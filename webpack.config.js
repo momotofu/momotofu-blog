@@ -11,14 +11,20 @@ module.exports = {
     port: 9000
   },
   module: {
-    loaders: [{
-      test: /\.js$/,
-      exclude: /node_modules/,
-      loader: "babel",
-      include: resolve(__dirname, 'source'),
-      query: {
-        presets: [ "es2015", "react", "react-hmre" ]
+    loaders: [
+      {
+        test: /\.js$/,
+        include: resolve(__dirname, 'source'),
+        loader: "babel",
+        query: {
+          presets: [ "es2015", "react", "react-hmre" ]
+        }
+      },
+      {
+        test: /\.styl$/,
+        include: resolve(__dirname, 'source'),
+        loader: 'style-loader!css-loader!stylus-loader'
       }
-    }]
+    ]
   }
 }

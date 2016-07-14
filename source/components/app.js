@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import BlogPost from "./blog-post/index.js"
 
 export default class App extends Component {
   constructor(props) {
@@ -7,7 +8,9 @@ export default class App extends Component {
 
   render() {
     return (
-      <App />
+      <div>
+        <BlogPost />
+      </div>
     );
   }
 }
