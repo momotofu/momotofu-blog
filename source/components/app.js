@@ -1,5 +1,6 @@
-import React, { Component } from "react";
-import BlogPost from "./blog-post/index.js"
+import React, { Component } from 'react';
+import BlogPost from './blog-post/index.js'
+require('./root-styles/index.styl')
 
 export default class App extends Component {
   constructor(props) {
