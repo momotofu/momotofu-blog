@@ -7,7 +7,8 @@ export default class BlogPost extends React.Component {
   }
   render() {
     return (
-      <div className={css.BlogPost-container}>
+      <div className="BlogPost_container">
+        <h1>TESTed</h1>
       </div>
     );
   }
