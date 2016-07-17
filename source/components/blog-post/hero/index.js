@@ -7,8 +7,16 @@ export default class Section extends React.Component {
   }
   render() {
     return (
-      <div className="BlogPost-image-container">
-        <img src="..." />
+      <div className="BlogPost-hero-container">
+        <div className="BlogPost-hero-wrapper">
+          <img
+            src={this.props.IMAGEDATA.source}
+            alt={this.props.IMAGEDATA.label}
+            />
+        </div>
+        <h6 className="BlogPost-hero-attribution">
+          {this.props.IMAGEDATA.creator}
+        </h6>
       </div>
     )
   }

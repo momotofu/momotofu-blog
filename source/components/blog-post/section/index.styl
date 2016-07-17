@@ -1,12 +1,24 @@
-.BlogPost
-  &-section
-    &-container
-      max-width 497px
-      width 100%
-      margin-bottom 29px
-    &-heading
-      font-size 36px
-      margin-bottom 8px
-    &-body
-      line-height 1.4
-      font-size 18px
+.BlogPost-section
+  &-container
+    max-width 497px
+    width 100%
+    margin-bottom 29px
+  &-heading
+    font-size 36px
+    margin-bottom 8px
+    line-height 27px
+    &:after
+      content ''
+      vertical-align text-bottom
+
+  &-body
+    line-height 1.4
+    font-size 18px
+    max-width 500px
+    margin 0 auto
+    width 100%
+    text-align justify
+    -webkit-hyphens auto
+    -moz-hyphens auto
+    -ms-hyphens auto
+    hyphens auto
