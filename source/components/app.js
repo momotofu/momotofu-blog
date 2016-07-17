@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import BlogPost from './blog-post/index.js'
+import '../hyphenate.js'
 require('./root-styles/index.styl')
 
 export default class App extends Component {
@@ -12,7 +13,6 @@ export default class App extends Component {
         <BlogPost POSTDATA={POSTDATA} key={POSTDATA.meta.UUID} />
       );
     });
-
   }
 
   render() {
@@ -23,3 +23,4 @@ export default class App extends Component {
     );
   }
 }
+

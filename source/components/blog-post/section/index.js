@@ -9,7 +9,7 @@ export default class Section extends React.Component {
     return (
       <div className="BlogPost-section-container">
         <h2 className="BlogPost-section-heading"> {this.props.headingCopy} </h2>
-        <p className="BlogPost-section-body"> {this.props.bodyCopy}</p>
+        <p className="BlogPost-section-body hyphenate"> {this.props.bodyCopy}</p>
       </div>
     )
   }
