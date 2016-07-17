@@ -7,9 +7,9 @@ export default class Section extends React.Component {
   }
   render() {
     return (
-      <div>
-        <h2 className="Section-heading"> {this.props.headingCopy} </h2>
-        <p className="Section-body"> {this.props.bodyCopy}</p>
+      <div className="BlogPost-section-container">
+        <h2 className="BlogPost-section-heading"> {this.props.headingCopy} </h2>
+        <p className="BlogPost-section-body"> {this.props.bodyCopy}</p>
       </div>
     )
   }
