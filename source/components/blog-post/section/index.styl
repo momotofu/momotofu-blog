@@ -1,20 +1,44 @@
 .BlogPost-section
   &-container
+    margin-bottom 29px
     max-width 497px
     width 100%
-    margin-bottom 29px
   &-heading
     font-size 36px
-    margin-bottom 8px
     line-height 27px
+    margin-bottom 8px
+    &-small
+      font-size 18px
+      line-height 1
     &:after
       content ''
       vertical-align text-bottom
 
   &-paragraph
-    line-height 1.4
     font-size 16px
-    text-align justify
-    max-width 500px
+    line-height 1.4
     margin-bottom 17px
+    max-width 500px
+    text-align justify
     width 100%
+
+  &-italic
+    font-style italic
+
+  &-list
+    position relative
+    margin-bottom 0
+    &-bulleted
+      margin-bottom 8px
+      &:before
+        content ''
+        position absolute
+        width 8px
+        height 8px
+        background white
+        border-radius 100px
+    &-spaced
+      margin-bottom 8px
+
+  &-small
+    font-size 14px

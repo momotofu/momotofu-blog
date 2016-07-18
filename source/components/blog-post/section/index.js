@@ -5,12 +5,14 @@ var classNames = require('classnames')
 class Section extends React.Component {
   constructor(props) {
     super(props)
-    this.classes = () => {
+    this.paragraphClasses = () => {
       if (this.props.options) {
         return classNames({
-          'list': this.props.options.list ? this.props.options.list : false,
-          'bulleted': this.props.options.bulleted ? this.props.options.bulleted : false,
-          'italic': this.props.options.italic ? this.props.options.italic : false,
+          'BlogPost-section-list': this.props.options.list ? this.props.options.list : false,
+          'BlogPost-section-list-bulleted': this.props.options.bulleted ? this.props.options.bulleted : false,
+          'BlogPost-section-list-spaced': this.props.options.listSpaced ? this.props.options.listSpaced : false,
+          'BlogPost-section-italic': this.props.options.italic ? this.props.options.italic : false,
+          'BlogPost-section-small': this.props.options.small ? this.props.options.small : false,
           'BlogPost-section-paragraph': true,
           'hyphenate': true
         })
@@ -22,9 +24,25 @@ class Section extends React.Component {
         })
       }
     }
+    this.headingClasses = () => {
+      if (this.props.options) {
+        return classNames({
+          'BlogPost-section-heading-small': this.props.options.small ? this.props.options.small : false,
+          'BlogPost-section-heading': true
+        })
+      }
+      else
+        return classNames({'BlogPost-section-heading': true})
+    }
+    this.heading = () => {
+      if (this.props.headingCopy)
+        return <h2 className={this.headingClasses()}> {this.props.headingCopy} </h2>
+      else
+        return
+    }
     this.paragraphs = this.props.bodyCopy.map((paragraph, index) => {
       return (
-        <p className={this.classes()} key={index}>
+        <p className={this.paragraphClasses()} key={index}>
           {paragraph}
         </p>
       )
@@ -33,7 +51,7 @@ class Section extends React.Component {
   render() {
     return (
       <div className="BlogPost-section-container">
-        <h2 className="BlogPost-section-heading"> {this.props.headingCopy} </h2>
+        {this.heading()}
         {this.paragraphs}
       </div>
     )
