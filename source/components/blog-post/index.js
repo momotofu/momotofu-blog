@@ -14,11 +14,27 @@ export default class BlogPost extends React.Component {
         <Section
           headingCopy={this.props.POSTDATA.abstract.label}
           bodyCopy={this.props.POSTDATA.abstract.copy}
+          options={{'list': true}}
+        />
+        <Section
+          headingCopy={this.props.POSTDATA.abstract.label}
+          bodyCopy={this.props.POSTDATA.abstract.copy}
+          options={{'list': true, 'bulleted': true}}
+        />
+        <Section
+          headingCopy={this.props.POSTDATA.abstract.label}
+          bodyCopy={this.props.POSTDATA.abstract.copy}
+          options={{'italic': true}}
         />
         <Hero IMAGEDATA={this.props.POSTDATA.illustration} />
         <Section
           headingCopy={this.props.POSTDATA.body.label}
           bodyCopy={this.props.POSTDATA.body.copy}
+        />
+        <Section
+          headingCopy={this.props.POSTDATA.abstract.label}
+          bodyCopy={this.props.POSTDATA.abstract.copy}
+          options={{'list': true}}
         />
       </div>
     )
