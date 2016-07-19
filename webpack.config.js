@@ -14,7 +14,9 @@ module.exports = {
     loaders: [
       {
         test: /\.js$/,
-        include: resolve(__dirname, 'source'),
+        include: [
+          resolve(__dirname, 'source')
+        ],
         loader: "babel",
         query: {
           presets: [ "es2015", "react", "react-hmre" ]
@@ -22,14 +24,21 @@ module.exports = {
       },
       {
         test: /\.styl$/,
-        include: resolve(__dirname, 'source'),
+        include: [
+          resolve(__dirname, 'source')
+        ],
         loader: 'style-loader!css-loader!stylus-loader'
       },
       {
         test: /\.json$/,
-        include: resolve(__dirname, 'api'),
+        include: [
+          resolve(__dirname, 'api')
+        ],
         loader: 'json-loader'
       }
     ]
+  },
+  node: {
+    fs: 'empty'
   }
 }

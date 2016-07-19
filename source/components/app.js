@@ -1,11 +1,13 @@
 import React, { Component } from 'react'
-import BlogPost from './blog-post/index.js'
+import BlogPost from './blog-post'
+import NavigationBar from './navigation-bar'
 import '../hyphenate.js'
-require('./root-styles/index.styl')
+require('../root-styles/index.styl')
+require('./index.styl')
 
 export default class App extends Component {
   constructor(props) {
-    super(props);
+    super(props)
 
     this.BLOGPOSTDATA = require('../../api/blog-posts.json')
     this.blogPosts = this.BLOGPOSTDATA.map((POSTDATA) => {
@@ -17,7 +19,8 @@ export default class App extends Component {
 
   render() {
     return (
-      <div>
+      <div className="App-container">
+        <NavigationBar />
         {this.blogPosts}
       </div>
     );
