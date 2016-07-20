@@ -10,7 +10,7 @@ class NavigationBar extends React.Component {
     return(
       <div className='NavigationBar-spacer'>
         <div className='NavigationBar-container'>
-
+          <h1>{this.state.category}</h1>
         </div>
       </div>
     )

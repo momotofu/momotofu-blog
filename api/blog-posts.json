@@ -64,5 +64,71 @@
         "Memory. (2016, June 17). In Wikipedia, The Free Encyclopedia. Retrieved 15:11, July 8, 2016, from https://en.wikipedia.org/w/index.php?title=Memory&oldid=725756178"
       ]
     }
+  },
+  {
+    "meta": {
+      "UUID": "1234567891",
+      "last-updated": "Fri Jul 15 2016 08:32:37 GMT-0600 (MDT)",
+      "category": "TESTING",
+      "date-posted": "Fri Jul 15 2016 08:32:37 GMT-0600 (MDT)"
+    },
+    "primer": {
+      "copy": [
+        "What is declarative memory?",
+        "What are islands of knowledge?",
+        "what is retroactive / proactive interference?",
+        "What is neuroplasticity?",
+        "what is working memory?",
+        "What is information encoding / semantics?",
+        "How is stress related to memory?",
+        "What are the physical parts of the brain associated with memory?"
+      ]
+    },
+    "connections": {
+      "label": "Connections",
+      "copy": [
+        "Memory is like a modern computer database, however data is subject to degradation, relevancy, and emotional impact.",
+        "Encoding information with previous patterns is like mix and matching notes from a major and minor scale.",
+        "Memory can be broken down into base elements similar to strings, numbers, boolean values, null / undefined, functions, and objects."
+      ]
+    },
+    "abstract": {
+      "label": "Abstract",
+      "copy": [
+        "Memory is a major facet of human reality and is the foundation of learning. It involves transferring our experiences via encoding from working memory into long term memory. Encoding happens through organization, semantic, visual, or acoustic distinction, emotional impact, and elaboration. When information is recognized or reconstructed into experience within working memory a memory is considered to be formed. The subject of memory is divided into several parts such as declarative, implicit, episodic, haptic, echoic, visual, procedural, topographical, semantic, prospective, and retrospective memory. Memory as a process is routed through the hippocampus from the cortex to various parts of the brain. The amygdala is involved in emotional memories. Synaptic plasticity is a factor in memory either through the strengthening or weakening of synaptic activity. Stress plays a major role in weakening memory by allowing the destruction of neurons within the hippocampus."
+      ]
+    },
+    "illustration": {
+      "label": "Scouring the Earth",
+      "creator": "Christopher M. Reece",
+      "source": "jpeg"
+    },
+    "body": {
+      "label": "Transient Thoughts Test",
+      "copy": [
+        "Memory is the process in which information is encoded, stored, and retrieved. Encoding allows information from the outside world to be sensed in the form of chemical and physical stimuli. In the first stage the information must be changed so that it may be put into the encoding process. Storage is the second memory stage or process. This entails that information is maintained over short periods of time.",
+        "Finally the third process is the retrieval of information that has been stored. Such information must be located and returned to the consciousness. Some retrieval attempts may be effortless due to the type of information, and other attempts to remember stored information may be more demanding for various reasons."
+      ]
+    },
+    "review": {
+      "label": "Review",
+      "copy": [
+        "What is declarative memory?",
+        "what is retroactive / proactive interference?",
+        "What is neuroplasticity?",
+        "what is working memory?",
+        "What is information encoding / semantics?",
+        "How is stress related to memory?",
+        "What are the physical parts of the brain associated with memory?"
+      ]
+    },
+    "references": {
+      "label": "References",
+      "copy": [
+        "Memory. (2016, June 17). In Wikipedia, The Free Encyclopedia. Retrieved 15:11, July 8, 2016, from https://en.wikipedia.org/w/index.php?title=Memory&oldid=725756178",
+        "Memory. (2016, June 17). In Wikipedia, The Free Encyclopedia. Retrieved 15:11, July 8, 2016, from https://en.wikipedia.org/w/index.php?title=Memory&oldid=725756178",
+        "Memory. (2016, June 17). In Wikipedia, The Free Encyclopedia. Retrieved 15:11, July 8, 2016, from https://en.wikipedia.org/w/index.php?title=Memory&oldid=725756178"
+      ]
+    }
   }
 ]

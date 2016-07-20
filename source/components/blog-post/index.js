@@ -8,9 +8,11 @@ export default class BlogPost extends React.Component {
     super(props)
 
   }
+
+
   render() {
     return (
-      <div className="BlogPost-container">
+      <div className="BlogPost-container" onMouseOver={this.props.bubbleMetaData.bind(this)}>
         <Section
           bodyCopy={this.props.POSTDATA.primer.copy}
           options={{'list': true}}
@@ -44,3 +46,5 @@ export default class BlogPost extends React.Component {
     )
   }
 }
+
+BlogPost.bubbleMeta
