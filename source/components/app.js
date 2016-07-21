@@ -15,6 +15,10 @@ export default class App extends Component {
         return this.props.POSTDATA
     }
 
+    this.updateNavigationBarMeta = function(METADATA) {
+      this.setState
+    }
+
     this.BLOGPOSTDATA = require('../../api/blog-posts.json')
     this.blogPosts = this.BLOGPOSTDATA.map((POSTDATA) => {
       return (
