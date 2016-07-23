@@ -6,13 +6,12 @@ class NavigationBar extends React.Component {
   constructor(props) {
     super(props)
 
-    this.props.updateNavigationBarMeta
   }
   render() {
     return(
       <div className='NavigationBar-spacer'>
         <div className='NavigationBar-container'>
-          <h1>{this.state.category}</h1>
+          <h1>{this.props.METADATA.title}</h1>
         </div>
       </div>
     )

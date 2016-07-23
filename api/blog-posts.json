@@ -2,6 +2,7 @@
   {
     "meta": {
       "UUID": "1234567890",
+      "title": "Transient Thoughts",
       "last-updated": "Fri Jul 15 2016 08:32:37 GMT-0600 (MDT)",
       "category": "learning",
       "date-posted": "Fri Jul 15 2016 08:32:37 GMT-0600 (MDT)"
@@ -68,6 +69,7 @@
   {
     "meta": {
       "UUID": "1234567891",
+      "title": "A React Relay",
       "last-updated": "Fri Jul 15 2016 08:32:37 GMT-0600 (MDT)",
       "category": "TESTING",
       "date-posted": "Fri Jul 15 2016 08:32:37 GMT-0600 (MDT)"

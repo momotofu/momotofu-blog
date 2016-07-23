@@ -4,4 +4,4 @@ import App from './components/app.js'
 
 render(
   <App/>, document.getElementById('app')
-);
+)
