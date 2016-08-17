@@ -11,7 +11,7 @@ class NavigationBar extends React.Component {
     return(
       <div className='NavigationBar-spacer'>
         <div className='NavigationBar-container'>
-          <h1>{this.props.METADATA.title}</h1>
+          <h1 className='NavigationBar-signifier'>{this.props.METADATA.title}</h1>
         </div>
       </div>
     )
