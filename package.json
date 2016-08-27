@@ -4,14 +4,21 @@
   "description": "A creative collection",
   "main": "index.js",
   "scripts": {
-    "start": "webpack; nodemon app.js"
+    "start": "webpack; node app.js",
+    "dev": "webpack; nodemon app.js"
   },
   "keywords": [],
   "author": "Momotofu",
   "license": "MIT",
   "devDependencies": {
     "jade-loader": "^0.8.0",
-    "nodemon": "^1.10.2"
+    "nodemon": "^1.10.2",
+    "json-loader": "^0.5.4",
+    "style-loader": "^0.13.1",
+    "css-loader": "^0.23.1",
+    "stylus-loader": "^2.1.1",
+    "webpack": "^1.13.0",
+    "webpack-dev-server": "^1.14.1"
   },
   "dependencies": {
     "babel-core": "^6.7.7",
@@ -22,16 +29,11 @@
     "classnames": "^2.2.5",
     "colors": "^1.1.2",
     "consolidate": "^0.14.1",
-    "css-loader": "^0.23.1",
     "express": "^4.14.0",
     "jade": "^1.11.0",
-    "json-loader": "^0.5.4",
     "react": "^15.0.1",
     "react-dom": "^15.0.1",
-    "style-loader": "^0.13.1",
-    "stylus": "^0.54.5",
-    "stylus-loader": "^2.1.1",
-    "webpack": "^1.13.0",
-    "webpack-dev-server": "^1.14.1"
+    "react-visibility-sensor": "^3.4.0",
+    "stylus": "^0.54.5"
   }
 }

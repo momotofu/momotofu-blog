@@ -9,9 +9,14 @@ export default class BlogPost extends React.Component {
     super(props)
 
     this.isVisible = function(visible) {
-      if(visible)
+      if (visible)
         this.props.bubbleMetaData(props.POSTDATA.meta)
     }
+
+    if (this.props.isLast)
+      this.footer = null
+    else
+      this.footer = <div className="BlogPost-footer" />
   }
 
   render() {
@@ -49,7 +54,7 @@ export default class BlogPost extends React.Component {
             />
           </div>
         </BlogPostSensor>
-        <div className="BlogPost-footer" />
+        {this.footer}
       </div>
     )
   }
