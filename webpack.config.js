@@ -1,31 +1,34 @@
 const {resolve} = require('path')
 
 module.exports = {
-  entry: resolve(__dirname, 'source/index.js'),
+  entry: resolve(__dirname, 'views/index.js'),
   output: {
     path: resolve(__dirname, 'bin'),
     filename: "bundle.js",
-    publicPath: "/static/"
-  },
-  devServer: {
-    port: 9000
   },
   module: {
     loaders: [
       {
         test: /\.js$/,
         include: [
-          resolve(__dirname, 'source')
+          resolve(__dirname, 'views')
         ],
         loader: "babel",
         query: {
-          presets: [ "es2015", "react", "react-hmre" ]
+          presets: [ "es2015", "react" ]
         }
+      },
+      {
+        test: /\.jade$/,
+        include: [
+          resolve(__dirname, 'views')
+        ],
+        loader: 'json-loader'
       },
       {
         test: /\.styl$/,
         include: [
-          resolve(__dirname, 'source')
+          resolve(__dirname, 'views')
         ],
         loader: 'style-loader!css-loader!stylus-loader'
       },
