@@ -1,9 +1,9 @@
-const {resolve} = require('path')
+const path = require('path')
 
 module.exports = {
-  entry: resolve(__dirname, 'views/index.js'),
+  entry: path.resolve(__dirname, 'views/index.js'),
   output: {
-    path: resolve(__dirname, 'bin'),
+    path: path.resolve(__dirname, 'bin'),
     filename: "bundle.js",
   },
   module: {
@@ -11,7 +11,7 @@ module.exports = {
       {
         test: /\.js$/,
         include: [
-          resolve(__dirname, 'views')
+          path.resolve(__dirname, 'views')
         ],
         loader: "babel",
         query: {
@@ -21,21 +21,21 @@ module.exports = {
       {
         test: /\.jade$/,
         include: [
-          resolve(__dirname, 'views')
+          path.resolve(__dirname, 'views')
         ],
         loader: 'json-loader'
       },
       {
         test: /\.styl$/,
         include: [
-          resolve(__dirname, 'views')
+          path.resolve(__dirname, 'views')
         ],
         loader: 'style-loader!css-loader!stylus-loader'
       },
       {
         test: /\.json$/,
         include: [
-          resolve(__dirname, 'api')
+          path.resolve(__dirname, 'api')
         ],
         loader: 'json-loader'
       }
