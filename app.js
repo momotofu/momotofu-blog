@@ -16,6 +16,6 @@ app.get('/', function(req, res) {
   res.render('index')
 })
 
-var server = app.listen(9000, function() {
+var server = app.listen(process.env.PORT || 9000, function() {
   console.log('Server running at http://localhost:' + server.address().port)
 })
