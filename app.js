@@ -13,9 +13,10 @@ app.set('view engine', 'jade')
 app.use('/js', express.static(__dirname + '/bin'))
 
 app.get('/', function(req, res) {
-  res.render('index')
+  var testVar = 'Horse stance, daimyo'
+  res.render('index', {testVar: testVar})
 })
 
-var server = app.listen(process.env.PORT || 9000, function() {
+var server = app.listen(process.env.PORT || 8000, function() {
   console.log('Server running at http://localhost:' + server.address().port)
 })
