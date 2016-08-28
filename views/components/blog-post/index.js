@@ -37,7 +37,7 @@ export default class BlogPost extends React.Component {
               headingCopy={this.props.POSTDATA.abstract.label}
               bodyCopy={this.props.POSTDATA.abstract.copy}
             />
-            <Hero IMAGEDATA={this.props.POSTDATA.illustration} />
+            {/*<Hero IMAGEDATA={this.props.POSTDATA.illustration} />*/}
             <Section
               headingCopy={this.props.POSTDATA.body.label}
               bodyCopy={this.props.POSTDATA.body.copy}
