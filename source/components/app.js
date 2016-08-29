@@ -4,11 +4,8 @@ import BlogPost from './blog-post'
 import NavigationBar from './navigation-bar'
 import Footer from './footer'
 import '../hyphenate.js'
-
 require('../root-styles/index.styl')
 require('./index.styl')
-
-var color = require('../../utils/tofu-color.js')
 
 export default class App extends Component {
   constructor(props) {
@@ -56,11 +53,8 @@ export default class App extends Component {
     }
   }
 
-  getChildContext() {
-    return { color: color }
-  }
-
   render() {
+    console.log(this.BlogPosts)
     return (
       <Router history={ browserHistory }>
         <Route path='/' component={ this.Container }>
@@ -70,7 +64,3 @@ export default class App extends Component {
     )
   }
 }
-
-App.childContextTypes = {
-  color: React.PropTypes.object
-};

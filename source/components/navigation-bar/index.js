@@ -24,8 +24,4 @@ class NavigationBar extends React.Component {
   }
 }
 
-NavigationBar.contextTypes = {
-  color: React.PropTypes.object
-}
-
 export default NavigationBar

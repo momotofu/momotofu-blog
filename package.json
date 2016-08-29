@@ -22,7 +22,6 @@
     "babel-preset-react-hmre": "^1.1.1",
     "classnames": "^2.2.5",
     "color": "^0.11.3",
-    "colors": "^1.1.2",
     "consolidate": "^0.14.1",
     "css-loader": "^0.23.1",
     "express": "^4.14.0",
