@@ -1,28 +1,37 @@
 .NavigationBar
   &-spacer
-    height 3rem
+    height 6rem
     position absolute
     top 0
     @media screen and (max-width: 435pt)
-        bottom 0
+      bottom 0
   &-container
     display flex
+    padding 0 3rem
     background #2b2633
     -webkit-box-shadow inset 0px -36px 25px -39px #0D031A
     -moz-box-shadow inset 0px -36px 25px -39px #0D031A
     box-shadow inset 0px -36px 25px -39px #0D031A
     align-items center
-    justify-content center
     border-bottom 1px solid #AA523C
-    color #F7FCFF
     position fixed
     height inherit
     width 100%
     z-index 10
   &-signifier
-    font-weight 600
-    text-transform uppercase
-    letter-spacing .4px
-    word-spacing 1px
-    font-size 12px
+    color #F7FCFF
+    cursor pointer
+    font-size 13px
+    font-weight 400
+    letter-spacing 0.06em
+    margin-right 3rem
     opacity .8
+    text-decoration none
+    text-transform uppercase
+    word-spacing 1px
+    transition all .26s ease
+    &:hover
+      color #FF7D4F
+    &:active
+      color #FF7D4F
+

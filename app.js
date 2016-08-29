@@ -13,8 +13,7 @@ app.set('view engine', 'jade')
 app.use('/js', express.static(__dirname + '/bin'))
 
 app.get('/', function(req, res) {
-  var testVar = 'Horse stance, daimyo'
-  res.render('index', {testVar: testVar})
+  res.render('index')
 })
 
 var server = app.listen(process.env.PORT || 8000, function() {

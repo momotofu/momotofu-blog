@@ -1,4 +1,5 @@
 import React from "react"
+import { Link } from 'react-router'
 require('./index.styl')
 var classNames = require('classnames')
 
@@ -11,11 +12,20 @@ class NavigationBar extends React.Component {
     return(
       <div className='NavigationBar-spacer'>
         <div className='NavigationBar-container'>
-          <h1 className='NavigationBar-signifier'>{this.props.METADATA.title}</h1>
+          <Link to="/" className='NavigationBar-signifier'>Momotofu</Link>
+          <Link to="/blog" className='NavigationBar-signifier'>Blog</Link>
+          <Link to="/about" className='NavigationBar-signifier'>About</Link>
+          <Link to="/contributions" className='NavigationBar-signifier'>Contributions</Link>
+          <Link to="/contact" className='NavigationBar-signifier'>Contact</Link>
+          {/*<h1 className='NavigationBar-signifier'>{this.props.METADATA.title}</h1>*/}
         </div>
       </div>
     )
   }
+}
+
+NavigationBar.contextTypes = {
+  color: React.PropTypes.object
 }
 
 export default NavigationBar

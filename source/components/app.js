@@ -1,10 +1,14 @@
 import React, { Component } from 'react'
+import { Router, Route, Link, IndexRoute, browserHistory } from 'react-router'
 import BlogPost from './blog-post'
 import NavigationBar from './navigation-bar'
 import Footer from './footer'
 import '../hyphenate.js'
+
 require('../root-styles/index.styl')
 require('./index.styl')
+
+var color = require('../../utils/tofu-color.js')
 
 export default class App extends Component {
   constructor(props) {
@@ -19,7 +23,7 @@ export default class App extends Component {
       this.setState({ navigationBarMeta: POSTMETADATA })
     }
 
-    this.blogPosts = this.BLOGPOSTDATA.map((POSTDATA, i) => {
+    this.posts = this.BLOGPOSTDATA.map((POSTDATA, i) => {
       var isLast = i === this.BLOGPOSTDATA.length - 1
       return (
         <BlogPost
@@ -30,18 +34,43 @@ export default class App extends Component {
         />
       )
     })
+
+    this.BlogPosts = (props) => {
+      return (
+        <div>
+          { this.posts }
+        </div>
+      )
+    }
+
+    this.Container = (props) => {
+      return (
+        <div className="App-container">
+          <NavigationBar
+            pageTitle='Read'
+            METADATA={this.state.navigationBarMeta}
+          />
+          { props.children }
+          <Footer />
+        </div>)
+    }
+  }
+
+  getChildContext() {
+    return { color: color }
   }
 
   render() {
     return (
-      <div className="App-container">
-        <NavigationBar
-          pageTitle='Read'
-          METADATA={this.state.navigationBarMeta}
-        />
-        {this.blogPosts}
-        <Footer />
-      </div>
+      <Router history={ browserHistory }>
+        <Route path='/' component={ this.Container }>
+          <Route path='/blog' component={ this.BlogPosts }/>
+        </Route>
+      </Router>
     )
   }
 }
+
+App.childContextTypes = {
+  color: React.PropTypes.object
+};
