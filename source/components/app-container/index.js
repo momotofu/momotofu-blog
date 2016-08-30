@@ -12,7 +12,8 @@ var Container = React.createClass({
         />
         { this.props.children }
         <Footer />
-      </div>)
+      </div>
+    )
   }
 })
 

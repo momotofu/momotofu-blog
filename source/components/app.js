@@ -3,30 +3,41 @@ import { Router, Route, Link, IndexRoute, browserHistory, Redirect, hashHistory}
 import Momotofu from './momotofu'
 import AppContainer from './app-container'
 import BlogPosts from './blog-posts'
+import ContactPage from './contact-page'
 import '../hyphenate.js'
 require('../root-styles/index.styl')
 require('./index.styl')
 
 var App = React.createClass({
-  sendRouterStateToNav: function(prevState, nextState) {
-    console.log('prev: ', prevState, 'next: ', nextState)
+  getInitialState: function() {
+    return {routerState: {prevState: '', nextState: ''}}
   },
-  onChange: function(prevState, nextState, replace, callback) {
-    this.sendRouterStateToNav(prevState.location.pathname, nextState.location.pathname)
+  getChildContext: function() {
+    return {routerState: this.state.routerState}
+  },
+  update: function(prevState, nextState) {
+    this.setState({
+      routerState: { prevState: prevState.location.pathname, nextState: nextState.location.pathname}
+    })
   },
   render: function() {
     return (
       <Router history={ browserHistory }>
-        <Route onChange={this.onChange} path='/' component={ AppContainer }>
+        <Route onChange={ this.update } path='/' component={ AppContainer }>
           <Route path='/momotofu' component={ Momotofu }/>
           <Route path='/blog' component={ BlogPosts }/>
           <Route path='/about' component={ Momotofu }/>
           <Route path='/contributions' component={ Momotofu }/>
-          <Route path='/contact' component={ Momotofu }/>
+          <Route path='/contact' component={ ContactPage }/>
         </Route>
       </Router>
     )
   }
 })
+
+
+App.childContextTypes = {
+  routerState: React.PropTypes.object
+}
 
 export default App

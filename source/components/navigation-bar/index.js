@@ -1,20 +1,23 @@
 import React from "react"
-import { Link , withRouter} from 'react-router'
+import { Link } from 'react-router'
 require('./index.styl')
 var classNames = require('classnames')
 
 var NavigationBar = React.createClass({
+  componentWillReceiveProps: function(nextProps, nextContext) {
+    var routerState = nextContext.routerState
+    this.sortLinks(routerState.nextState.substr(1))
+  },
   componentWillMount: function() {
     var links = ['momotofu', 'blog', 'about', 'contributions', 'contact']
     this.setState({
       links: links.map((value, i) => {
         return (
            <Link
-            to={value}
+            to={'/' + value}
             activeClassName='NavigationBar-signifier-active'
             className='NavigationBar-signifier'
             key={value}
-            onClick={this.sortLinks.bind(null, value)}
             >
             {value}
           </Link>
@@ -66,5 +69,9 @@ var NavigationBar = React.createClass({
   }
 })
 
-export default withRouter(NavigationBar)
+NavigationBar.contextTypes = {
+  routerState: React.PropTypes.object
+}
+
+export default NavigationBar
 
