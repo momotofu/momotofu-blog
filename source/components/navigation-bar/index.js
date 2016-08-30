@@ -1,30 +1,29 @@
 import React from "react"
-import { Link } from 'react-router'
+import { Link , withRouter} from 'react-router'
 require('./index.styl')
 var classNames = require('classnames')
 
 var NavigationBar = React.createClass({
   componentWillMount: function() {
-    var links = ['/', 'blog', 'about', 'contributions', 'contact']
+    var links = ['momotofu', 'blog', 'about', 'contributions', 'contact']
     this.setState({
       links: links.map((value, i) => {
-        var label = ''
-        if (value == '/')
-          label = 'Momotofu'
-        else
-          label = value
         return (
            <Link
             to={value}
             activeClassName='NavigationBar-signifier-active'
             className='NavigationBar-signifier'
             key={value}
-            onClick={this.sortLinks.bind(null, value)}>
-            {label}
+            onClick={this.sortLinks.bind(null, value)}
+            >
+            {value}
           </Link>
         )
       })
     })
+  },
+  componentDidMount: function() {
+    this.sortLinks(window.page)
   },
   removeArrayItem: function(array, index) {
     return array.slice(0, index)
@@ -37,16 +36,20 @@ var NavigationBar = React.createClass({
     var activeLink
 
     links.forEach((n, i) => {
-      if (n.key === linkId)
+      if (n.key === linkId) {
         activeLinkIndex = i
+        return
+      }
     })
     if (activeLinkIndex == 0)
       return
-
     activeLink = links[activeLinkIndex]
     links = this.removeArrayItem(links, activeLinkIndex)
+    links.sort((a, b) => {
+      return a.key < b.key
+    })
     links.unshift(activeLink)
-    console.log('links: ', links)
+
     this.setState({
       links: links
     })
@@ -54,7 +57,7 @@ var NavigationBar = React.createClass({
   render: function() {
     return (
       <div className='NavigationBar-spacer'>
-        <div className='NavigationBar-container' ref='nav'>
+        <div className='NavigationBar-container'>
           {this.state.links}
           {/*<h1 className='NavigationBar-signifier'>{this.props.METADATA.title}</h1>*/}
         </div>
@@ -63,5 +66,5 @@ var NavigationBar = React.createClass({
   }
 })
 
-export default NavigationBar
+export default withRouter(NavigationBar)
 

@@ -1,66 +1,32 @@
-import React, { Component } from 'react'
-import { Router, Route, Link, IndexRoute, browserHistory } from 'react-router'
-import BlogPost from './blog-post'
-import NavigationBar from './navigation-bar'
-import Footer from './footer'
+import React from 'react'
+import { Router, Route, Link, IndexRoute, browserHistory, Redirect, hashHistory} from 'react-router'
+import Momotofu from './momotofu'
+import AppContainer from './app-container'
+import BlogPosts from './blog-posts'
 import '../hyphenate.js'
 require('../root-styles/index.styl')
 require('./index.styl')
 
-export default class App extends Component {
-  constructor(props) {
-    super(props)
-    this.BLOGPOSTDATA = require('../../api/blog-posts.json')
-
-    this.state = {
-      navigationBarMeta: this.BLOGPOSTDATA[0].meta
-    }
-
-    this.getNavigationBarMeta = function(POSTMETADATA) {
-      this.setState({ navigationBarMeta: POSTMETADATA })
-    }
-
-    this.posts = this.BLOGPOSTDATA.map((POSTDATA, i) => {
-      var isLast = i === this.BLOGPOSTDATA.length - 1
-      return (
-        <BlogPost
-          POSTDATA={POSTDATA}
-          key={POSTDATA.meta.UUID}
-          bubbleMetaData={this.getNavigationBarMeta.bind(this)}
-          isLast={isLast}
-        />
-      )
-    })
-
-    this.BlogPosts = (props) => {
-      return (
-        <div>
-          { this.posts }
-        </div>
-      )
-    }
-
-    this.Container = (props) => {
-      return (
-        <div className="App-container">
-          <NavigationBar
-            pageTitle='Read'
-            METADATA={this.state.navigationBarMeta}
-          />
-          { props.children }
-          <Footer />
-        </div>)
-    }
-  }
-
-  render() {
-    console.log(this.BlogPosts)
+var App = React.createClass({
+  sendRouterStateToNav: function(prevState, nextState) {
+    console.log('prev: ', prevState, 'next: ', nextState)
+  },
+  onChange: function(prevState, nextState, replace, callback) {
+    this.sendRouterStateToNav(prevState.location.pathname, nextState.location.pathname)
+  },
+  render: function() {
     return (
       <Router history={ browserHistory }>
-        <Route path='/' component={ this.Container }>
-          <Route path='/blog' component={ this.BlogPosts }/>
+        <Route onChange={this.onChange} path='/' component={ AppContainer }>
+          <Route path='/momotofu' component={ Momotofu }/>
+          <Route path='/blog' component={ BlogPosts }/>
+          <Route path='/about' component={ Momotofu }/>
+          <Route path='/contributions' component={ Momotofu }/>
+          <Route path='/contact' component={ Momotofu }/>
         </Route>
       </Router>
     )
   }
-}
+})
+
+export default App
