@@ -3,9 +3,8 @@ var gulp = require('gulp')
 var nodemon = require('nodemon')
 var path = require('path')
 var webpack = require('webpack')
-var child_process = require('child_process')
 
-/*
+/**
   webpack configuration
  */
 
@@ -53,7 +52,7 @@ var frontendConfig = {
   ]
 }
 
-/*
+/**
   tasks
  */
 
