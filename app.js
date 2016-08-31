@@ -21,6 +21,11 @@ app.get('/', function(req, res) {
   res.redirect('/momotofu');
 })
 
+app.post('/sendForm', function(req, res) {
+  console.log('form request', req.body)
+  res.status(200).send('success')
+})
+
 var server = app.listen(process.env.PORT || 8000, function() {
   console.log('Server running at http://localhost:' + server.address().port)
 })
