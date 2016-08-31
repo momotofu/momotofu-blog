@@ -4,7 +4,6 @@
   &-container
     display flex
     justify-content center
-    margin-bottom 6rem
 
   &-form
     display flex
@@ -22,13 +21,16 @@
       display flex
 
       &-items
+        transition all .3s ease
         border 1px solid rust
+        border-radius 1px
+        margin-bottom 2rem
         &-content
           display flex
-          height 4rem
+          height 100%
           position relative
           &:before
-            background pink
+            background rust
             content ''
             height 1px
             position absolute
@@ -41,25 +43,56 @@
             min-width 5rem
             padding 1.5rem
           &-input
+            font-size 13px
+            color tangerine
+            box-sizing border-box
             background black
             padding 1.5rem
             width 100%
+            height 4rem
             outline none
             text-align right
             border none
+          &-textarea
+            resize none
+            text-align left
+            height 12rem
           &:first-child
-            border-top-left-radius 2px
-            border-top-right-radius 2px
             &:before
               content none
-          &:last-child
-            border-bottom-right-radius 2px
-            border-bottom-right-radius 2px
 
-      &-message
-        resize none
-        height 12rem
-        margin 1.5rem 0
+    &-button
+      -moz-box-shadow inset 0px -36px 25px -39px #0D031A
+      -webkit-box-shadow inset 0px -36px 25px -39px #0D031A
+      box-shadow inset 0px -36px 25px -39px #0D031A
+      background charcoal
+      border 1px solid rust
+      color #F7FCFF
+      cursor pointer
+      cursor pointer
+      font-size 13px
+      font-weight 400
+      height 4rem
+      letter-spacing 0.06em
+      opacity .8
+      outline none
+      text-decoration none
+      text-transform uppercase
+      transition all .26s ease
+      word-spacing 1px
+      &:hover
+        color #FF7D4F
+      &:active
+        color #AA523C
+        transition all .05s ease
 
-      &-button
-        cursor pointer
+
+::-webkit-input-placeholder
+  color rust
+::-moz-placeholder
+  color rust
+:-ms-input-placeholder
+  color rust
+:-moz-placeholder
+  color rust
+

@@ -2,6 +2,8 @@ import React from 'react'
 import NavigationBar from '../navigation-bar'
 import Footer from '../footer'
 
+require('./index.styl')
+
 var Container = React.createClass({
   render: function() {
     return (
@@ -10,7 +12,9 @@ var Container = React.createClass({
           pageTitle='Read'
           METADATA={this.props.navigationBarMeta}
         />
-        { this.props.children }
+        <div className='App-content'>
+          { this.props.children }
+        </div>
         <Footer />
       </div>
     )

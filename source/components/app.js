@@ -5,8 +5,8 @@ import AppContainer from './app-container'
 import BlogPosts from './blog-posts'
 import ContactPage from './contact-page'
 import '../hyphenate.js'
+
 require('../root-styles/index.styl')
-require('./index.styl')
 
 var App = React.createClass({
   getInitialState: function() {
