@@ -32,9 +32,9 @@
         animation-iteration-count infinite
         animation-name hover
         animation-timing-function ease
-        border-bottom 8px solid electricty
         border-radius 2px
-        border-right 8px solid electricty
+        border-bottom 8px solid
+        border-right 8px solid
         bottom .5rem
         height 16px
         left 50%
@@ -43,6 +43,11 @@
         -ms-transform rotate(45deg)
         -webkit-transform rotate(45deg)
         width 16px
+      &:hover
+        color neonPink
+        transition all .3s ease
+      &:active
+        opacity .6
 
 @keyframes hover
   0%
