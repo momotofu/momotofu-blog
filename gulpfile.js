@@ -69,16 +69,19 @@ function onBuild(done) {
   }
 }
 
-gulp.task('stack-build', (done) => {
-  webpack(frontendConfig).run(onBuild(done))
-})
-
-gulp.task('stack-watch', () => {
-  webpack(frontendConfig).watch(100, onBuild());
-  nodemon({
-    script: path.join(__dirname, 'app.js')
+if (process.env.NODE_ENV == 'production') {
+  gulp.task('stack-build', (done) => {
+    webpack(frontendConfig).run(onBuild(done))
   })
-})
+} else {
+  gulp.task('stack-watch', () => {
+    webpack(frontendConfig).watch(100, onBuild());
+    nodemon({
+      script: path.join(__dirname, 'app.js')
+    })
+  })
+}
+
 
 
 gulp.task('build', ['stack-build'])
