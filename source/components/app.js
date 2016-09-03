@@ -26,7 +26,6 @@ var App = React.createClass({
         <Route onChange={ this.update } path='/' component={ AppContainer }>
           <Route path='/momotofu' component={ Momotofu }/>
           <Route path='/blog' component={ BlogPosts }/>
-          <Route path='/about' component={ Momotofu }/>
           <Route path='/contributions' component={ Momotofu }/>
           <Route path='/contact' component={ ContactPage }/>
         </Route>

@@ -9,7 +9,7 @@ var NavigationBar = React.createClass({
     this.sortLinks(routerState.nextState.substr(1))
   },
   componentWillMount: function() {
-    var links = ['momotofu', 'blog', 'about', 'contributions', 'contact']
+    var links = ['momotofu', 'blog', 'contributions', 'contact']
     this.setState({
       links: links.map((value, i) => {
         return (
