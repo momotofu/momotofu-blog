@@ -47,7 +47,6 @@ app.get('/', function(req, res) {
 })
 
 app.post('/sendForm', function(req, res) {
-  console.log('req.body', req.body.email)
   emailTransporter.sendMail({
     from: process.env.EMAIL_USER,
     to: process.env.EMAIL_USER,
@@ -58,7 +57,6 @@ app.post('/sendForm', function(req, res) {
       console.log(err)
       res.status(500).send(err)
     } else {
-      console.log('Message sent: ', info.response)
       console.log('info: ', info)
       res.status(200).send('success')
     }
