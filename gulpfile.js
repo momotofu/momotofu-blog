@@ -69,7 +69,7 @@ function onBuild(done) {
   }
 }
 
-if (process.env.NODE_ENV == 'production') {
+if (process.env.NODE_ENV == 'PRODUCTION') {
   gulp.task('stack-build', (done) => {
     webpack(frontendConfig).run(onBuild(done))
   })
