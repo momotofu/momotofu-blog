@@ -80,7 +80,6 @@ gulp.task('stack-watch', () => {
   })
 })
 
-
 gulp.task('build', ['stack-build'])
 gulp.task('watch', ['stack-watch'])
 

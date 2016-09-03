@@ -71,5 +71,78 @@
         "Memory. (2016, June 17). In Wikipedia, The Free Encyclopedia. Retrieved 15:11, July 8, 2016, from https://en.wikipedia.org/w/index.php?title=Memory&oldid=725756178"
       ]
     }
+  },
+  {
+    "meta": {
+      "UUID": "0002",
+      "title": "Transient thoughts",
+      "last-updated": "Fri Jul 15 2016 08:32:37 GMT-0600 (MDT)",
+      "category": "learning",
+      "date-posted": "Fri Jul 15 2016 08:32:37 GMT-0600 (MDT)"
+    },
+    "primer": {
+      "copy": [
+        "What is declarative memory?",
+        "What are islands of knowledge?",
+        "what is retroactive / proactive interference?",
+        "What is neuroplasticity?",
+        "what is working memory?",
+        "What is information encoding / semantics?",
+        "How is stress related to memory?",
+        "What are the physical parts of the brain associated with memory?"
+      ]
+    },
+    "connections": {
+      "label": "Connections",
+      "copy": [
+        "Memory is like a modern computer database, however data is subject to degradation, relevancy, and emotional impact.",
+        "Encoding information with previous patterns is like mix and matching notes from a major and minor scale.",
+        "Memory can be broken down into base elements similar to strings, numbers, boolean values, null / undefined, functions, and objects."
+      ]
+    },
+    "abstract": {
+      "label": "Abstract",
+      "copy": [
+        "Memory is a major facet of human reality and is the foundation of learning. It involves transferring our experiences via encoding from working memory into long term memory. Encoding happens through organization, semantic, visual, or acoustic distinction, emotional impact, and elaboration. When information is recognized or reconstructed into experience within working memory a memory is considered to be formed.",
+        "The subject of memory is divided into several parts such as declarative, implicit, episodic, haptic, echoic, visual, procedural, topographical, semantic, prospective, and retrospective memory. Memory as a process is routed through the hippocampus from the cortex to various parts of the brain. The amygdala is involved in emotional memories. Synaptic plasticity is a factor in memory either through the strengthening or weakening of synaptic activity. Stress plays a major role in weakening memory by allowing the destruction of neurons within the hippocampus."
+      ]
+    },
+    "illustration": {
+      "label": "Scouring the Earth",
+      "creator": "Christopher M. Reece",
+      "source": "jpeg"
+    },
+    "body": {
+      "label": "Transient Thoughts",
+      "copy": [
+        "Memory is formed from sensory data; visual, echoic (auditory), and haptic (touch) sources. This data can be divided into two main categories: explicit and implicit memory. Explicit data is encoded using semantics and is made up of factual and episodic information (a combination of who, what, when, and where). Implicit data is formatted using procedural memory, such as riding a bike or tying one’s shoelaces (activities that don’t require conscious thought). There is evidence that learning can occur implicitly through priming (citation needed).",
+        "Finally the third process is the retrieval of information that has been stored. Such information must be located and returned to the consciousness. Some retrieval attempts may be effortless due to the type of information, and other attempts to remember stored information may be more demanding for various reasons.",
+        "Sensory data is encoded before it’s accepted into long term memory. Encoding happens in several ways; four of which are distinction, categorization, effort, and elaboration. The quality and quantity of encoding may determine the efficiency of memory reconstruction and recollection from long term storage. For example: I’ve peeled an orange and have begun tasting its fleshy fruit as I begin chewing.",
+        "Categorization: This is a citrus fruit. Florida and California are famous for oranges. I like pulpy orange juice. The color is bright and cheerful.",
+        "Distinction: (look up citrus in the dictionary) Grown in warm climates, lemons, grapefruit, limes, oranges, and fingered octopus looking citron. Citrus is a Genus (taxonomic category). Oranges color are a mixture of red and yellow. The citrus genus is native to Asia.",
+        "Elaboration: I can’t remember the first time I had an orange. But the strong memories that come to mind are the soft wet foam texture on the inner layer of an orange peel. While peeling the king, little explosions of orange oil erupt from oranges pores; glistening in the light and leaving a transient citrus smell. The piquant sour sweet juice, and the bitter strings of the pericarp attached to the fruits flesh form a melody of taste.",
+        "Effort: How much time did I spend? about 10 min. I visited a forum on food descriptors, checked out the dictionary and wikipedia. And spent the time to go into detail by writing down a few descriptors.",
+        "The next time I eat an orange, the experience will have gained a new level of depth or perspective. Oranges are now associated with learning memory, and will act as a gateway to the knowledge discussed here.",
+        "Taking the time to process information can reveal new layers of reality and enrich human experience."
+      ]
+    },
+    "review": {
+      "label": "Review",
+      "copy": [
+        "What is declarative memory?",
+        "what is retroactive / proactive interference?",
+        "What is neuroplasticity?",
+        "what is working memory?",
+        "What is information encoding / semantics?",
+        "How is stress related to memory?",
+        "What are the physical parts of the brain associated with memory?"
+      ]
+    },
+    "references": {
+      "label": "References",
+      "copy": [
+        "Memory. (2016, June 17). In Wikipedia, The Free Encyclopedia. Retrieved 15:11, July 8, 2016, from https://en.wikipedia.org/w/index.php?title=Memory&oldid=725756178"
+      ]
+    }
   }
 ]
