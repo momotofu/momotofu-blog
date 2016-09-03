@@ -1,9 +1,10 @@
 import React from 'react'
 import { Router, Route, Link, IndexRoute, browserHistory, Redirect, hashHistory} from 'react-router'
-import Momotofu from './momotofu'
+import MomotofuPage from './momotofu-page'
+import ContributionsPage from './contributions-page'
+import ContactPage from './contact-page'
 import AppContainer from './app-container'
 import BlogPosts from './blog-posts'
-import ContactPage from './contact-page'
 import '../hyphenate.js'
 
 require('../root-styles/index.styl')
@@ -24,9 +25,9 @@ var App = React.createClass({
     return (
       <Router history={ browserHistory }>
         <Route onChange={ this.update } path='/' component={ AppContainer }>
-          <Route path='/momotofu' component={ Momotofu }/>
+          <Route path='/momotofu' component={ MomotofuPage }/>
           <Route path='/blog' component={ BlogPosts }/>
-          <Route path='/contributions' component={ Momotofu }/>
+          <Route path='/contributions' component={ ContributionsPage }/>
           <Route path='/contact' component={ ContactPage }/>
         </Route>
       </Router>
