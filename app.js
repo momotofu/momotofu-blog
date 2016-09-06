@@ -35,7 +35,8 @@ app.set('view engine', 'jade')
 
 app.use(bodyParser.urlencoded({ extended: true }))
 app.use('/js', express.static(__dirname + '/bin'))
-app.use('/images', express.static(__dirname + '/images'))
+app.use('/images', express.static(__dirname + '/media/images'))
+app.use('/videos', express.static(__dirname + '/media/videos'))
 app.use('/:page', Router)
 
 /**

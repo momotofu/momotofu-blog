@@ -1,0 +1,66 @@
+@import "../../root-styles/color.styl"
+
+.Momotofu
+  &-container
+    &::-webkit-scrollbar
+      display none
+    display flex
+    align-items center
+    flex-direction column
+    width 100%
+    margin-top -75px
+  &-hero
+    width 100%
+    position relative
+    opacity .8
+    text-align center
+    margin-bottom 5rem
+    overflow-x hidden
+    &-video
+      margin-top -39px
+      opacity .9
+      width 103%
+    &-greeting
+      color electricty
+      cursor pointer
+      font-family "kazuraki-sp2n-n3", "kazuraki-sp2n", sans-serif
+      font-style normal
+      font-weight 300
+      font-size 84px
+      padding-bottom 3rem
+      position absolute
+      top 6rem
+      left 0
+      width 100%
+      text-shadow 1px 1px rust
+      &:after
+        content ''
+        animation-duration 2.5s
+        animation-iteration-count infinite
+        animation-name hover
+        animation-timing-function ease
+        border-radius 2px
+        border-bottom 4px solid
+        border-right 4px solid
+        bottom .5rem
+        height 16px
+        left 50%
+        position absolute
+        transform rotate(45deg)
+        -ms-transform rotate(45deg)
+        -webkit-transform rotate(45deg)
+        width 16px
+      &:hover
+        color neonPink
+        transition all .3s ease
+      &:active
+        opacity .6
+
+@keyframes hover
+  0%
+    bottom -.5rem
+  50%
+    bottom .5rem
+  100%
+    bottom -.5rem
+

@@ -1,4 +1,3 @@
-import React from 'react'
 import { Router, Route, Link, IndexRoute, browserHistory, Redirect, hashHistory} from 'react-router'
 import MomotofuPage from './momotofu-page'
 import ContributionsPage from './contributions-page'
