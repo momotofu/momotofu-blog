@@ -44,7 +44,7 @@ var MomotofuPage = React.createClass({
     return (
       <div className='Momotofu-container'>
         <div className='Momotofu-hero'>
-          <video className='Momotofu-hero-video' src='videos/coffee-cup.mp4' autoPlay loop/>
+          <video className='Momotofu-hero-video' src='videos/coffee-cup.mp4#t=1,160' autoPlay loop/>
           <a onClick={ this.scrollToTarget.bind(null, 'KonichiwaTarget') } className='Momotofu-hero-greeting'>こんにちは</a>
         </div>
         <div ref='KonichiwaTarget' />
@@ -57,6 +57,7 @@ var MomotofuPage = React.createClass({
             'One day while walking through the University Library, he mustered the courage to asked if he could sit at the table of a beautiful girl. After a couple of sentence exchanges and body language, they realized they were two kindred spirits and soon began to dating. After a couple of months she went back to Japan, and Christopher who had been working as a waiter and freelance designer, started to work extra hard in order to afford frequent trips to Japan.',
             'Eventually Christopher found himself working on a product team and an engineering team over at Movement Ventures. There, in the space of a year, he went from 12$ an hour to a 40k salary, to a 50k salary, and then finally to a 60k salary. That gorgeous girl he met at the U took a leap of faith and came over to the US in order to marry. Now both Christopher and his wife have moved to the land of the rising son, enjoying ramen, hot springs, and computer stuff.'
           ]}
+          options={{headingJapanese: true}}
         />
       </div>
     )

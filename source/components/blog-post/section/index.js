@@ -28,6 +28,7 @@ class Section extends React.Component {
       if (this.props.options) {
         return classNames({
           'BlogPost-section-heading-small': this.props.options.small ? this.props.options.small : false,
+          'BlogPost-section-heading-japanese': this.props.options.headingJapanese ? this.props.options.headingJapanese : false,
           'BlogPost-section-heading': true
         })
       }
