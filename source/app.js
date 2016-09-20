@@ -1,5 +1,9 @@
 import React from 'react'
 import { Router, Route, Link, IndexRoute, browserHistory, Redirect, hashHistory} from 'react-router'
+import { createStore } from 'redux'
+import { Provider } from 'react-redux'
+import reducer from './reducers'
+
 import MomotofuPage from './pages/momotofu-page'
 import ContributionsPage from './pages/contributions-page'
 import ContactPage from './pages/contact-page'
@@ -8,6 +12,8 @@ import BlogPosts from './components/blog-posts'
 import '../utils/hyphenate.js'
 
 require('./root-styles/index.styl')
+
+// const store = createStore(reducer)
 
 var App = React.createClass({
   getInitialState: function() {
@@ -34,7 +40,6 @@ var App = React.createClass({
     )
   }
 })
-
 
 App.childContextTypes = {
   routerState: React.PropTypes.object

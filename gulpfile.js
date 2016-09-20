@@ -16,14 +16,7 @@ var frontendConfig = {
   },
   module: {
     loaders: [
-      {
-        test: /\.js$/,
-        include: path.resolve(__dirname, 'source'),
-        loader: 'babel',
-        query: {
-          presets: ["es2015", "react"]
-        }
-      },
+      { test: /\.js$/, loaders: ['babel-loader'], exclude: /node_modules/ },
       {
         test: /\.styl$/,
         include: [
