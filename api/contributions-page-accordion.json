@@ -1,29 +1,47 @@
 [
   {
     "demoURL": "#",
-    "description": "...",
+    "description": "Donec ullamcorper nulla non metus auctor fringilla. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Vestibulum id ligula porta felis euismod semper. Curabitur blandit tempus porttitor.",
     "githubURL": "#",
     "language": "javascript",
     "open": false,
-    "tabLabel": "Google Maps",
+    "tabLabel": "Google Maps API",
     "tabSubLabel": "Implementation"
   },
   {
     "demoURL": "#",
-    "description": "...",
+    "description": "Maecenas sed diam eget risus varius blandit sit amet non magna. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Sed posuere consectetur est at lobortis. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Maecenas sed diam eget risus varius blandit sit amet non magna. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Sed posuere consectetur est at lobortis. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.",
     "githubURL": "#",
     "language": "javascript",
     "open": false,
-    "tabLabel": "Google Maps",
-    "tabSubLabel": "Implementation"
+    "tabLabel": "Symmetrical Encryption",
+    "tabSubLabel": "CripTofu"
   },
   {
     "demoURL": "#",
-    "description": "...",
+    "description": "Donec ullamcorper nulla non metus auctor fringilla. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Vestibulum id ligula porta felis euismod semper. Curabitur blandit tempus porttitor.",
     "githubURL": "#",
     "language": "javascript",
     "open": false,
-    "tabLabel": "Google Maps",
+    "tabLabel": "Lazy Image Loading",
+    "tabSubLabel": "LazyTofu"
+  },
+  {
+    "demoURL": "#",
+    "description": "Donec ullamcorper nulla non metus auctor fringilla. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Vestibulum id ligula porta felis euismod semper. Curabitur blandit tempus porttitor.",
+    "githubURL": "#",
+    "language": "javascript",
+    "open": false,
+    "tabLabel": "Sudoku AI",
+    "tabSubLabel": "Constraint propagation"
+  },
+  {
+    "demoURL": "#",
+    "description": "Donec ullamcorper nulla non metus auctor fringilla. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Vestibulum id ligula porta felis euismod semper. Curabitur blandit tempus porttitor.",
+    "githubURL": "#",
+    "language": "javascript",
+    "open": false,
+    "tabLabel": "Pong",
     "tabSubLabel": "Implementation"
   }
 ]

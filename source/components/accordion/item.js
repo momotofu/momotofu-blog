@@ -13,23 +13,28 @@ const AccordionItem = ({
 }) => (
   <div className='Accordion-item'>
     <div className='Accordion-item-tab'>
-      <h4 className='Accordion-item-tab-label'>
-        {tabLabel}
-      </h4>
-      <h6 className='Accordion-item-tab-subLabel'>
-        {tabSubLabel}
-      </h6>
+      <div className='Accordion-item-tab-label'>
+        <h4 className='Accordion-item-tab-label-title'>
+          {tabLabel}
+        </h4>
+        <h6 className='Accordion-item-tab-label-sub'>
+          {tabSubLabel}
+        </h6>
+      </div>
       <button
+        className={'Accordion-item-tab-signifier Accordion-signifier' + (open ? ' Accordion-item-tab-signifier-open' : '')}
         onClick={onClick}
-      >
-        { open ? 'CLOSE' : 'OPEN' }
-      </button>
+      />
     </div>
-    <a href={demoURL}>Demo</a>
-    <a href={githubURL}>Github</a>
-    <p className='Accordion-description'>
+    <div
+      className={'Accordion-item-description' + (open ? ' Accordion-item-description-open' : '')}
+    >
+      <a className="Accordion-signifier Accordion-item-signifier" href={demoURL}>Demo</a>
+      <a className="Accordion-signifier Accordion-item-signifier" href={githubURL}>Github</a>
+      <p className="Accordion-item-paragraph">
       {description}
-    </p>
+      </p>
+    </div>
   </div>
 )
 
