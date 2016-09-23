@@ -1,8 +1,5 @@
 import React from 'react'
 import { Router, Route, Link, IndexRoute, browserHistory, Redirect, hashHistory} from 'react-router'
-import { createStore } from 'redux'
-import { Provider } from 'react-redux'
-import reducer from './reducers'
 
 import MomotofuPage from './pages/momotofu-page'
 import ContributionsPage from './pages/contributions-page'

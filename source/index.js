@@ -1,7 +1,17 @@
-import { render } from 'react-dom'
 import React from 'react'
-import App from './app.js'
+import { render } from 'react-dom'
+import { createStore } from 'redux'
+import { Provider } from 'react-redux'
+
+import reducer from './reducers/'
+import App from './app'
+import contributionsPageAccordionItemsContent from '../api/contributions-page-accordion.json'
+
+const store = createStore(reducer, {contributionsPageAccordion: contributionsPageAccordionItemsContent})
 
 render(
-  <App/>, document.getElementById('app')
+  <Provider store={store}>
+    <App/>
+  </Provider>,
+  document.getElementById('app')
 )
