@@ -2,6 +2,11 @@ import React from 'react'
 require('./index.styl')
 
 var ContactPage = React.createClass({
+  messageStatus: {
+    sending: 'Routing message...',
+    success: 'Your message arrived in Momotofu\'s inbox.',
+    error: 'Something went wrong, refresh the page and try again.'
+  },
   componentWillMount() {
     const script = document.createElement('script')
 
@@ -12,6 +17,15 @@ var ContactPage = React.createClass({
   },
   sendForm: function(event) {
     event.preventDefault()
+
+    var that = this
+    var messageContainer = document.getElementById('ContactPage-form-message')
+    var sendMessage = document.createTextNode(this.messageStatus.sending)
+    document.getElementById('ContactPage-Form').style.display = 'none'
+
+    messageContainer.style.display = 'flex'
+    messageContainer.appendChild(sendMessage)
+
     $.ajax('/sendForm', {
       method: 'POST',
       data: {
@@ -20,20 +34,24 @@ var ContactPage = React.createClass({
         message: $('#message').val(),
       },
       success: function(data) {
+        messageContainer.removeChild(messageContainer.lastChild)
+        messageContainer.appendChild(document.createTextNode(that.messageStatus.success))
         console.log('sent data: ', data)
       },
       error: function(xhr, status, err) {
+        messageContainer.removeChild(messageContainer.lastChild)
+        messageContainer.appendChild(document.createTextNode(that.messageStatus.error))
         console.error(status, err.toString());
-      },
-      complete: function () {
-
       }
     })
   },
   render: function() {
     return (
       <div className='ContactPage-container'>
-        <form className='ContactPage-form' onSubmit={ this.sendForm }>
+        <div className='ContactPage-form-message' id='ContactPage-form-message'>
+          {this.props.formMessage}
+        </div>
+        <form className='ContactPage-form' id='ContactPage-Form' onSubmit={ this.sendForm }>
 
           <div className='ContactPage-form-input-items'>
             <div className='ContactPage-form-input-items-content'>
