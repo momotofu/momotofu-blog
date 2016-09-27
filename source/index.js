@@ -7,7 +7,9 @@ import reducer from './reducers/'
 import App from './app'
 import contributionsPageAccordionItemsContent from '../api/contributions-page-accordion.json'
 
-const store = createStore(reducer, {contributionsPageAccordion: contributionsPageAccordionItemsContent})
+const store = createStore(reducer, {contributionsPageAccordion: {
+  items: contributionsPageAccordionItemsContent}
+})
 
 render(
   <Provider store={store}>

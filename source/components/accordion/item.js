@@ -29,8 +29,8 @@ const AccordionItem = ({
     <div
       className={'Accordion-item-description' + (open ? ' Accordion-item-description-open' : '')}
     >
-      <a className="Accordion-signifier Accordion-item-signifier" href={demoURL}>Demo</a>
-      <a className="Accordion-signifier Accordion-item-signifier" href={githubURL}>Github</a>
+      <a className="Accordion-signifier Accordion-item-signifier" href={demoURL} target='_blank'>Demo</a>
+      <a className="Accordion-signifier Accordion-item-signifier" href={githubURL} target='_blank'>Github</a>
       <p className="Accordion-item-paragraph">
       {description}
       </p>

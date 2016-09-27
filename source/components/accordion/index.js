@@ -8,9 +8,9 @@ const Accordion = ({accordionItems, onItemClick}) => (
     {accordionItems.map((item, index) => {
       return (
         <AccordionItem
-          key={index}
+          key={item.tabLabel}
           {...item}
-          onClick={() => onItemClick(index)}
+          onClick={() => onItemClick(item.tabLabel)}
         />
       )
     })}
