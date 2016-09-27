@@ -21,7 +21,7 @@ Accordion.propTypes = {
   accordionItems: PropTypes.arrayOf(PropTypes.shape({
   demoURL: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
-  githubURL: PropTypes.string.isRequired,
+  githubURL: PropTypes.string,
   language: PropTypes.string,
   open: PropTypes.bool.isRequired,
   tabLabel: PropTypes.string.isRequired,

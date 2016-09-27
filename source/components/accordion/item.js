@@ -29,9 +29,9 @@ const AccordionItem = ({
     <div
       className={'Accordion-item-description' + (open ? ' Accordion-item-description-open' : '')}
     >
-      <a className="Accordion-signifier Accordion-item-signifier" href={demoURL} target='_blank'>Demo</a>
-      <a className="Accordion-signifier Accordion-item-signifier" href={githubURL} target='_blank'>Github</a>
-      <p className="Accordion-item-paragraph">
+      <a className={'Accordion-signifier Accordion-item-signifier' + (!demoURL ? ' Accordion-item-signifier-disabled' : '')} href={demoURL ? demoURL : '#'} target='_blank'>{demoURL ? 'Demo' : 'Demo (pending)'}</a>
+      <a className={'Accordion-signifier Accordion-item-signifier' + (!githubURL ? ' Accordion-item-signifier-disabled' : '')} href={githubURL ? githubURL : '#'} target='_blank'>{githubURL ? 'GitHub' : 'GitHub (private)'}</a>
+      <p className='Accordion-item-paragraph'>
       {description}
       </p>
     </div>
@@ -45,7 +45,7 @@ AccordionItem.propTypes = {
   onClick: PropTypes.func.isRequired,
   open: PropTypes.bool.isRequired,
   demoURL: PropTypes.string.isRequired,
-  githubURL: PropTypes.string.isRequired
+  githubURL: PropTypes.string
 }
 
 export default AccordionItem

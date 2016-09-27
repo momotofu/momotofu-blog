@@ -2,7 +2,6 @@
   {
     "demoURL": "https://www.boombox.com",
     "description": "Description coming soon...",
-    "githubURL": "#",
     "language": "javascript",
     "open": false,
     "tabLabel": "Boombox.com",
@@ -11,7 +10,6 @@
   {
     "demoURL": "https://www.qzzr.com",
     "description": "Description coming soon...",
-    "githubURL": "#",
     "language": "javascript",
     "open": false,
     "tabLabel": "Qzzr.com",
@@ -20,13 +18,19 @@
   {
     "demoURL": "https://www.pollcaster.com",
     "description": "Description coming soon...",
-    "githubURL": "#",
     "language": "javascript",
     "open": false,
     "tabLabel": "Pollcaster.com",
     "tabSubLabel": "Web app design and development"
   },
   {
+    "demoURL": "http://codepen.io/momotofu/pen/VjjpVv",
+    "description": "Lazy image loading using simple vanila javascript. In order to improve our Google page speed score, I created this snippet of code while working on qzzr.com.",
+    "language": "javascript",
+    "open": false,
+    "tabLabel": "Facebook Pixel Integration",
+    "tabSubLabel": "Javascript event tracking"
+  },{
     "demoURL": "https://www.qzzr.com/",
     "description": "Lazy image loading using simple vanila javascript. In order to improve our Google page speed score, I created this snippet of code while working on qzzr.com.",
     "githubURL": "https://github.com/momotofu/LazyTofu",
@@ -36,9 +40,7 @@
     "tabSubLabel": "LazyTofu"
   },
   {
-    "demoURL": "#",
     "description": "Example coming soon... I learned about encryption and decided to make a little toy program that encrypts and decrypts messages via CLI.",
-    "githubURL": "#",
     "language": "python",
     "open": false,
     "tabLabel": "Sudoku AI",
@@ -47,25 +49,20 @@
   {
     "demoURL": "http://www.coe.utah.edu/~reece/flash/game.swf",
     "description": "Javascript implementation coming soon...",
-    "githubURL": "#",
     "language": "javascript",
     "open": false,
     "tabLabel": "Pong",
     "tabSubLabel": "Implementation"
   },
   {
-    "demoURL": "#",
     "description": "Example coming soon...",
-    "githubURL": "#",
     "language": "javascript",
     "open": false,
     "tabLabel": "Google Maps API",
     "tabSubLabel": "Implementation"
   },
   {
-    "demoURL": "#",
     "description": "Example coming soon...",
-    "githubURL": "#",
     "language": "python",
     "open": false,
     "tabLabel": "Symmetrical Encryption",
