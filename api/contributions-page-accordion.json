@@ -1,7 +1,61 @@
 [
   {
+    "demoURL": "https://www.boombox.com",
+    "description": "Description coming soon...",
+    "githubURL": "#",
+    "language": "javascript",
+    "open": false,
+    "tabLabel": "Boombox.com",
+    "tabSubLabel": "Web app design and development"
+  },
+  {
+    "demoURL": "https://www.qzzr.com",
+    "description": "Description coming soon...",
+    "githubURL": "#",
+    "language": "javascript",
+    "open": false,
+    "tabLabel": "Qzzr.com",
+    "tabSubLabel": "Web app design and development"
+  },
+  {
+    "demoURL": "https://www.pollcaster.com",
+    "description": "Description coming soon...",
+    "githubURL": "#",
+    "language": "javascript",
+    "open": false,
+    "tabLabel": "Pollcaster.com",
+    "tabSubLabel": "Web app design and development"
+  },
+  {
+    "demoURL": "https://www.qzzr.com/",
+    "description": "Lazy image loading using simple vanila javascript. In order to improve our Google page speed score, I created this snippet of code while working on qzzr.com.",
+    "githubURL": "https://github.com/momotofu/LazyTofu",
+    "language": "javascript",
+    "open": false,
+    "tabLabel": "Lazy Image Loading",
+    "tabSubLabel": "LazyTofu"
+  },
+  {
     "demoURL": "#",
-    "description": "Donec ullamcorper nulla non metus auctor fringilla. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Vestibulum id ligula porta felis euismod semper. Curabitur blandit tempus porttitor.",
+    "description": "Example coming soon... I learned about encryption and decided to make a little toy program that encrypts and decrypts messages via CLI.",
+    "githubURL": "#",
+    "language": "python",
+    "open": false,
+    "tabLabel": "Sudoku AI",
+    "tabSubLabel": "Constraint propagation"
+  },
+  {
+    "demoURL": "http://www.coe.utah.edu/~reece/flash/game.swf",
+    "description": "Javascript implementation coming soon...",
+    "githubURL": "#",
+    "language": "javascript",
+    "open": false,
+    "tabLabel": "Pong",
+    "tabSubLabel": "Implementation"
+  },
+  {
+    "demoURL": "#",
+    "description": "Example coming soon...",
     "githubURL": "#",
     "language": "javascript",
     "open": false,
@@ -10,38 +64,11 @@
   },
   {
     "demoURL": "#",
-    "description": "Maecenas sed diam eget risus varius blandit sit amet non magna. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Sed posuere consectetur est at lobortis. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Maecenas sed diam eget risus varius blandit sit amet non magna. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Sed posuere consectetur est at lobortis. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.",
+    "description": "Example coming soon...",
     "githubURL": "#",
     "language": "python",
     "open": false,
     "tabLabel": "Symmetrical Encryption",
     "tabSubLabel": "CripTofu"
-  },
-  {
-    "demoURL": "#",
-    "description": "Donec ullamcorper nulla non metus auctor fringilla. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Vestibulum id ligula porta felis euismod semper. Curabitur blandit tempus porttitor.",
-    "githubURL": "#",
-    "language": "javascript",
-    "open": false,
-    "tabLabel": "Lazy Image Loading",
-    "tabSubLabel": "LazyTofu"
-  },
-  {
-    "demoURL": "#",
-    "description": "Donec ullamcorper nulla non metus auctor fringilla. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Vestibulum id ligula porta felis euismod semper. Curabitur blandit tempus porttitor.",
-    "githubURL": "#",
-    "language": "python",
-    "open": false,
-    "tabLabel": "Sudoku AI",
-    "tabSubLabel": "Constraint propagation"
-  },
-  {
-    "demoURL": "#",
-    "description": "Donec ullamcorper nulla non metus auctor fringilla. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Vestibulum id ligula porta felis euismod semper. Curabitur blandit tempus porttitor.",
-    "githubURL": "#",
-    "language": "javascript",
-    "open": false,
-    "tabLabel": "Pong",
-    "tabSubLabel": "Implementation"
   }
 ]
