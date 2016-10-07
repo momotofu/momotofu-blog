@@ -1,18 +1,18 @@
 [
   {
+    "demoURL": "https://www.qzzr.com",
+    "description": "Qzzr.com was a hugely rewarding and challenging project because of the dynamic needs and demands of a fast paced start up environment.  While working with Movement Ventures I took full charge of qzzr.com. I rewrote the entire website from a copy and pasted WordPress hack to clean and functional code (jade, stylus, etc.). I cowboyed and crafted all of the UI features (galleries, forms, mobile, navigation, SEO, and A / B tests) and integrated our contact forms with an integrations server (I built the server from the ground up using Node, Express, and third party API's). ",
+    "language": "javascript",
+    "open": false,
+    "tabLabel": "Qzzr.com",
+    "tabSubLabel": "Web app design and development"
+  },
+  {
     "demoURL": "https://www.boombox.com",
     "description": "Description coming soon...",
     "language": "javascript",
     "open": false,
     "tabLabel": "Boombox.com",
-    "tabSubLabel": "Web app design and development"
-  },
-  {
-    "demoURL": "https://www.qzzr.com",
-    "description": "Description coming soon...",
-    "language": "javascript",
-    "open": false,
-    "tabLabel": "Qzzr.com",
     "tabSubLabel": "Web app design and development"
   },
   {
