@@ -8,6 +8,30 @@
     "tabSubLabel": "Web app design and development"
   },
   {
+    "demoURL": "http://codepen.io/momotofu/pen/VjjpVv",
+    "description": "While your users are interacting with a quiz, events will fire when a quiz is started, when a question is answered, etc. These events carry valuable data; like which question options were selected, or which outcome a user recieved. You can update the webpage, refresh your ads, and even tack on this data to your pixel parameters. Check out the tutorial below to see how you can create custom conversions and audiences using the Facebook Pixel.",
+    "language": "javascript",
+    "open": false,
+    "tabLabel": "Facebook Pixel Integration",
+    "tabSubLabel": "Javascript event tracking"
+  },{
+    "demoURL": "https://www.qzzr.com/",
+    "description": "Lazy image loading using simple vanila javascript. In order to improve our Google page speed score, I created this snippet of code while working on qzzr.com.",
+    "githubURL": "https://github.com/momotofu/LazyTofu",
+    "language": "javascript",
+    "open": false,
+    "tabLabel": "Lazy Image Loading",
+    "tabSubLabel": "LazyTofu"
+  },
+  {
+    "demoURL": "http://www.coe.utah.edu/~reece/flash/game.swf",
+    "description": "Javascript implementation coming soon...",
+    "language": "javascript",
+    "open": false,
+    "tabLabel": "Pong",
+    "tabSubLabel": "Implementation"
+  },
+  {
     "demoURL": "https://www.boombox.com",
     "description": "Description coming soon...",
     "language": "javascript",
@@ -24,35 +48,11 @@
     "tabSubLabel": "Web app design and development"
   },
   {
-    "demoURL": "http://codepen.io/momotofu/pen/VjjpVv",
-    "description": "Lazy image loading using simple vanila javascript. In order to improve our Google page speed score, I created this snippet of code while working on qzzr.com.",
-    "language": "javascript",
-    "open": false,
-    "tabLabel": "Facebook Pixel Integration",
-    "tabSubLabel": "Javascript event tracking"
-  },{
-    "demoURL": "https://www.qzzr.com/",
-    "description": "Lazy image loading using simple vanila javascript. In order to improve our Google page speed score, I created this snippet of code while working on qzzr.com.",
-    "githubURL": "https://github.com/momotofu/LazyTofu",
-    "language": "javascript",
-    "open": false,
-    "tabLabel": "Lazy Image Loading",
-    "tabSubLabel": "LazyTofu"
-  },
-  {
     "description": "Example coming soon... I learned about encryption and decided to make a little toy program that encrypts and decrypts messages via CLI.",
     "language": "python",
     "open": false,
     "tabLabel": "Sudoku AI",
     "tabSubLabel": "Constraint propagation"
-  },
-  {
-    "demoURL": "http://www.coe.utah.edu/~reece/flash/game.swf",
-    "description": "Javascript implementation coming soon...",
-    "language": "javascript",
-    "open": false,
-    "tabLabel": "Pong",
-    "tabSubLabel": "Implementation"
   },
   {
     "description": "Example coming soon...",
