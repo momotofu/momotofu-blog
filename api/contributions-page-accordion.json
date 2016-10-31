@@ -25,11 +25,19 @@
   },
   {
     "demoURL": "http://www.coe.utah.edu/~reece/flash/game.swf",
-    "description": "Javascript implementation coming soon...",
+    "description": "Another implementation of the classic game using sprites, collision detection, and rudimentary AI.",
     "language": "javascript",
     "open": false,
     "tabLabel": "Pong",
     "tabSubLabel": "Implementation"
+  },
+  {
+    "description": "In order to understand encryption on a deeper level I wrote this fun CLI. It takes a key, a couple of optional flags, and a file and then either encrypts or decrypts the test in the file. Symmetrical encryption can be achieved when two parties use the same key to encode and decode the message.",
+    "githubURL": "https://github.com/momotofu/cripTofu",
+    "language": "python",
+    "open": false,
+    "tabLabel": "Symmetrical Encryption",
+    "tabSubLabel": "CripTofu"
   },
   {
     "demoURL": "https://www.boombox.com",
@@ -55,17 +63,9 @@
     "tabSubLabel": "Constraint propagation"
   },
   {
-    "description": "Example coming soon...",
     "language": "javascript",
     "open": false,
     "tabLabel": "Google Maps API",
     "tabSubLabel": "Implementation"
-  },
-  {
-    "description": "Example coming soon...",
-    "language": "python",
-    "open": false,
-    "tabLabel": "Symmetrical Encryption",
-    "tabSubLabel": "CripTofu"
   }
 ]
