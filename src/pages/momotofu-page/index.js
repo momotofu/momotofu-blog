@@ -4,8 +4,12 @@ import Section from '../../components/blog-post/section'
 
 require('./index.styl')
 
-var MomotofuPage = React.createClass({
-  scrollToTarget: function(targetID) {
+class MomotofuPage extends React.Component {
+  componentDidMount() {
+    ReactDOM.findDOMNode(this).scrollTop = 0
+  }
+
+  scrollToTarget(targetID) {
     var appRect = window.document.getElementById('app').getBoundingClientRect(),
     targetRect = ReactDOM.findDOMNode(this.refs[targetID]).getBoundingClientRect(),
     offset = targetRect.top - appRect.top
@@ -40,7 +44,8 @@ var MomotofuPage = React.createClass({
 
     startScroll(window.document.getElementById('app'), offset - 120, 1000)
   },
-  render: function() {
+
+  render() {
     return (
       <div className='Momotofu-container'>
         <div className='Momotofu-hero'>
@@ -62,6 +67,6 @@ var MomotofuPage = React.createClass({
       </div>
     )
   }
-})
+}
 
 export default MomotofuPage
