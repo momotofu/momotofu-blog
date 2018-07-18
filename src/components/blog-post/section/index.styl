@@ -1,0 +1,62 @@
+.BlogPost-section
+  &-container
+    box-sizing border-box
+    margin-bottom 3rem
+    max-width 41.4rem
+    width 100%
+    @media screen and (max-width: 736px)
+      max-width 100%
+      padding 0 1.5rem
+
+  &-heading
+    font-size 20px
+    line-height 26px
+    margin-bottom 10px
+    font-weight 500
+    line-height 1rem
+    margin-bottom .8rem
+    &-small
+      font-size 1.5rem
+      line-height 1
+    &:after
+      content ''
+      vertical-align text-bottom
+    &-japanese
+      font-family "kazuraki-sp2n-n3", "kazuraki-sp2n", sans-serif
+      font-style normal
+      font-weight 300
+
+  &-paragraph
+    font-size 15px
+    line-height 22.5px
+    margin-bottom 15px
+    text-align justify
+    opacity 0.7
+    &:last-child
+      margin-bottom 0
+
+  &-italic
+    font-style italic
+
+  &-list
+    position relative
+    margin-bottom 0
+    &-bulleted
+      margin-bottom 1rem
+      &:before
+        content ''
+        position absolute
+        width 2px
+        height 2pt
+        background #a66a4d
+        opacity 0.8
+        border-radius 100px
+        left -1.5rem
+        top 11px
+    &-spaced
+      margin-bottom 1rem
+    &:last-child
+      margin-bottom 0
+
+  &-small
+    font-size 1rem

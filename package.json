@@ -1,7 +1,8 @@
 {
-  "name": "test",
-  "version": "0.1.0",
+  "name": "momotofu.io",
+  "version": "0.0.1",
   "private": true,
+  "author": "Christopher Reece",
   "dependencies": {
     "react": "^16.4.1",
     "react-dom": "^16.4.1",
