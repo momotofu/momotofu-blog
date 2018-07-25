@@ -1,0 +1,23 @@
+{
+  "name": "momotofu-blog",
+  "description": "This app does one little thing, and does it well.",
+  "keywords": [
+  ],
+  "website": "",
+  "repository": "",
+  "logo": "",
+  "success_url": "",
+  "scripts": {
+  },
+  "env": {
+  },
+  "formation": {
+  },
+  "image": "heroku/javascript",
+  "addons": [
+  ],
+  "buildpacks": [
+  ],
+  "environments": {
+  }
+}
