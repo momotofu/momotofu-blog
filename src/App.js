@@ -1,11 +1,19 @@
 import React, { Component } from 'react';
 import './App.css';
 import NavBar from './components/navbar'
+import 'bootstrap/dist/css/bootstrap-grid.min.css'
 
 class App extends Component {
   render() {
     return (
-      <NavBar />
+      <div>
+        <div className="container-fluid">
+          <NavBar />
+        </div>
+        <div className="container">
+          <p>hello</p>
+        </div>
+      </div>
     )
   }
 }
