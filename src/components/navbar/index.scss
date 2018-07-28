@@ -1,0 +1,9 @@
+@import '../../styles/color.scss';
+
+.NavBar {
+  display: flex;
+  width: 100%;
+  margin-right: auto;
+  margin-left: auto;
+  background-color: $charcoal;
+}
