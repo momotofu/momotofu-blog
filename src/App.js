@@ -1,5 +1,5 @@
-import React, { Component } from 'react';
-import './App.scss';
+import React, { Component } from 'react'
+import './App.sass'
 import NavBar from './components/navbar'
 import 'bootstrap/dist/css/bootstrap-grid.min.css'
 
