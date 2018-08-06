@@ -11,14 +11,31 @@ class NavBar extends React.Component {
     return (
       <div className="NavBar">
         <ul className="NavBar-list">
-          <li className="NavBar-list-link"><NavLink to="/">About</NavLink></li>
-          <li className="NavBar-list-link"><NavLink to="/blog">Blog</NavLink></li>
-          <li className="NavBar-list-link"><NavLink to="/contributions">Contributions</NavLink></li>
-          <li className="NavBar-list-link"><NavLink to="/contact">Contact</NavLink></li>
+          <li className="NavBar-list-item">
+            <NavLink
+              className="NavBar-list-signifier"
+              to="/about">About</NavLink>
+          </li>
+          <li className="NavBar-list-item">
+            <NavLink
+              className="NavBar-list-signifier"
+              to="/blog">Blog</NavLink>
+          </li>
+          <li className="NavBar-list-item">
+            <NavLink
+              className="NavBar-list-signifier"
+              to="/contributions">Contributions</NavLink>
+          </li>
+          <li className="NavBar-list-item">
+            <NavLink
+              className="NavBar-list-signifier"
+              to="/contact">Contact</NavLink>
+          </li>
         </ul>
-        <Route exact path="/" />
-        <Route path="/about" />
-        <Route path="/topics" />
+        <Route exact path="/about" />
+        <Route path="/blog" />
+        <Route path="/contributions" />
+        <Route path="/contact" />
       </div>
     )
   }

@@ -1,0 +1,35 @@
+@import 'color.scss';
+
+&-signifier {
+  color: $bubbleBath;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 400;
+  letter-spacing: 0.06em;
+  margin-right: 3rem;
+  opacity: .8;
+  text-decoration: none;
+  text-transform: uppercase;
+  word-spacing: 1px;
+  transition: all .26s ease;
+  outline: none;
+
+  &:hover {
+    color: $tangerine;
+  }
+
+  &:active {
+    color: $rust;
+    transition: all .05s ease;
+  }
+
+  &.active {
+    border-right: 2px solid $steelBlue;
+    border-radius: 2px;
+    color: $electricity;
+    opacity: 1;
+    padding-right: 3rem;
+    transition: all .5s ease;
+    transition: color 0;
+  }
+ }

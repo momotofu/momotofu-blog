@@ -14,5 +14,7 @@
     list-style: none;
     margin: 0;
     align-self: center;
+
+    @import '../../styles/signifier.scss';
   }
 }
