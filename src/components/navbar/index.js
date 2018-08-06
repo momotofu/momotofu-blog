@@ -10,11 +10,11 @@ class NavBar extends React.Component {
   render() {
     return (
       <div className="NavBar">
-        <ul>
-          <li><Link to="/">About</Link></li>
-          <li><Link to="/blog">Blog</Link></li>
-          <li><Link to="/contributions">Contributions</Link></li>
-          <li><Link to="/contact">Contact</Link></li>
+        <ul className="NavBar-list">
+          <li className="NavBar-list-link"><Link to="/">About</Link></li>
+          <li className="NavBar-list-link"><Link to="/blog">Blog</Link></li>
+          <li className="NavBar-list-link"><Link to="/contributions">Contributions</Link></li>
+          <li className="NavBar-list-link"><Link to="/contact">Contact</Link></li>
         </ul>
         <Route exact path="/" />
         <Route path="/about" />
