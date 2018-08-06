@@ -1,7 +1,7 @@
 import React from 'react'
 import {
   Route,
-  Link
+  NavLink
 } from 'react-router-dom'
 
 import './index.css'
@@ -11,10 +11,10 @@ class NavBar extends React.Component {
     return (
       <div className="NavBar">
         <ul className="NavBar-list">
-          <li className="NavBar-list-link"><Link to="/">About</Link></li>
-          <li className="NavBar-list-link"><Link to="/blog">Blog</Link></li>
-          <li className="NavBar-list-link"><Link to="/contributions">Contributions</Link></li>
-          <li className="NavBar-list-link"><Link to="/contact">Contact</Link></li>
+          <li className="NavBar-list-link"><NavLink to="/">About</NavLink></li>
+          <li className="NavBar-list-link"><NavLink to="/blog">Blog</NavLink></li>
+          <li className="NavBar-list-link"><NavLink to="/contributions">Contributions</NavLink></li>
+          <li className="NavBar-list-link"><NavLink to="/contact">Contact</NavLink></li>
         </ul>
         <Route exact path="/" />
         <Route path="/about" />
