@@ -7,7 +7,7 @@
   font-weight: 400;
   letter-spacing: 0.06em;
   margin-right: 3rem;
-  opacity: .8;
+  opacity: .6;
   text-decoration: none;
   text-transform: uppercase;
   word-spacing: 1px;
@@ -16,6 +16,7 @@
 
   &:hover {
     color: $tangerine;
+    text-decoration: none;
   }
 
   &:active {
@@ -24,12 +25,8 @@
   }
 
   &.active {
-    border-right: 2px solid $steelBlue;
-    border-radius: 2px;
     color: $electricity;
     opacity: 1;
-    padding-right: 3rem;
-    transition: all .5s ease;
-    transition: color 0;
+    transition: all .3s;
   }
  }
