@@ -1,6 +1,7 @@
 import React from 'react'
 import {
   Route,
+  Redirect,
   NavLink
 } from 'react-router-dom'
 
@@ -32,6 +33,9 @@ class NavBar extends React.Component {
               to="/contact">Contact</NavLink>
           </li>
         </ul>
+        <Route exact path="/" render={() => (
+            <Redirect to="/about"/>
+        )}/>
         <Route exact path="/about" />
         <Route path="/blog" />
         <Route path="/contributions" />
