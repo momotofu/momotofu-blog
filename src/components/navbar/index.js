@@ -12,7 +12,7 @@ class NavBar extends React.Component {
     event.stopPropagation()
     event.preventDefault()
 
-    const hamburger = event.target
+    const hamburger = document.getElementsByClassName('NavBar-hamburger-middle')[0]
     const classes = hamburger.className.split(' ')
 
     if (classes.includes('isActive')) {
@@ -26,10 +26,10 @@ class NavBar extends React.Component {
   render() {
     return (
       <div className="NavBar">
-        <div className="NavBar-hamburger">
-          <div
-            className="NavBar-hamburger-middle"
-            onClick={ this.handleHamburgerClick }>
+        <div
+          className="NavBar-hamburger"
+          onClick={ this.handleHamburgerClick }>
+          <div className="NavBar-hamburger-middle">
           </div>
         </div>
         <ul className="NavBar-list">
