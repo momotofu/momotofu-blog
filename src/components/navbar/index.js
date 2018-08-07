@@ -9,6 +9,9 @@ import './index.css'
 
 class NavBar extends React.Component {
   handleHamburgerClick(event) {
+    event.stopPropagation()
+    event.preventDefault()
+
     const hamburger = event.target
     const classes = hamburger.className.split(' ')
 
@@ -23,10 +26,11 @@ class NavBar extends React.Component {
   render() {
     return (
       <div className="NavBar">
-        <div
-          className="NavBar-hamburger"
-          onClick={ this.handleHamburgerClick }>
-          <div className="NavBar-hamburger-middle"></div>
+        <div className="NavBar-hamburger">
+          <div
+            className="NavBar-hamburger-middle"
+            onClick={ this.handleHamburgerClick }>
+          </div>
         </div>
         <ul className="NavBar-list">
           <li>

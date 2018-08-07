@@ -34,6 +34,20 @@
       height: 2px;
       width: 24px;
 
+      &.isActive {
+        background-color: $charcoal;
+      }
+
+      &.isActive:before {
+        transform: rotate(45deg);
+        top: 22px;
+      }
+
+      &.isActive:after {
+        transform: rotate(135deg);
+        bottom: 20px;
+      }
+
       &:before, &:after {
         content: '';
         width: 24px;
@@ -41,6 +55,7 @@
         display: flex;
         background: $bubbleBath;
         position: absolute;
+        transition: all 0.2s ease;
       }
 
       &:before {
