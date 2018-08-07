@@ -11,6 +11,9 @@ class NavBar extends React.Component {
   render() {
     return (
       <div className="NavBar">
+        <div className="NavBar-hamburger">
+          <div className="NavBar-hamburger-middle"></div>
+        </div>
         <ul className="NavBar-list">
           <li>
             <NavLink

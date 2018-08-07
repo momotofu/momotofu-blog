@@ -16,4 +16,56 @@
     margin: 0;
     align-self: center;
   }
+
+  &-hamburger {
+    height: 2px;
+    padding: 1.4rem 0.65rem;
+    position: relative;
+
+    &-middle {
+      background-color: $bubbleBath;
+      height: 2px;
+      width: 24px;
+
+      &:before, &:after {
+        content: '';
+        width: 24px;
+        height: 2px;
+        display: flex;
+        background: $bubbleBath;
+        position: absolute;
+      }
+
+      &:before {
+        top: 15px
+      }
+
+      &:after {
+        bottom: 14px;
+      }
+    }
+  }
+
+  @media screen and (max-width: 600px) {
+    $navHeight: 40px;
+
+    & {
+      height: $navHeight;
+    }
+
+    &-list {
+      flex-direction: column;
+      position: absolute;
+      top: $navHeight;
+      left: 0;
+      width: 100%;
+      background: $charcoal;
+      padding-left: 1.5rem;
+
+      & > li > .signifier {
+        display: block;
+        padding: 0 0 1rem;
+      }
+    }
+  }
 }
