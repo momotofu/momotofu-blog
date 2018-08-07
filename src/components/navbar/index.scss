@@ -21,6 +21,13 @@
     height: 2px;
     padding: 1.4rem 0.65rem;
     position: relative;
+    margin-left: 0.8rem;
+    align-self: center;
+    display: none;
+
+    &:hover {
+      cursor: pointer;
+    }
 
     &-middle {
       background-color: $bubbleBath;
@@ -41,16 +48,21 @@
       }
 
       &:after {
-        bottom: 14px;
+        bottom: 13px;
       }
     }
   }
 
   @media screen and (max-width: 600px) {
-    $navHeight: 40px;
+    $navHeight: 60px;
 
     & {
       height: $navHeight;
+      justify-content: flex-start;
+    }
+
+    &-hamburger {
+      display: flex;
     }
 
     &-list {
