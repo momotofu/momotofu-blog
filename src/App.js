@@ -1,8 +1,16 @@
 import React, { Component } from 'react'
+import {
+  Route,
+  Redirect
+} from 'react-router-dom'
+
 import './App.css'
-import NavBar from './components/navbar'
 import 'bootstrap/dist/css/bootstrap-grid.min.css'
 import 'bootstrap/dist/css/bootstrap-reboot.min.css'
+
+import AboutPage from './pages/about'
+import NavBar from './components/navbar'
+
 
 class App extends Component {
   render() {
@@ -10,6 +18,13 @@ class App extends Component {
       <div>
         <NavBar />
         <div className="container">
+          <Route exact path="/" render={() => (
+              <Redirect to="/about"/>
+          )}/>
+          <Route exact path="/about" component={ AboutPage } />
+          <Route path="/blog" />
+          <Route path="/contributions" />
+          <Route path="/contact" />
         </div>
       </div>
     )

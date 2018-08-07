@@ -1,7 +1,5 @@
 import React from 'react'
 import {
-  Route,
-  Redirect,
   NavLink
 } from 'react-router-dom'
 
@@ -52,13 +50,6 @@ class NavBar extends React.Component {
               to="/contact">Contact</NavLink>
           </li>
         </ul>
-        <Route exact path="/" render={() => (
-            <Redirect to="/about"/>
-        )}/>
-        <Route exact path="/about" />
-        <Route path="/blog" />
-        <Route path="/contributions" />
-        <Route path="/contact" />
       </div>
     )
   }
@@ -68,7 +59,7 @@ const toggleIsActiveOn = (el) => {
     const classes = el.className.split(' ')
 
     if (classes.includes('isActive')) {
-      el.className = classes.filter(item => item != 'isActive')
+      el.className = classes.filter(item => item !== 'isActive')
     } else {
       el.className = classes.concat('isActive').join(' ')
     }
