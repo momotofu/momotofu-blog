@@ -8,10 +8,24 @@ import {
 import './index.css'
 
 class NavBar extends React.Component {
+  handleHamburgerClick(event) {
+    const hamburger = event.target
+    const classes = hamburger.className.split(' ')
+
+    if (classes.includes('isActive')) {
+      hamburger.className = classes.filter(item => item != 'isActive')
+    } else {
+      hamburger.className = classes.concat('isActive').join(' ')
+    }
+
+  }
+
   render() {
     return (
       <div className="NavBar">
-        <div className="NavBar-hamburger">
+        <div
+          className="NavBar-hamburger"
+          onClick={ this.handleHamburgerClick }>
           <div className="NavBar-hamburger-middle"></div>
         </div>
         <ul className="NavBar-list">
