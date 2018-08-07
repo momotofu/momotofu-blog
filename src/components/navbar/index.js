@@ -20,6 +20,18 @@ class NavBar extends React.Component {
     toggleIsActiveOn(this.navBarList)
   }
 
+  handleNavLinkClick(match) {
+    if (this && this.hamburger && this.navBarList) {
+      this.hamburger.classList.remove('isActive')
+      this.navBarList.classList.remove('isActive')
+    }
+
+    if (!match)
+      return false
+    else
+      return true
+  }
+
   render() {
     return (
       <div className="NavBar">
@@ -33,22 +45,26 @@ class NavBar extends React.Component {
           <li>
             <NavLink
               className="signifier"
-              to="/about">About</NavLink>
+              to="/about"
+              isActive={ this.handleNavLinkClick.bind(this) }>About</NavLink>
           </li>
           <li>
             <NavLink
               className="signifier"
-              to="/blog">Blog</NavLink>
+              to="/blog"
+              isActive={ this.handleNavLinkClick.bind(this) }>Blog</NavLink>
           </li>
           <li>
             <NavLink
               className="signifier"
-              to="/contributions">Contributions</NavLink>
+              to="/contributions"
+              isActive={ this.handleNavLinkClick.bind(this) }>Contributions</NavLink>
           </li>
           <li>
             <NavLink
               className="signifier"
-              to="/contact">Contact</NavLink>
+              to="/contact"
+              isActive={ this.handleNavLinkClick.bind(this) }>Contact</NavLink>
           </li>
         </ul>
       </div>
