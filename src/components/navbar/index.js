@@ -8,19 +8,17 @@ import {
 import './index.css'
 
 class NavBar extends React.Component {
+  componentDidMount() {
+    this.hamburger = document.getElementsByClassName('NavBar-hamburger-middle')[0]
+    this.navBarList = document.getElementsByClassName('NavBar-list')[0]
+  }
+
   handleHamburgerClick(event) {
     event.stopPropagation()
     event.preventDefault()
 
-    const hamburger = document.getElementsByClassName('NavBar-hamburger-middle')[0]
-    const classes = hamburger.className.split(' ')
-
-    if (classes.includes('isActive')) {
-      hamburger.className = classes.filter(item => item != 'isActive')
-    } else {
-      hamburger.className = classes.concat('isActive').join(' ')
-    }
-
+    toggleIsActiveOn(this.hamburger)
+    toggleIsActiveOn(this.navBarList)
   }
 
   render() {
@@ -28,7 +26,7 @@ class NavBar extends React.Component {
       <div className="NavBar">
         <div
           className="NavBar-hamburger"
-          onClick={ this.handleHamburgerClick }>
+          onClick={ this.handleHamburgerClick.bind(this) }>
           <div className="NavBar-hamburger-middle">
           </div>
         </div>
@@ -64,6 +62,16 @@ class NavBar extends React.Component {
       </div>
     )
   }
+}
+
+const toggleIsActiveOn = (el) => {
+    const classes = el.className.split(' ')
+
+    if (classes.includes('isActive')) {
+      el.className = classes.filter(item => item != 'isActive')
+    } else {
+      el.className = classes.concat('isActive').join(' ')
+    }
 }
 
 export default NavBar
