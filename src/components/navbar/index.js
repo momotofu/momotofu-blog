@@ -4,6 +4,7 @@ import {
 } from 'react-router-dom'
 
 import './index.css'
+import { toggleIsActiveOn } from '../../utils'
 
 class NavBar extends React.Component {
   componentDidMount() {
@@ -53,16 +54,6 @@ class NavBar extends React.Component {
       </div>
     )
   }
-}
-
-const toggleIsActiveOn = (el) => {
-    const classes = el.className.split(' ')
-
-    if (classes.includes('isActive')) {
-      el.className = classes.filter(item => item !== 'isActive')
-    } else {
-      el.className = classes.concat('isActive').join(' ')
-    }
 }
 
 export default NavBar
