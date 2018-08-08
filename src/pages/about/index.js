@@ -6,24 +6,25 @@ class AboutPage extends React.Component {
   componentDidMount() {
     const Linear = window.Linear
     const ScrollMagic = window.ScrollMagic
-    const SakuraTree = document.getElementById('#SakuraTree')
     const Test = document.getElementById('#Test')
 
-    this.controller = new ScrollMagic.Controller({
+    this.parallaxController = new ScrollMagic.Controller({
       globalSceneOptions: {
         triggerHook: 'onEnter',
         duration: '200%'
       }
     })
 
-
-    new ScrollMagic.Scene({ triggerElement: SakuraTree })
-      .setTween('#SakuraTree > section', {y: '80%', ease: Linear.easeNone})
-      .addTo(this.controller)
+    this.pinController = new ScrollMagic.Controller()
 
     new ScrollMagic.Scene({ triggerElement: Test })
-      .setTween('#Test > section', {y: '80%', ease: Linear.easeNone})
-      .addTo(this.controller)
+      .setTween('#SakuraTree-container', {y: '400%', ease: Linear.easeNone})
+      .addTo(this.parallaxController)
+
+    new ScrollMagic.Scene({ triggerElement: '#trigger1', duration: 600 })
+      .setPin(document.getElementById('#pin1'))
+      .addIndicators({name: '1 (duration: 300)'})
+      .addTo(this.pinController)
 
   }
 
@@ -33,12 +34,11 @@ class AboutPage extends React.Component {
         <div id="#SakuraTree">
           <SakuraTree />
         </div>
-        <div style={{ width: '100%', background: 'blue', height: '200px'}}>
+        <div id="trigger1"></div>
+        <div id="#pin1" style={{ width: '100%', height: '200px', background: 'blue' }}>
         </div>
-        <div id="#Test">
-          <section style={{ width: '100%', background: 'pink', height: '700px'}}>
-          </section>
-        </div>
+        <section id="TestTween" style={{ width: '100%', background: 'pink', height: '700px'}}>
+        </section>
       </div>
     )
   }
