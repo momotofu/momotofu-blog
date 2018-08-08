@@ -18,7 +18,7 @@ class AboutPage extends React.Component {
     this.pinController = new ScrollMagic.Controller()
 
     new ScrollMagic.Scene({ triggerElement: Test })
-      .setTween('#SakuraTree-container', {y: '400%', ease: Linear.easeNone})
+      .setTween('#SakuraTree-container', {y: '200%', ease: Linear.easeNone})
       .addTo(this.parallaxController)
 
     new ScrollMagic.Scene({ triggerElement: '#trigger1', duration: 600 })
