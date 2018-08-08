@@ -26,6 +26,11 @@ class AboutPage extends React.Component {
       .addIndicators({name: '1 (duration: 300)'})
       .addTo(this.pinController)
 
+    new ScrollMagic.Scene({ triggerElement: '#trigger2', duration: 600 })
+      .setPin(document.getElementById('#pin2'))
+      .addIndicators({name: '1 (duration: 300)'})
+      .addTo(this.pinController)
+
   }
 
   render() {
@@ -36,6 +41,9 @@ class AboutPage extends React.Component {
         </div>
         <div id="trigger1"></div>
         <div id="#pin1" style={{ width: '100%', height: '200px', background: 'blue' }}>
+        </div>
+        <div id="trigger2"></div>
+        <div id="#pin2" style={{ width: '100%', height: '200px', background: 'blue' }}>
         </div>
         <section id="TestTween" style={{ width: '100%', background: 'pink', height: '700px'}}>
         </section>
