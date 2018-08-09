@@ -1,0 +1,22 @@
+@import '../../styles/color.scss';
+
+.greeting-hero {
+  top: 80px;
+  left: 30px;
+  position: absolute;
+}
+
+.heading {
+  color: $charcoal;
+  font-weight: 200;
+  letter-spacing: 0.06em;
+  opacity: .6;
+  text-transform: uppercase;
+  word-spacing: 1px;
+}
+
+.heading .letter {
+  display: inline-block;
+  line-height: 1em;
+  opacity: 0;
+}
