@@ -6,7 +6,6 @@ class AboutPage extends React.Component {
   componentDidMount() {
     const Linear = window.Linear
     const ScrollMagic = window.ScrollMagic
-    const Test = document.getElementById('#Test')
 
     this.parallaxController = new ScrollMagic.Controller({
       globalSceneOptions: {
@@ -17,7 +16,7 @@ class AboutPage extends React.Component {
 
     this.pinController = new ScrollMagic.Controller()
 
-    new ScrollMagic.Scene({ triggerElement: Test })
+    new ScrollMagic.Scene()
       .setTween('#SakuraTree-container', {y: '200%', ease: Linear.easeNone})
       .addTo(this.parallaxController)
 
