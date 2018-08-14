@@ -7,6 +7,21 @@ class AboutPage extends React.Component {
   componentDidMount() {
     const Linear = window.Linear
     const ScrollMagic = window.ScrollMagic
+    const anime = window.anime
+
+    const animateSquare = function(context) {
+      var path = anime.path('#path')
+
+      const motionPath = anime({
+        targets: '#motionPath .motionSquare',
+        translateX: path('x'),
+        translateY: path('y'),
+        rotate: path('angle'),
+        easing: 'easeOutSine',
+        duration: 2000,
+      })
+    }
+
 
     // Scrollmagic start
     this.parallaxController = new ScrollMagic.Controller({
@@ -26,9 +41,11 @@ class AboutPage extends React.Component {
       .setTween(document.getElementById('#backdrop'), {x: '-300%', ease: Linear.easeNone})
       .addTo(this.parallaxController)
 
+    console.log('then')
     new ScrollMagic.Scene({ triggerElement: '#trigger1', duration: 600 })
       .setPin(document.getElementById('#pin1'))
       .addIndicators({name: '1 (duration: 300)'})
+      .on('start', animateSquare.bind(this))
       .addTo(this.pinController)
 
     new ScrollMagic.Scene({ triggerElement: '#trigger2', duration: 600 })
@@ -47,8 +64,17 @@ class AboutPage extends React.Component {
         <div id="#SakuraTree">
           <SakuraTree />
         </div>
+        <div style={{ width: '700px', height: '100vh' }}></div>
         <div id="trigger1"></div>
         <div id="#pin1" style={{ width: '100%', height: '200px', background: 'blue' }}>
+          <div id="motionPath">
+            <div className="motionSquare"style={{
+              width: '100px',
+              height: '100px',
+              backgroundColor: 'green',
+              display: 'inline-block'}}></div>
+            <svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 481 241"><title>test</title><path id="path" d="M780,284a120,120,0,0,1-240,0,120,120,0,0,0-240,0" transform="translate(-299.5 -163.5)" style={{fill: '#fff', stroke: '#000', strokeMiterlimit:'10'}}/></svg>
+          </div>
         </div>
         <div id="trigger2"></div>
         <div id="#pin2" style={{ width: '100%', height: '200px', background: 'blue' }}>
