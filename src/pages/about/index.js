@@ -9,6 +9,7 @@ class AboutPage extends React.Component {
     const ScrollMagic = window.ScrollMagic
     const anime = window.anime
 
+    // Todo: seperate out into a component
     const animateSquare = function(context) {
       var path = anime.path('#path')
 
