@@ -1,6 +1,12 @@
 @import './color.scss';
 
+@font-face {
+    font-family: "chris-regular";
+    src: url(assets/chris-regular.tff) format("truetype");
+}
+
 html, body {
     max-width: 100%;
     overflow-x: hidden;
+    font-family: "chris-regular";
 }

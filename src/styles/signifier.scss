@@ -3,13 +3,14 @@
 .signifier {
   color: $bubbleBath;
   cursor: pointer;
-  font-size: 13px;
+  font-size: 28px;
+  font-family: 'chris-regular';
   font-weight: 400;
   letter-spacing: 0.06em;
   margin-right: 3rem;
   opacity: .6;
   text-decoration: none;
-  text-transform: uppercase;
+  //text-transform: uppercase;
   word-spacing: 1px;
   transition: all .26s ease;
   outline: none;

@@ -4,13 +4,22 @@ import AnimatedText from '../../components/animatedText'
 import './index.css'
 
 class AboutPage extends React.Component {
+  componentWillUnmount() {
+    console.log('ran')
+    this.parallaxController = null
+    this.pinController = null
+    this.animateSquare = null
+    this.sceneOne.on('start', () => {})
+  }
+
   componentDidMount() {
+    console.log('mounted')
     const Linear = window.Linear
     const ScrollMagic = window.ScrollMagic
     const anime = window.anime
 
     // Todo: seperate out into a component
-    const animateSquare = function(context) {
+    var animateSquare = function(context) {
       var path = anime.path('#path')
 
       const motionPath = anime({
@@ -43,7 +52,7 @@ class AboutPage extends React.Component {
       .addTo(this.parallaxController)
 
     console.log('then')
-    new ScrollMagic.Scene({ triggerElement: '#trigger1', duration: 600 })
+    this.sceneOne = new ScrollMagic.Scene({ triggerElement: '#trigger1', duration: 600 })
       .setPin(document.getElementById('#pin1'))
       .addIndicators({name: '1 (duration: 300)'})
       .on('start', animateSquare.bind(this))
