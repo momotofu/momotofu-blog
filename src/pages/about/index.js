@@ -22,6 +22,10 @@ class AboutPage extends React.Component {
     var animateSquare = function(context) {
       var path = anime.path('#path')
 
+      // Can't disable scrollmagic event. This prevents react from
+      // catching the error and crashing the app.
+      try { path() } catch(e) { return }
+
       const motionPath = anime({
         targets: '#motionPath .motionSquare',
         translateX: path('x'),
