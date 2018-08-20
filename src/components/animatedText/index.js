@@ -9,15 +9,7 @@ class AnimatedText extends React.Component {
     // Wrap every letter in a span
     anime.timeline({loop: false})
       .add({
-        targets: '#greeting .letter',
-        opacity: 1,
-        duration: 160,
-        delay: function(el, i) {
-          return 100 * i;
-        }
-      })
-      .add({
-        targets: '#greeting-name .letter',
+        targets: '.heading .letter',
         opacity: 1,
         duration: 160,
         delay: function(el, i) {
