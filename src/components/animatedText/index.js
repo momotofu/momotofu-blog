@@ -1,15 +1,16 @@
 import React from 'react'
 import './index.css'
+import { generateRandomIDHash } from '../../utils'
 
 
 class AnimatedText extends React.Component {
   componentDidMount() {
     const anime = window.anime
+    const targetId = this.targetId
 
-    // Wrap every letter in a span
     anime.timeline({loop: false})
       .add({
-        targets: '#message .AnimatedText-letter',
+        targets: `#${targetId} .AnimatedText-letter`,
         opacity: 1,
         duration: 160,
         delay: function(el, i) {
@@ -31,7 +32,9 @@ class AnimatedText extends React.Component {
 
       if (letter === ' ') {
         HTMLString += ' '
-      } else if (i != messageLength - 2) {
+      } else if (letter === '|') {
+        HTMLString += '<br />'
+      } else if (i !== messageLength - 2) {
         HTMLString += `<span class="AnimatedText-letter">${letter}</span>`
       }
     }
@@ -40,11 +43,14 @@ class AnimatedText extends React.Component {
   }
 
   render() {
+    if (!this.targetId)
+      this.targetId = 'AnimatedText-' + generateRandomIDHash()
 
     return (
       <div className="AnimatedText-container">
         <p
-          id="message"
+          className="AnimatedText-message"
+          id={ `${this.targetId}` }
           dangerouslySetInnerHTML={{__html: this.renderMessageHTML() }}>
         </p>
       </div>

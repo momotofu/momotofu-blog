@@ -8,3 +8,7 @@ export const toggleIsActiveOn = (el) => {
       el.className = classes.concat('isActive').join(' ')
     }
 }
+
+export const generateRandomIDHash = (el) => {
+  return `${Math.random().toString(36).substring(7)}`
+}
