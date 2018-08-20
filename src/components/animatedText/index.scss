@@ -8,7 +8,7 @@
   position: absolute;
 }
 
-.heading {
+.AnimatedText-message {
   color: $charcoal;
   font-weight: 200;
   font-family: 'chris-regular';
@@ -16,10 +16,10 @@
   letter-spacing: 0.06em;
   text-transform: uppercase;
   word-spacing: 1px;
-}
 
-.heading .letter {
-  display: inline-block;
-  line-height: 1em;
-  opacity: 0;
+  & .AnimatedText-letter {
+    display: inline-block;
+    line-height: 1em;
+    opacity: 0;
+  }
 }

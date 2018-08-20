@@ -9,7 +9,7 @@ class AnimatedText extends React.Component {
     // Wrap every letter in a span
     anime.timeline({loop: false})
       .add({
-        targets: '.heading .letter',
+        targets: '#message .AnimatedText-letter',
         opacity: 1,
         duration: 160,
         delay: function(el, i) {
@@ -18,34 +18,35 @@ class AnimatedText extends React.Component {
       })
   }
 
+  renderMessageHTML() {
+    const messageLength = this.props.message.length
+    const message = this.props.message
+    let HTMLString = ''
+
+    // loop through each letter in the props message
+    // and construct an html string that will be used
+    // for anime animation
+    for (let i = 0; i < messageLength; i++) {
+      const letter = message[i]
+
+      if (letter === ' ') {
+        HTMLString += ' '
+      } else if (i != messageLength - 2) {
+        HTMLString += `<span class="AnimatedText-letter">${letter}</span>`
+      }
+    }
+
+    return HTMLString
+  }
+
   render() {
+
     return (
-      <div className="greeting-hero">
-        <h1 className="heading" id="greeting">
-          <span className="letter">H</span>
-          <span className="letter">e</span>
-          <span className="letter">l</span>
-          <span className="letter">l</span>
-          <span className="letter">o</span>
-          <span className="letter">,</span>
-        </h1>
-        <h1 className="heading" id="greeting-name">
-          <span className="letter">I</span>
-          <span className="letter">'</span>
-          <span className="letter">m</span>
-          {' '}
-          <span className="letter">C</span>
-          <span className="letter">h</span>
-          <span className="letter">r</span>
-          <span className="letter">i</span>
-          <span className="letter">s</span>
-          <span className="letter">t</span>
-          <span className="letter">o</span>
-          <span className="letter">p</span>
-          <span className="letter">h</span>
-          <span className="letter">e</span>
-          <span className="letter">r</span>
-        </h1>
+      <div className="AnimatedText-container">
+        <p
+          id="message"
+          dangerouslySetInnerHTML={{__html: this.renderMessageHTML() }}>
+        </p>
       </div>
     )
   }

@@ -74,7 +74,7 @@ class AboutPage extends React.Component {
     return (
       <div className="AboutPage">
         <div id="#backdrop" className="backdrop" style={{ backgroundImage: "url('images/dots.jpeg')" }}></div>
-        <AnimatedText />
+        <AnimatedText message="Hello, I'm Christopher..."/>
         <div id="#SakuraTree">
           <SakuraTree />
         </div>
