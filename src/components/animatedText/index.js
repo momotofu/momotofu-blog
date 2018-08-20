@@ -11,9 +11,7 @@ class AnimatedText extends React.Component {
       .add({
         targets: '#greeting .letter',
         opacity: 1,
-        translateY: [-40,0],
-        easing: "easeOutExpo",
-        duration: 1400,
+        duration: 160,
         delay: function(el, i) {
           return 100 * i;
         }
@@ -21,11 +19,9 @@ class AnimatedText extends React.Component {
       .add({
         targets: '#greeting-name .letter',
         opacity: 1,
-        translateY: [-40,0],
-        easing: "easeOutExpo",
-        duration: 1200,
+        duration: 160,
         delay: function(el, i) {
-          return 50 * i;
+          return 100 * i;
         }
       })
   }
