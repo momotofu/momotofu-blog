@@ -1,6 +1,7 @@
 import React from 'react'
 import SakuraTree from '../../components/sakuraTree'
 import AnimatedText from '../../components/animatedText'
+import { getParameterByName } from '../../utils'
 import './index.css'
 
 class AboutPage extends React.Component {
@@ -74,7 +75,7 @@ class AboutPage extends React.Component {
     return (
       <div className="AboutPage">
         <div id="#backdrop" className="backdrop" style={{ backgroundImage: "url('images/dots.jpeg')" }}></div>
-        <AnimatedText message="Hello,|I'm Christopher..."/>
+        <AnimatedText message={ `Hello, ${getParameterByName('recipient')}|I'm Christopher....` }/>
         <div id="#SakuraTree">
           <SakuraTree />
         </div>

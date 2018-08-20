@@ -34,7 +34,7 @@ class AnimatedText extends React.Component {
         HTMLString += ' '
       } else if (letter === '|') {
         HTMLString += '<br />'
-      } else if (i !== messageLength - 2) {
+      } else if (i !== messageLength - 1) {
         HTMLString += `<span class="AnimatedText-letter">${letter}</span>`
       }
     }
