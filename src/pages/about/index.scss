@@ -1,5 +1,28 @@
 @import '../../styles/color.scss';
 
+.AboutPage {
+  &-greeting {
+    display: flex;
+    justify-content: flex-end;
+    z-index: 10;
+  }
+
+  &-SakuraTree {
+    z-index: -1;
+    position: absolute;
+    top: calc(100vh * .16);
+    width: 100%;
+
+    @media screen and (max-width: 600px) {
+      top: calc(100vh * .35);
+    }
+
+    &-contianer {
+      position: relative;
+    }
+  }
+}
+
 .backdrop {
   opacity: 0.5;
   height: 100vh;

@@ -14,7 +14,6 @@ class AboutPage extends React.Component {
   }
 
   componentDidMount() {
-    console.log('mounted')
     const Linear = window.Linear
     const ScrollMagic = window.ScrollMagic
     const anime = window.anime
@@ -33,7 +32,7 @@ class AboutPage extends React.Component {
         translateY: path('y'),
         rotate: path('angle'),
         easing: 'easeOutSine',
-        duration: 2000,
+        duration: 1600,
       })
     }
 
@@ -52,11 +51,14 @@ class AboutPage extends React.Component {
       .setTween('#SakuraTree-container', {y: '200%', ease: Linear.easeNone})
       .addTo(this.parallaxController)
 
-    new ScrollMagic.Scene()
-      .setTween(document.getElementById('#backdrop'), {x: '-300%', ease: Linear.easeNone})
-      .addTo(this.parallaxController)
+    //new ScrollMagic.Scene()
+      //.setTween(document.getElementById('#backdrop'), {x: '-300%', ease: Linear.easeNone})
+      //.addTo(this.parallaxController)
+    new ScrollMagic.Scene({ triggerElement: '#trigger0', duration: 1600 })
+      .setPin(document.getElementById('pin0'))
+      .addIndicators({name: '1 (duration: 800)'})
+      .addTo(this.pinController)
 
-    console.log('then')
     this.sceneOne = new ScrollMagic.Scene({ triggerElement: '#trigger1', duration: 600 })
       .setPin(document.getElementById('#pin1'))
       .addIndicators({name: '1 (duration: 300)'})
@@ -73,10 +75,14 @@ class AboutPage extends React.Component {
 
   render() {
     return (
-      <div className="AboutPage">
-        <div id="#backdrop" className="backdrop" style={{ backgroundImage: "url('images/dots.jpeg')" }}></div>
-        <AnimatedText message={ `Hello, ${getParameterByName('recipient')}|I'm Christopher....` }/>
-        <div id="#SakuraTree">
+      <div className="AboutPage" id="trigger0">
+        { /* <div id="#backdrop" className="backdrop" style={{ backgroundImage: "url('images/dots.jpeg')" }}></div> */}
+        <div id="pin0">
+          <div className="AboutPage-greeting">
+            <AnimatedText message={ `Hello, ${getParameterByName('recipient')}|I'm Christopher...` }/>
+          </div>
+        </div>
+        <div className="AboutPage-SakuraTree">
           <SakuraTree />
         </div>
         <div style={{ width: '700px', height: '100vh' }}></div>
