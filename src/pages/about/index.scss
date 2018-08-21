@@ -2,25 +2,16 @@
 
 .AboutPage {
   &-greeting {
+    margin-top: 60px;
     display: flex;
     justify-content: flex-end;
-    z-index: 10;
+    opacity: 1;
+    transition: opacity 0.3s;
   }
+}
 
-  &-SakuraTree {
-    z-index: -1;
-    position: absolute;
-    top: calc(100vh * .16);
-    width: 100%;
-
-    @media screen and (max-width: 600px) {
-      top: calc(100vh * .35);
-    }
-
-    &-contianer {
-      position: relative;
-    }
-  }
+.fade {
+  opacity: 0;
 }
 
 .backdrop {

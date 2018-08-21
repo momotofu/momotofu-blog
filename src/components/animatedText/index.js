@@ -8,15 +8,20 @@ class AnimatedText extends React.Component {
     const anime = window.anime
     const targetId = this.targetId
 
-    anime.timeline({loop: false})
+    const animateLetters = anime.timeline({loop: false})
       .add({
         targets: `#${targetId} .AnimatedText-letter`,
         opacity: 1,
         duration: 160,
         delay: function(el, i) {
           return 100 * i;
+        },
+        complete: (anim) => {
+          if ('callback' in this.props)
+            this.props.callback()
         }
       })
+
   }
 
   renderMessageHTML() {
@@ -34,7 +39,7 @@ class AnimatedText extends React.Component {
         HTMLString += ' '
       } else if (letter === '|') {
         HTMLString += '<br />'
-      } else if (i !== messageLength - 1) {
+      } else {
         HTMLString += `<span class="AnimatedText-letter">${letter}</span>`
       }
     }

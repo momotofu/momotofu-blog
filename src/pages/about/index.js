@@ -6,7 +6,6 @@ import './index.css'
 
 class AboutPage extends React.Component {
   componentWillUnmount() {
-    console.log('ran')
     this.parallaxController = null
     this.pinController = null
     this.animateSquare = null
@@ -56,33 +55,43 @@ class AboutPage extends React.Component {
       //.addTo(this.parallaxController)
     new ScrollMagic.Scene({ triggerElement: '#trigger0', duration: 1600 })
       .setPin(document.getElementById('pin0'))
-      .addIndicators({name: '1 (duration: 800)'})
+      //.addIndicators({name: '1 (duration: 800)'})
       .addTo(this.pinController)
 
     this.sceneOne = new ScrollMagic.Scene({ triggerElement: '#trigger1', duration: 600 })
       .setPin(document.getElementById('#pin1'))
-      .addIndicators({name: '1 (duration: 300)'})
+      //.addIndicators({name: '1 (duration: 300)'})
       .on('start', animateSquare.bind(this))
       .addTo(this.pinController)
 
     new ScrollMagic.Scene({ triggerElement: '#trigger2', duration: 600 })
       .setPin(document.getElementById('#pin2'))
-      .addIndicators({name: '1 (duration: 300)'})
+      //.addIndicators({name: '1 (duration: 300)'})
       .addTo(this.pinController)
     // Scrollmagic end
 
   }
 
+  greetingCallback(delay) {
+    setTimeout(() => {
+      document.querySelector('.AboutPage-greeting').classList.toggle('fade')
+    }, delay)
+  }
+
   render() {
+    const recipient = getParameterByName('recipient')
+
     return (
-      <div className="AboutPage" id="trigger0">
+      <div className="AboutPage">
         { /* <div id="#backdrop" className="backdrop" style={{ backgroundImage: "url('images/dots.jpeg')" }}></div> */}
         <div id="pin0">
           <div className="AboutPage-greeting">
-            <AnimatedText message={ `Hello, ${getParameterByName('recipient')}|I'm Christopher...` }/>
+            <AnimatedText message={
+              `Hello${ recipient ? ' ' + recipient : ''},|Welcome to my webby bio.| I'm Christopher...`}
+              callback={ this.greetingCallback.bind(this, 2000) } />
           </div>
         </div>
-        <div className="AboutPage-SakuraTree">
+        <div className="AboutPage-SakuraTree" id="trigger0">
           <SakuraTree />
         </div>
         <div style={{ width: '700px', height: '100vh' }}></div>
