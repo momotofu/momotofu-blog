@@ -74,7 +74,9 @@ class AboutPage extends React.Component {
 
   greetingCallback(delay) {
     setTimeout(() => {
-      document.querySelector('.AboutPage-greeting').classList.toggle('fade')
+      document.querySelector('.AboutPage-greeting-message')
+        .classList
+        .toggle('fade')
     }, delay)
   }
 
@@ -88,6 +90,7 @@ class AboutPage extends React.Component {
           <div className="AboutPage-greeting">
             <AnimatedText message={
               `Hello${ recipient ? ' ' + recipient : ''},|Welcome to my webby bio.| I'm Christopher...`}
+              classString="AboutPage-greeting-message"
               callback={ this.greetingCallback.bind(this, 2000) } />
           </div>
         </div>

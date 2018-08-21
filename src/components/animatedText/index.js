@@ -51,8 +51,13 @@ class AnimatedText extends React.Component {
     if (!this.targetId)
       this.targetId = 'AnimatedText-' + generateRandomIDHash()
 
+    const classes = this.props.classString
+    const id = this.props.id
+
     return (
-      <div className="AnimatedText-container">
+      <div
+        className={ `AnimatedText-container ${ classes ? classes : '' }` }
+        id={ id ? id : '' }>
         <p
           className="AnimatedText-message"
           id={ `${this.targetId}` }
