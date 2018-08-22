@@ -12,7 +12,7 @@ class AnimatedText extends React.Component {
     }
   }
 
-  animateText(callback) {
+  animateText(callback, callbackDelay, fadeCallback) {
     const anime = window.anime
     const targetId = this.targetId
 
@@ -28,27 +28,50 @@ class AnimatedText extends React.Component {
           return 100 * i;
         },
         complete: (anim) => {
-          if (callback) {
+          if (fadeCallback) {
+            setTimeout(() => {
+              fadeCallback(true)
+            }, callbackDelay ? callbackDelay - 300 : 300)
+          }
+          if (callbackDelay && callback) {
+            setTimeout(() => {
+              callback()
+            }, callbackDelay)
+          } else if (!callbackDelay && callback) {
             callback()
           }
+
         }
       })
   }
 
+  addOrRemoveFade(addFade) {
+    if (addFade)
+      document.querySelector('#' + this.targetId).classList.add('fade')
+    else
+      document.querySelector('#' + this.targetId).classList.remove('fade')
+  }
+
   componentDidUpdate() {
+    this.addOrRemoveFade(false)
+
     const animate = this.animateText(() => {
       if (this.state.currentMessageIndex < this.props.messages.length - 1) {
         this.setState({
           currentMessageIndex: this.state.currentMessageIndex + 1
         })
+      } else if ('callback' in this.props) {
+        this.props.callback()
       } else {
         return
       }
-    })
+    }, 2000, this.addOrRemoveFade.bind(this))
+
     animate.play()
   }
 
   componentDidMount() {
+    this.addOrRemoveFade(false)
     this.setState({
       currentMessageIndex: this.state.currentMessageIndex + 1
     })
