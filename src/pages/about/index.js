@@ -90,10 +90,10 @@ class AboutPage extends React.Component {
           <div className="AboutPage-greeting">
             <AnimatedText
               messages={
-                [`Hello${ recipient ? ' ' + recipient : ''},|Welcome to my webby bio.| I'm Christopher...`],
-                [`Check it out!`],
-                [`This Sakura Tree is actually a program I wrote, which uses the pattern of recursion generate and render a tree similar to the way that nature does it.`],
-                [`The program draws a new tree each time. It’ll take a sec, so enjoy the little squiggle’s or continue scrolling on through.`]
+                [`Hello${ recipient ? ' ' + recipient : ''},|Welcome to my webby bio.| I'm Christopher...`,
+                `Check it out!`,
+                `This Sakura Tree is actually a program I wrote, which uses the pattern of recursion generate and render a tree similar to the way that nature does it.`,
+                `The program draws a new tree each time. It’ll take a sec, so enjoy the little squiggle’s or continue scrolling on through.`]
               }
               classString="AboutPage-greeting-message"
               callback={ this.greetingCallback.bind(this, 2000) } />

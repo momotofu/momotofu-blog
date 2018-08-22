@@ -8,16 +8,17 @@ class AnimatedText extends React.Component {
     super(props)
 
     this.state = {
-      currentMessage: props.messages[0]
+      currentMessageIndex: -1
     }
   }
 
-  componentDidMount() {
+  animateText(callback) {
     const anime = window.anime
     const targetId = this.targetId
 
-    const animateLetters = anime.timeline({
+    return anime.timeline({
       loop: false,
+      autoplay: false
     })
       .add({
         targets: `#${targetId} .AnimatedText-letter`,
@@ -27,16 +28,38 @@ class AnimatedText extends React.Component {
           return 100 * i;
         },
         complete: (anim) => {
-          if ('callback' in this.props)
-            this.props.callback()
+          if (callback) {
+            callback()
+          }
         }
       })
+  }
 
+  componentDidUpdate() {
+    const animate = this.animateText(() => {
+      if (this.state.currentMessageIndex < this.props.messages.length - 1) {
+        this.setState({
+          currentMessageIndex: this.state.currentMessageIndex + 1
+        })
+      } else {
+        return
+      }
+    })
+    animate.play()
+  }
+
+  componentDidMount() {
+    this.setState({
+      currentMessageIndex: this.state.currentMessageIndex + 1
+    })
   }
 
   renderMessageHTML() {
-    const messageLength = this.props.message.length
-    const message = this.props.message
+    if (this.state.currentMessageIndex < 0) return
+
+    const currentMessage = this.props.messages[this.state.currentMessageIndex]
+    const messageLength = currentMessage.length
+    const message = currentMessage
     let HTMLString = ''
 
     // loop through each letter in the props message
