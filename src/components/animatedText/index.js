@@ -8,7 +8,8 @@ class AnimatedText extends React.Component {
     super(props)
 
     this.state = {
-      currentMessageIndex: -1
+      currentMessageIndex: -1,
+      automated: this.props.automated
     }
   }
 
@@ -69,19 +70,26 @@ class AnimatedText extends React.Component {
     this.addOrRemoveFade(false)
 
     const animate = function() {
-      if (this.props.automated) {
+      if (this.state.automated) {
         return this.animateText(() => {
-          if (this.state.currentMessageIndex < this.props.messages.length - 1) {
+          if (this.canIncrement()) {
+            if ('disableAutomatedAtIndex' in this.props && this.state.currentMessageIndex + 1 === this.props.disableAutomatedAtIndex)
+              this.setState({automated: false})
+
             this.incrementMessageIndex()
+
           } else if ('callback' in this.props) {
             this.props.callback()
+
           } else {
             return
           }
+
           }, 2000, this.addOrRemoveFade.bind(this))
+
       } else {
         return this.animateText(() => {
-          if (this.state.currentMessageIndex < this.props.messages.length - 1) {
+          if (this.canIncrement()) {
           } else if ('callback' in this.props) {
 
           } else {
@@ -128,7 +136,7 @@ class AnimatedText extends React.Component {
   }
 
   renderContinueSignifier() {
-    if (!this.props.automated && this.canIncrement())
+    if (!this.state.automated && this.canIncrement())
       return (
         <button
           onClick={ this.incrementMessageIndex.bind(this) }
