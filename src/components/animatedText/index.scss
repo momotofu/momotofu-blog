@@ -22,4 +22,27 @@
   & .AnimatedText-letter {
     opacity: 0;
   }
+
+  &-signifier {
+    font-family: 'chris-regular';
+    font-size: 36px;
+    letter-spacing: 0.05em;
+    border: none;
+    border-bottom: solid 1px;
+    line-height: 1.4rem;
+    background: none;
+    outline: none;
+    outline: aliceblue;
+    transition: all .2s ease;
+    padding: 0;
+
+    &:focus {
+      outline: none;
+    }
+
+    &:hover {
+      cursor: pointer;
+      border-bottom: solid 3px;
+    }
+  }
 }

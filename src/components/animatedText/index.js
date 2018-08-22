@@ -52,7 +52,14 @@ class AnimatedText extends React.Component {
       document.querySelector('#' + this.targetId).classList.remove('fade')
   }
 
+  canIncrement() {
+    return !(this.state.currentMessageIndex >= this.props.messages.length - 1)
+  }
+
   incrementMessageIndex() {
+    if (!this.canIncrement())
+      return
+
     this.setState({
       currentMessageIndex: this.state.currentMessageIndex + 1
     })
@@ -121,8 +128,14 @@ class AnimatedText extends React.Component {
   }
 
   renderContinueSignifier() {
-    if (!this.props.automated)
-      return <span>Continue</span>
+    if (!this.props.automated && this.canIncrement())
+      return (
+        <button
+          onClick={ this.incrementMessageIndex.bind(this) }
+          className='AnimatedText-message-signifier'>
+          Continue
+        </button>
+      )
     else
       return ''
   }

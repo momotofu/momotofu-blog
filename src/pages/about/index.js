@@ -89,11 +89,12 @@ class AboutPage extends React.Component {
         <div id="pin0">
           <div className="AboutPage-greeting">
             <AnimatedText
-              automated={true}
+              automated={false}
               messages={
                 [`Hello${ recipient ? ' ' + recipient : ''},|Welcome to my webby bio.| I'm Christopher...`,
                 `Check it out!`,
-                `This Sakura Tree is actually a program I wrote, which uses the pattern of recursion to generate and render a tree similar to the way nature does it.`,
+                `The Sakura tree below is actually a program I wrote.`,
+                `It uses the pattern of recursion to generate and render a tree similar to the way nature does it.`,
                 `The program draws a new tree each time.`,
                 `It'll take a sec, so enjoy the little squiggle's or continue scrolling on through.`]
               }
