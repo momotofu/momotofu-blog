@@ -3,7 +3,7 @@
 from random import randint
 
 leaf_colors = ["#F3E5F5", "#FCE4EC", "#F8BBD0", "#FFEBEE", "#FFCDD2"]
-wood_color = "#795548"
+wood_color = "#AA523C"
 
 def branch(t, length, angle, scale):
     if length < 4:

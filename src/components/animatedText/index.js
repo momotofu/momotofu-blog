@@ -4,11 +4,21 @@ import { generateRandomIDHash } from '../../utils'
 
 
 class AnimatedText extends React.Component {
+  constructor(props) {
+    super(props)
+
+    this.state = {
+      currentMessage: props.messages[0]
+    }
+  }
+
   componentDidMount() {
     const anime = window.anime
     const targetId = this.targetId
 
-    const animateLetters = anime.timeline({loop: false})
+    const animateLetters = anime.timeline({
+      loop: false,
+    })
       .add({
         targets: `#${targetId} .AnimatedText-letter`,
         opacity: 1,
