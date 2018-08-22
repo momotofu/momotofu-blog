@@ -11,13 +11,14 @@ class AnimatedText extends React.Component {
       currentMessageIndex: -1,
       automated: this.props.automated
     }
+
+    this.anime = window.anime
   }
 
   animateText(callback, callbackDelay, fadeCallback) {
-    const anime = window.anime
     const targetId = this.targetId
 
-    return anime.timeline({
+    return this.anime.timeline({
       loop: false,
       autoplay: false
     })
@@ -46,6 +47,19 @@ class AnimatedText extends React.Component {
       })
   }
 
+  animateContinueSignifier() {
+    const target = document.querySelector(`#${this.targetId}-signifier`)
+
+    return this.anime({
+      targets: target,
+      translateX: 50,
+      opacity: 1,
+      elasticity: function(el, i, l) {
+        return (200 + i * 200);
+      }
+    })
+  }
+
   addOrRemoveFade(addFade) {
     if (addFade)
       document.querySelector('#' + this.targetId).classList.add('fade')
@@ -61,6 +75,13 @@ class AnimatedText extends React.Component {
     if (!this.canIncrement())
       return
 
+    if (!this.state.automated) {
+      const continueSignifier = document.querySelector(`#${this.targetId}-signifier`)
+      if (continueSignifier) {
+        continueSignifier.style = {}
+      }
+    }
+
     this.setState({
       currentMessageIndex: this.state.currentMessageIndex + 1
     })
@@ -69,7 +90,7 @@ class AnimatedText extends React.Component {
   componentDidUpdate() {
     this.addOrRemoveFade(false)
 
-    const animate = function() {
+    const animateMessage = function() {
       if (this.state.automated) {
         return this.animateText(() => {
           if (this.canIncrement()) {
@@ -90,8 +111,12 @@ class AnimatedText extends React.Component {
       } else {
         return this.animateText(() => {
           if (this.canIncrement()) {
-          } else if ('callback' in this.props) {
+            // animate continue button
+            this.animateContinueSignifier()
+            console.log('should animate sig')
 
+          } else if ('callback' in this.props) {
+            this.props.callback()
           } else {
             return
           }
@@ -99,7 +124,7 @@ class AnimatedText extends React.Component {
       }
     }.call(this)
 
-    animate.play()
+    animateMessage.play()
   }
 
   componentDidMount() {
@@ -128,7 +153,7 @@ class AnimatedText extends React.Component {
       } else if (letter === '|') {
         HTMLString += '<br />'
       } else {
-        HTMLString += `<span class="AnimatedText-letter">${letter}</span>`
+        HTMLString += `<span class="AnimatedText-letter" >${letter}</span>`
       }
     }
 
@@ -140,7 +165,8 @@ class AnimatedText extends React.Component {
       return (
         <button
           onClick={ this.incrementMessageIndex.bind(this) }
-          className='AnimatedText-message-signifier'>
+          className='AnimatedText-message-signifier'
+          id={`${this.targetId}-signifier`}>
           Continue
         </button>
       )
