@@ -52,20 +52,37 @@ class AnimatedText extends React.Component {
       document.querySelector('#' + this.targetId).classList.remove('fade')
   }
 
+  incrementMessageIndex() {
+    this.setState({
+      currentMessageIndex: this.state.currentMessageIndex + 1
+    })
+  }
+
   componentDidUpdate() {
     this.addOrRemoveFade(false)
 
-    const animate = this.animateText(() => {
-      if (this.state.currentMessageIndex < this.props.messages.length - 1) {
-        this.setState({
-          currentMessageIndex: this.state.currentMessageIndex + 1
-        })
-      } else if ('callback' in this.props) {
-        this.props.callback()
+    const animate = function() {
+      if (this.props.automated) {
+        return this.animateText(() => {
+          if (this.state.currentMessageIndex < this.props.messages.length - 1) {
+            this.incrementMessageIndex()
+          } else if ('callback' in this.props) {
+            this.props.callback()
+          } else {
+            return
+          }
+          }, 2000, this.addOrRemoveFade.bind(this))
       } else {
-        return
+        return this.animateText(() => {
+          if (this.state.currentMessageIndex < this.props.messages.length - 1) {
+          } else if ('callback' in this.props) {
+
+          } else {
+            return
+          }
+        })
       }
-    }, 2000, this.addOrRemoveFade.bind(this))
+    }.call(this)
 
     animate.play()
   }
@@ -103,6 +120,13 @@ class AnimatedText extends React.Component {
     return HTMLString
   }
 
+  renderContinueSignifier() {
+    if (!this.props.automated)
+      return <span>Continue</span>
+    else
+      return ''
+  }
+
   render() {
     if (!this.targetId)
       this.targetId = 'AnimatedText-' + generateRandomIDHash()
@@ -119,6 +143,7 @@ class AnimatedText extends React.Component {
           id={ `${this.targetId}` }
           dangerouslySetInnerHTML={{__html: this.renderMessageHTML() }}>
         </p>
+        { this.renderContinueSignifier() }
       </div>
     )
   }
