@@ -75,16 +75,15 @@ class AnimatedText extends React.Component {
     if (!this.canIncrement())
       return
 
-    if (!this.state.automated) {
-      const continueSignifier = document.querySelector(`#${this.targetId}-signifier`)
-      if (continueSignifier) {
-        continueSignifier.style = {}
-      }
-    }
-
     this.setState({
       currentMessageIndex: this.state.currentMessageIndex + 1
     })
+  }
+
+  handleContinueSignifierClick() {
+    this.continueSignifier.style = {}
+    this.incrementMessageIndex()
+    this.continueSignifierAnimation.pause()
   }
 
   componentDidUpdate() {
@@ -112,8 +111,7 @@ class AnimatedText extends React.Component {
         return this.animateText(() => {
           if (this.canIncrement()) {
             // animate continue button
-            this.animateContinueSignifier()
-            console.log('should animate sig')
+            this.continueSignifierAnimation = this.animateContinueSignifier()
 
           } else if ('callback' in this.props) {
             this.props.callback()
@@ -128,6 +126,7 @@ class AnimatedText extends React.Component {
   }
 
   componentDidMount() {
+    this.continueSignifier = document.querySelector(`#${this.targetId}-signifier`)
     this.addOrRemoveFade(false)
     this.setState({
       currentMessageIndex: this.state.currentMessageIndex + 1
@@ -164,7 +163,8 @@ class AnimatedText extends React.Component {
     if (!this.state.automated && this.canIncrement())
       return (
         <button
-          onClick={ this.incrementMessageIndex.bind(this) }
+          onClick={ this.handleContinueSignifierClick.bind(this) }
+          style={{}}
           className='AnimatedText-message-signifier'
           id={`${this.targetId}-signifier`}>
           Continue
