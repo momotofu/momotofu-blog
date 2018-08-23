@@ -73,11 +73,16 @@ class AboutPage extends React.Component {
   }
 
   greetingCallback(delay) {
-    //setTimeout(() => {
-      //document.querySelector('.AboutPage-greeting-message')
-        //.classList
-        //.toggle('fade')
-    //}, delay)
+    setTimeout(() => {
+      document.querySelector('.AboutPage-greeting-message')
+        .classList
+        .toggle('fade')
+      setTimeout(() => {
+        document.querySelector('.AboutPage-greeting-control-container')
+          .classList
+          .toggle('show')
+      }, 300)
+    }, delay)
   }
 
   render() {
@@ -86,6 +91,10 @@ class AboutPage extends React.Component {
     return (
       <div className="AboutPage">
         <div className="AboutPage-greeting">
+          <div className="AboutPage-greeting-control-container">
+            <button style={{left: 0}} className="AboutPage-greeting-control">Redraw</button>
+            <button style={{right: 0}} className="AboutPage-greeting-control">Continue</button>
+          </div>
           <AnimatedText
             automated={false}
             messages={
@@ -94,10 +103,10 @@ class AboutPage extends React.Component {
               `The Sakura tree below is actually a program I wrote.`,
               `It uses the pattern of recursion to generate and render a tree similar to the way nature does.`,
               `The program draws a new tree each time.`,
-              `It'll take a sec to draw, so enjoy the little squiggles or continue scrolling on through.`]
+              `It'll take a sec to render, so enjoy the little squiggles or continue scrolling on through.`]
             }
             classString="AboutPage-greeting-message mt-5"
-            callback={ this.greetingCallback.bind(this, 2000) } />
+            callback={ this.greetingCallback.bind(this, 1600) } />
           <div className="AboutPage-SakuraTree">
             <SakuraTree />
           </div>
