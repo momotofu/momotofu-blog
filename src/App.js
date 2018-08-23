@@ -5,8 +5,9 @@ import {
 } from 'react-router-dom'
 
 import './App.css'
-import 'bootstrap/dist/css/bootstrap-grid.min.css'
-import 'bootstrap/dist/css/bootstrap-reboot.min.css'
+import 'bootstrap/dist/css/bootstrap.min.css'
+//import 'bootstrap/dist/css/bootstrap-grid.min.css'
+//import 'bootstrap/dist/css/bootstrap-reboot.min.css'
 
 import AboutPage from './pages/about'
 import NavBar from './components/navbar'

@@ -85,24 +85,22 @@ class AboutPage extends React.Component {
 
     return (
       <div className="AboutPage">
-        <div id="pin0">
-          <div className="AboutPage-greeting">
-            <AnimatedText
-              automated={false}
-              messages={
-                [`Hello${ recipient ? ' ' + recipient : ''},|Welcome to my webby bio.| I'm Christopher...`,
-                `Check it out!`,
-                `The Sakura tree below is actually a program I wrote.`,
-                `It uses the pattern of recursion to generate and render a tree similar to the way nature does.`,
-                `The program draws a new tree each time.`,
-                `It'll take a sec, so enjoy the little squiggles or continue scrolling on through.`]
-              }
-              classString="AboutPage-greeting-message"
-              callback={ this.greetingCallback.bind(this, 2000) } />
+        <div className="AboutPage-greeting">
+          <AnimatedText
+            automated={false}
+            messages={
+              [`Hello${ recipient ? ' ' + recipient : ''},|Welcome to my webby bio.| I'm Christopher...`,
+              `Check it out!`,
+              `The Sakura tree below is actually a program I wrote.`,
+              `It uses the pattern of recursion to generate and render a tree similar to the way nature does.`,
+              `The program draws a new tree each time.`,
+              `It'll take a sec, so enjoy the little squiggles or continue scrolling on through.`]
+            }
+            classString="AboutPage-greeting-message mt-4"
+            callback={ this.greetingCallback.bind(this, 2000) } />
+          <div className="AboutPage-SakuraTree">
+            <SakuraTree />
           </div>
-        </div>
-        <div className="AboutPage-SakuraTree">
-          <SakuraTree />
         </div>
         <div style={{ width: '700px', height: '100vh' }}></div>
         <div id="trigger1"></div>
