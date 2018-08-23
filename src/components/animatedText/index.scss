@@ -12,12 +12,13 @@
   color: $charcoal;
   font-weight: 200;
   font-family: 'chris-regular';
-  font-size: 48px;
+  font-size: inherit;
   letter-spacing: 0.06em;
   word-spacing: 1px;
   line-height: 1em;
   transition: opacity 0.3s;
   opacity: 1;
+  margin-bottom: 0;
 
   & .AnimatedText-letter {
     opacity: 0;

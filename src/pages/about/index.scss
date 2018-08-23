@@ -5,10 +5,18 @@
     display: flex;
     justify-content: flex-end;
     z-index: 10;
+    height: 100vh;
 
     &-message {
       opacity: 1;
       transition: opacity 0.3s;
+      font-size: 48px;
+      margin: auto;
+      max-width: 560px;
+
+      @media screen and (max-width: 600px) {
+        font-size: 36px;
+      }
     }
   }
 
@@ -19,7 +27,7 @@
     width: 100%;
 
     @media screen and (max-width: 600px) {
-      top: calc(100vh * .35);
+      top: calc(100vh * .16);
     }
 
     &-contianer {

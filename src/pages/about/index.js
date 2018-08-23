@@ -96,13 +96,12 @@ class AboutPage extends React.Component {
               `The program draws a new tree each time.`,
               `It'll take a sec, so enjoy the little squiggles or continue scrolling on through.`]
             }
-            classString="AboutPage-greeting-message mt-4"
+            classString="AboutPage-greeting-message mt-5"
             callback={ this.greetingCallback.bind(this, 2000) } />
           <div className="AboutPage-SakuraTree">
             <SakuraTree />
           </div>
         </div>
-        <div style={{ width: '700px', height: '100vh' }}></div>
         <div id="trigger1"></div>
         <div id="#pin1" style={{ width: '100%', height: '200px', background: 'blue' }}>
           <div id="motionPath">
