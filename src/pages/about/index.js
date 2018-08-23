@@ -94,7 +94,7 @@ class AboutPage extends React.Component {
               `The Sakura tree below is actually a program I wrote.`,
               `It uses the pattern of recursion to generate and render a tree similar to the way nature does.`,
               `The program draws a new tree each time.`,
-              `It'll take a sec, so enjoy the little squiggles or continue scrolling on through.`]
+              `It'll take a sec to draw, so enjoy the little squiggles or continue scrolling on through.`]
             }
             classString="AboutPage-greeting-message mt-5"
             callback={ this.greetingCallback.bind(this, 2000) } />
