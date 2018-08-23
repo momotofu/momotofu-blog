@@ -81,7 +81,11 @@ class AnimatedText extends React.Component {
   }
 
   handleContinueSignifierClick() {
+    if (!this.continueSignifier)
+      this.continueSignifier = document.querySelector(`#${this.targetId}-signifier`)
+
     this.continueSignifier.style = {}
+
     this.incrementMessageIndex()
     this.continueSignifierAnimation.pause()
   }

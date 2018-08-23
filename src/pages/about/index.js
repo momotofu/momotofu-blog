@@ -46,17 +46,17 @@ class AboutPage extends React.Component {
 
     this.pinController = new ScrollMagic.Controller()
 
-    new ScrollMagic.Scene()
-      .setTween('#SakuraTree-container', {y: '200%', ease: Linear.easeNone})
-      .addTo(this.parallaxController)
+    //new ScrollMagic.Scene()
+      //.setTween('#SakuraTree-container', {y: '200%', ease: Linear.easeNone})
+      //.addTo(this.parallaxController)
 
     //new ScrollMagic.Scene()
       //.setTween(document.getElementById('#backdrop'), {x: '-300%', ease: Linear.easeNone})
       //.addTo(this.parallaxController)
-    new ScrollMagic.Scene({ triggerElement: '#trigger0', duration: 1600 })
-      .setPin(document.getElementById('pin0'))
+    //new ScrollMagic.Scene({ triggerElement: '#trigger0', duration: 1600 })
+      //.setPin(document.getElementById('pin0'))
       //.addIndicators({name: '1 (duration: 800)'})
-      .addTo(this.pinController)
+      //.addTo(this.pinController)
 
     this.sceneOne = new ScrollMagic.Scene({ triggerElement: '#trigger1', duration: 600 })
       .setPin(document.getElementById('#pin1'))
@@ -85,7 +85,6 @@ class AboutPage extends React.Component {
 
     return (
       <div className="AboutPage">
-        { /* <div id="#backdrop" className="backdrop" style={{ backgroundImage: "url('images/dots.jpeg')" }}></div> */}
         <div id="pin0">
           <div className="AboutPage-greeting">
             <AnimatedText
@@ -102,7 +101,7 @@ class AboutPage extends React.Component {
               callback={ this.greetingCallback.bind(this, 2000) } />
           </div>
         </div>
-        <div className="AboutPage-SakuraTree" id="trigger0">
+        <div className="AboutPage-SakuraTree">
           <SakuraTree />
         </div>
         <div style={{ width: '700px', height: '100vh' }}></div>
