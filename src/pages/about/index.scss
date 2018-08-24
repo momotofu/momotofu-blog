@@ -37,6 +37,8 @@
 
       &-container {
         opacity: 0;
+        max-width: 600px;
+        transform: translateX(-50%);
         display: flex;
         position: absolute;
         width: 100%;

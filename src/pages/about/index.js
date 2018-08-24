@@ -106,7 +106,7 @@ class AboutPage extends React.Component {
               `It'll take a sec to render, so enjoy the little squiggles or continue scrolling on through.`]
             }
             classString="AboutPage-greeting-message mt-5"
-            callback={ this.greetingCallback.bind(this, 1600) } />
+            callback={ this.greetingCallback.bind(this, 1200) } />
           <div className="AboutPage-SakuraTree">
             <SakuraTree />
           </div>

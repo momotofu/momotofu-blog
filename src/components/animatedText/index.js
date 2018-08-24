@@ -17,6 +17,7 @@ class AnimatedText extends React.Component {
 
   animateText(callback, callbackDelay, fadeCallback) {
     const targetId = this.targetId
+    const speed = this.props.speed ? this.props.speed : 70
 
     return this.anime.timeline({
       loop: false,
@@ -27,7 +28,7 @@ class AnimatedText extends React.Component {
         opacity: 1,
         duration: 160,
         delay: function(el, i) {
-          return 100 * i;
+          return speed * i;
         },
         complete: (anim) => {
           if (fadeCallback) {
