@@ -85,6 +85,11 @@ class AboutPage extends React.Component {
     }, delay)
   }
 
+  redrawClickHandler() {
+    if (window.draw)
+      window.draw()
+  }
+
   render() {
     const recipient = getParameterByName('recipient')
 
@@ -92,8 +97,14 @@ class AboutPage extends React.Component {
       <div className="AboutPage">
         <div className="AboutPage-greeting">
           <div className="AboutPage-greeting-control-container">
-            <button style={{left: 0}} className="AboutPage-greeting-control">Redraw</button>
-            <button style={{right: 0}} className="AboutPage-greeting-control">Continue</button>
+            <button
+              className="AboutPage-greeting-control"
+              style={{left: 0}}
+              onClick={ this.redrawClickHandler }>Redraw</button>
+            <button
+              className="AboutPage-greeting-control"
+              style={{right: 0}}
+              onClick={ this.redrawClickHandler }>Continue</button>
           </div>
           <AnimatedText
             automated={false}
