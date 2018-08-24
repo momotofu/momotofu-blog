@@ -73,11 +73,11 @@ class AboutPage extends React.Component {
   }
 
   greetingCallback(delay) {
+    const animatedMessageEl = document.querySelector('.AboutPage-greeting-message')
     setTimeout(() => {
-      document.querySelector('.AboutPage-greeting-message')
-        .classList
-        .toggle('fade')
+      animatedMessageEl.classList.toggle('fade')
       setTimeout(() => {
+        animatedMessageEl.parentNode.removeChild(animatedMessageEl)
         document.querySelector('.AboutPage-greeting-control-container')
           .classList
           .toggle('show')
@@ -96,16 +96,6 @@ class AboutPage extends React.Component {
     return (
       <div className="AboutPage">
         <div className="AboutPage-greeting">
-          <div className="AboutPage-greeting-control-container">
-            <button
-              className="AboutPage-greeting-control"
-              style={{left: 0}}
-              onClick={ this.redrawClickHandler }>Redraw</button>
-            <button
-              className="AboutPage-greeting-control"
-              style={{right: 0}}
-              onClick={ this.redrawClickHandler }>Continue</button>
-          </div>
           <AnimatedText
             automated={false}
             messages={
@@ -118,6 +108,16 @@ class AboutPage extends React.Component {
             }
             classString="AboutPage-greeting-message mt-5"
             callback={ this.greetingCallback.bind(this, 1200) } />
+          <div className="AboutPage-greeting-control-container">
+            <button
+              className="AboutPage-greeting-control"
+              style={{left: 0}}
+              onClick={ this.redrawClickHandler }>Redraw</button>
+            <button
+              className="AboutPage-greeting-control"
+              style={{right: 0}}
+              onClick={ this.redrawClickHandler }>Continue</button>
+          </div>
           <div className="AboutPage-SakuraTree">
             <SakuraTree />
           </div>

@@ -88,7 +88,8 @@ class AnimatedText extends React.Component {
     this.continueSignifier.style = {}
 
     this.incrementMessageIndex()
-    this.continueSignifierAnimation.pause()
+    if (this.continueSignifierAnimation)
+      this.continueSignifierAnimation.pause()
   }
 
   componentDidUpdate() {
