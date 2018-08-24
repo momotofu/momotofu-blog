@@ -37,8 +37,10 @@
 
       &-container {
         opacity: 0;
-        max-width: 600px;
-        transform: translateX(-50%);
+        left: 0;
+        right: 0;
+        margin: auto;
+        max-width: 300px;
         display: flex;
         position: absolute;
         width: 100%;
