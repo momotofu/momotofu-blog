@@ -1,7 +1,8 @@
 import React from 'react'
 import SakuraTree from '../../components/sakuraTree'
 import AnimatedText from '../../components/animatedText'
-import portrait from './images/portrait.jpg'
+import portrait from './images/portrait.png'
+import portraitBg from './images/portrait-bg.jpg'
 import { getParameterByName } from '../../utils'
 import './index.css'
 
@@ -127,7 +128,8 @@ class AboutPage extends React.Component {
           </div>
         </div>
         <div className="row">
-          <img className="AboutPage-intro-image" src={ portrait } />
+          <img className="AboutPage-intro-portrait-bg" src={ portraitBg } />
+          <img className="AboutPage-intro-portrait" src={ portrait } />
         </div>
 
         {/*<div id="trigger1"></div>
