@@ -133,9 +133,9 @@ class AboutPage extends React.Component {
             messages={
               [`Hello again, that's me below...`,
                 `My wife took this picture while I was telling her about the new rasberry pi I bought.`,
-                `I'm curious and creative, so I like to tinker around with things like that.`,
+                `I'm curious and creative, so I like to tinker around with things.`,
                 `The drive to take things apart and put them back together again eventually lead me to be programmer.`,
-                `I now work as a full-stack developer, which is an individual who designs and builds interesting web products`
+                `I now work as a full-stack developer, which is an individual who designs and builds interesting web products.`
               ]
             }
             classString="AboutPage-intro-message"
