@@ -15,7 +15,7 @@ class AboutPage extends React.Component {
     this.parallaxController = null
     this.pinController = null
     this.animateSquare = null
-    this.sceneOne.on('start', () => {})
+    //this.sceneOne.on('start', () => {})
   }
 
   componentDidMount() {
