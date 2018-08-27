@@ -41,16 +41,17 @@ class AboutPage extends React.Component {
     // Scrollmagic start
     this.parallaxController = new ScrollMagic.Controller({
       globalSceneOptions: {
-        triggerHook: 'onEnter',
         duration: '200%'
       }
     })
 
+
     this.pinController = new ScrollMagic.Controller()
 
-    //new ScrollMagic.Scene()
-      //.setTween('#SakuraTree-container', {y: '200%', ease: Linear.easeNone})
-      //.addTo(this.parallaxController)
+    new ScrollMagic.Scene()
+      .setTween(document.querySelector('.AboutPage-intro-portrait-bg'), {y: '-30%', ease: Linear.easeNone})
+      .triggerElement(document.querySelector('.AboutPage-intro'))
+      .addTo(this.parallaxController)
 
     //new ScrollMagic.Scene()
       //.setTween(document.getElementById('#backdrop'), {x: '-300%', ease: Linear.easeNone})
@@ -60,17 +61,17 @@ class AboutPage extends React.Component {
       //.addIndicators({name: '1 (duration: 800)'})
       //.addTo(this.pinController)
 
-    this.sceneOne = new ScrollMagic.Scene({ triggerElement: '#trigger1', duration: 600 })
-      .setPin(document.getElementById('#pin1'))
-      //.addIndicators({name: '1 (duration: 300)'})
-      .on('start', animateSquare.bind(this))
-      .addTo(this.pinController)
+    //this.sceneOne = new ScrollMagic.Scene({ triggerElement: '#trigger1', duration: 600 })
+      //.setPin(document.getElementById('#pin1'))
+      ////.addIndicators({name: '1 (duration: 300)'})
+      //.on('start', animateSquare.bind(this))
+      //.addTo(this.pinController)
 
-    new ScrollMagic.Scene({ triggerElement: '#trigger2', duration: 600 })
-      .setPin(document.getElementById('#pin2'))
-      //.addIndicators({name: '1 (duration: 300)'})
-      .addTo(this.pinController)
-    // Scrollmagic end
+    //new ScrollMagic.Scene({ triggerElement: '#trigger2', duration: 600 })
+      //.setPin(document.getElementById('#pin2'))
+      ////.addIndicators({name: '1 (duration: 300)'})
+      //.addTo(this.pinController)
+    //// Scrollmagic end
 
   }
 
@@ -90,9 +91,6 @@ class AboutPage extends React.Component {
   redrawClickHandler() {
     if (window.draw)
       window.draw()
-  }
-
-  greetingContinueClickHandler() {
   }
 
   render() {
@@ -117,11 +115,7 @@ class AboutPage extends React.Component {
             <button
               className="AboutPage-greeting-control"
               style={{left: 0}}
-              onClick={ this.redrawClickHandler }>Redraw</button>
-            <button
-              className="AboutPage-greeting-control"
-              style={{right: 0}}
-              onClick={ this.redrawClickHandler }>Continue</button>
+              onClick={ this.redrawClickHandler }>Redraw tree</button>
           </div>
           <div className="AboutPage-SakuraTree">
             <SakuraTree />
