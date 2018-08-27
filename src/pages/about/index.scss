@@ -83,6 +83,22 @@
     }
   }
 
+  &-intro {
+    &-message {
+      position: absolute;
+      font-size: 36px;
+      left: 0;
+      right: 0;
+      margin: 4rem auto auto;
+      max-width: 300px;
+
+      & .AnimatedText-message,
+      & .AnimatedText-message-signifier {
+        color: white;
+      }
+    }
+  }
+
   &-block {
     position: absolute;
     background-color: $hauntar;

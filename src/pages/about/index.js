@@ -128,6 +128,18 @@ class AboutPage extends React.Component {
         <div className="row AboutPage-block" id="AboutPage-block-0">
           <img className="AboutPage-block-bg" id="AboutPage-block-0-bg" src={ portraitBg } />
           <img className="AboutPage-block-portrait" src={ portrait } />
+          <AnimatedText
+            automated={false}
+            messages={
+              [`Hello again, that's me below...`,
+                `My wife took this picture while I was telling her about the new rasberry pi I bought.`,
+                `I'm curious and creative, so I like to tinker around with things like that.`,
+                `The drive to take things apart and put them back together again eventually lead me to be programmer.`,
+                `I now work as a full-stack developer, which is an individual who designs and builds interesting web products`
+              ]
+            }
+            classString="AboutPage-intro-message"
+            callback={ this.greetingCallback.bind(this, 1200) } />
         </div>
         <div className="AboutPage-spacer"></div>
         <div className="row AboutPage-block">
