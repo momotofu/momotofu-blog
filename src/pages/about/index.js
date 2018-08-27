@@ -1,10 +1,14 @@
 import React from 'react'
 import SakuraTree from '../../components/sakuraTree'
 import AnimatedText from '../../components/animatedText'
-import portrait from './images/portrait.png'
-import portraitBg from './images/portrait-bg.jpg'
 import { getParameterByName } from '../../utils'
 import './index.css'
+
+// images
+import portrait from './images/portrait.png'
+import portraitBg from './images/portrait-bg.jpg'
+import remoteBg from './images/deep-space.jpg'
+
 
 class AboutPage extends React.Component {
   componentWillUnmount() {
@@ -49,8 +53,8 @@ class AboutPage extends React.Component {
     this.pinController = new ScrollMagic.Controller()
 
     new ScrollMagic.Scene()
-      .setTween(document.querySelector('.AboutPage-intro-portrait-bg'), {y: '-30%', ease: Linear.easeNone})
-      .triggerElement(document.querySelector('.AboutPage-intro'))
+      .setTween(document.querySelector('#AboutPage-block-0-bg'), {y: '-30%', ease: Linear.easeNone})
+      .triggerElement(document.querySelector('#AboutPage-block-0'))
       .addTo(this.parallaxController)
 
     //new ScrollMagic.Scene()
@@ -121,10 +125,15 @@ class AboutPage extends React.Component {
             <SakuraTree />
           </div>
         </div>
-        <div className="row AboutPage-intro">
-          <img className="AboutPage-intro-portrait-bg" src={ portraitBg } />
-          <img className="AboutPage-intro-portrait" src={ portrait } />
+        <div className="row AboutPage-block" id="AboutPage-block-0">
+          <img className="AboutPage-block-bg" id="AboutPage-block-0-bg" src={ portraitBg } />
+          <img className="AboutPage-block-portrait" src={ portrait } />
         </div>
+        <div className="AboutPage-spacer"></div>
+        <div className="row AboutPage-block">
+          <img className="AboutPage-block-bg" src={ remoteBg }/>
+        </div>
+        <div className="AboutPage-spacer"></div>
 
         {/*<div id="trigger1"></div>
         <div id="#pin1" style={{ width: '100%', height: '200px', background: 'blue' }}>

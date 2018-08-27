@@ -1,6 +1,10 @@
 @import '../../styles/color.scss';
 
 .AboutPage {
+  &-spacer {
+    height: 100vh;
+  }
+
   &-greeting {
     display: flex;
     justify-content: flex-end;
@@ -79,8 +83,9 @@
     }
   }
 
-  &-intro {
+  &-block {
     position: absolute;
+    background-color: $hauntar;
     left: 0;
     height: 100vh;
     overflow: hidden;
@@ -94,10 +99,11 @@
       height: auto;
     }
 
-    &-portrait-bg {
+    &-bg {
       height: calc(100vh + 100px);
       width: 200%;
     }
+
   }
 }
 
