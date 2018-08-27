@@ -80,6 +80,9 @@
   }
 
   &-intro {
+    position: absolute;
+    left: 0;
+
     &-portrait {
       display: block;
       max-width: 100%;

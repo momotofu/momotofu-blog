@@ -127,7 +127,7 @@ class AboutPage extends React.Component {
             <SakuraTree />
           </div>
         </div>
-        <div className="row">
+        <div className="row AboutPage-intro">
           <img className="AboutPage-intro-portrait-bg" src={ portraitBg } />
           <img className="AboutPage-intro-portrait" src={ portrait } />
         </div>
@@ -143,11 +143,13 @@ class AboutPage extends React.Component {
             <svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 481 241"><title>test</title><path id="path" d="M780,284a120,120,0,0,1-240,0,120,120,0,0,0-240,0" transform="translate(-299.5 -163.5)" style={{fill: '#fff', stroke: '#000', strokeMiterlimit:'10'}}/></svg>
           </div>
         </div> */}
+        {/*
         <div id="trigger2"></div>
         <div id="#pin2" style={{ width: '100%', height: '200px', background: 'blue' }}>
         </div>
         <section id="TestTween" style={{ width: '100%', background: 'pink', height: '700px'}}>
         </section>
+        */}
       </div>
     )
   }
