@@ -9,9 +9,9 @@ class SakuraTree extends React.Component {
 
   render() {
     return (
-      <section className="row mb-5" id="SakuraTree-container">
+      <section id="SakuraTree-container">
         <figure
-          className="col-12 SakuraTree-canvas"
+          className="SakuraTree-canvas"
           id="hero-canvas">
         </figure>
       </section>

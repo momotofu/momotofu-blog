@@ -18,7 +18,7 @@ class App extends Component {
     return (
       <div>
         <NavBar />
-        <div className="container" style={{ position: 'relative' }}>
+        <div className="container" style={{ paddingLeft: 0, paddingRight: 0 }}>
           <Route exact path="/" render={() => (
               <Redirect to="/about"/>
           )}/>
