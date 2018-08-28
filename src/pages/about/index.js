@@ -13,6 +13,8 @@ import remoteBg from './images/deep-space.jpg'
 class AboutPage extends React.Component {
   constructor(props) {
     super(props)
+
+    this.scenes = []
   }
 
   componentWillUnmount() {
@@ -20,8 +22,8 @@ class AboutPage extends React.Component {
     this.pinController = null
     this.animateSquare = null
 
-    for (let scene in this.scenes) {
-      scene.on('start', () => {})
+    for (let index in this.scenes) {
+      this.scenes[index].on('start', () => {})
     }
   }
 
@@ -29,7 +31,6 @@ class AboutPage extends React.Component {
     const Linear = window.Linear
     const ScrollMagic = window.ScrollMagic
     const anime = window.anime
-    this.scenes = []
 
     // Todo: seperate out into a component
     var animateSquare = function(context) {
