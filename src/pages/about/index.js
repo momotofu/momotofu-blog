@@ -131,7 +131,7 @@ class AboutPage extends React.Component {
           <AnimatedText
             automated={false}
             messages={
-              [`Hello again, that's me below...`,
+              [`Oh hello again, that's me below...`,
                 `My wife took this picture while I was telling her about the new rasberry pi I bought.`,
                 `I'm curious and creative, so I like to tinker around with things.`,
                 `The drive to take things apart and put them back together again eventually lead me to be programmer.`,
