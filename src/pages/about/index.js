@@ -11,6 +11,10 @@ import remoteBg from './images/deep-space.jpg'
 
 
 class AboutPage extends React.Component {
+  constructor(props) {
+    super(props)
+  }
+
   componentWillUnmount() {
     this.parallaxController = null
     this.pinController = null
@@ -97,6 +101,10 @@ class AboutPage extends React.Component {
     }, delay)
   }
 
+  introIncrementCallback() {
+
+  }
+
   redrawClickHandler() {
     if (window.draw)
       window.draw()
@@ -149,10 +157,11 @@ class AboutPage extends React.Component {
                 `My wife took this picture while I was telling her about the new rasberry pi I bought.`,
                 `I'm curious and creative, so I like to tinker around with things.`,
                 `The drive to take things apart and put them back together again eventually lead me to be programmer.`,
-                `I now work as a full-stack developer, which is an individual who designs and builds interesting web products.`
+                `I now work as a full-stack developer, so I get to design and build interesting web products. Yay!`
               ]
             }
             classString="AboutPage-intro-message"
+            incrementCallback={ () => { console.log('increment') } }
             callback={ this.greetingCallback.bind(this, 1200) } />
         </div>
         <div className="AboutPage-spacer"></div>

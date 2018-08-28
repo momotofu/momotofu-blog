@@ -86,12 +86,19 @@
   &-intro {
     &-message {
       position: absolute;
-      font-size: 36px;
-      left: 0;
-      right: 0;
+      font-size: 48px;
+      right: 32px;
       margin: 4rem auto auto;
-      max-width: 300px;
+      max-width: 560px;
       padding: 0 15px;
+      transform: translateY(50%)
+
+      @media screen and (max-width: 600px) {
+        font-size: 32px;
+        transform: none;
+        right: 0;
+        left: 0;
+      }
 
       & .AnimatedText-message,
       & .AnimatedText-message-signifier {
