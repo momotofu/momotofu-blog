@@ -15,13 +15,17 @@ class AboutPage extends React.Component {
     this.parallaxController = null
     this.pinController = null
     this.animateSquare = null
-    //this.sceneOne.on('start', () => {})
+
+    for (let scene in this.scenes) {
+      scene.on('start', () => {})
+    }
   }
 
   componentDidMount() {
     const Linear = window.Linear
     const ScrollMagic = window.ScrollMagic
     const anime = window.anime
+    this.scenes = []
 
     // Todo: seperate out into a component
     var animateSquare = function(context) {
@@ -52,10 +56,11 @@ class AboutPage extends React.Component {
 
     this.pinController = new ScrollMagic.Controller()
 
-    new ScrollMagic.Scene()
+    this.scenes.push(new ScrollMagic.Scene()
       .setTween(document.querySelector('#AboutPage-block-0-bg'), {y: '-30%', ease: Linear.easeNone})
       .triggerElement(document.querySelector('#AboutPage-block-0'))
-      .addTo(this.parallaxController)
+      .on('start', this.activateText.bind(this, 'intro'))
+      .addTo(this.parallaxController))
 
     //new ScrollMagic.Scene()
       //.setTween(document.getElementById('#backdrop'), {x: '-300%', ease: Linear.easeNone})
@@ -97,6 +102,12 @@ class AboutPage extends React.Component {
       window.draw()
   }
 
+  activateText(name) {
+    if (name in this.refs) {
+      this.refs[name].toggleActivate()
+    }
+  }
+
   render() {
     const recipient = getParameterByName('recipient')
 
@@ -130,7 +141,9 @@ class AboutPage extends React.Component {
           <img className="AboutPage-block-bg" id="AboutPage-block-0-bg" src={ portraitBg } />
           <img className="AboutPage-block-portrait" src={ portrait } />
           <AnimatedText
-            automated={false}
+            ref="intro"
+            active={ false }
+            automated={ false }
             messages={
               [`Oh hello again, that's me below...`,
                 `My wife took this picture while I was telling her about the new rasberry pi I bought.`,

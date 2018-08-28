@@ -189,6 +189,12 @@ class AnimatedText extends React.Component {
       return ''
   }
 
+  toggleActivate() {
+    this.setState({
+      active: !this.state.active
+    })
+  }
+
   render() {
     if (!this.targetId)
       this.targetId = 'AnimatedText-' + generateRandomIDHash()
