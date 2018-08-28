@@ -104,7 +104,8 @@ class AboutPage extends React.Component {
       <div className="AboutPage">
         <div className="AboutPage-greeting">
           <AnimatedText
-            automated={false}
+            automated={ false }
+            active={ true }
             messages={
               [`Hello${ recipient ? ' ' + recipient : ''},|Welcome to my webby bio.| I'm Christopher...`,
               `Check it out!`,

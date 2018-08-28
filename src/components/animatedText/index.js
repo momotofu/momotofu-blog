@@ -9,7 +9,8 @@ class AnimatedText extends React.Component {
 
     this.state = {
       currentMessageIndex: -1,
-      automated: this.props.automated
+      automated: this.props.automated,
+      active: this.props.active
     }
 
     this.anime = window.anime
@@ -93,6 +94,10 @@ class AnimatedText extends React.Component {
   }
 
   componentDidUpdate() {
+    if (this.state.active && this.state.currentMessageIndex == -1) {
+      this.incrementMessageIndex()
+    }
+
     this.addOrRemoveFade(false)
 
     const animateMessage = function() {
@@ -134,9 +139,13 @@ class AnimatedText extends React.Component {
   componentDidMount() {
     this.continueSignifier = document.querySelector(`#${this.targetId}-signifier`)
     this.addOrRemoveFade(false)
-    this.setState({
-      currentMessageIndex: this.state.currentMessageIndex + 1
-    })
+
+    if (this.state.active) {
+      this.setState({
+        currentMessageIndex: this.state.currentMessageIndex + 1
+      })
+    }
+
   }
 
   renderMessageHTML() {
