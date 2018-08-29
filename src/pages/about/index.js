@@ -17,6 +17,7 @@ class AboutPage extends React.Component {
     super(props)
 
     this.scenes = []
+    this.anime = window.anime
     this.introPhotos = {
         0: portrait0,
         2: portrait1,
@@ -38,26 +39,6 @@ class AboutPage extends React.Component {
   componentDidMount() {
     const Linear = window.Linear
     const ScrollMagic = window.ScrollMagic
-    const anime = window.anime
-
-    // Todo: seperate out into a component
-    var animateSquare = function(context) {
-      var path = anime.path('#path')
-
-      // Can't disable scrollmagic event. This prevents react from
-      // catching the error and crashing the app.
-      try { path() } catch(e) { return }
-
-      const motionPath = anime({
-        targets: '#motionPath .motionSquare',
-        translateX: path('x'),
-        translateY: path('y'),
-        rotate: path('angle'),
-        easing: 'easeOutSine',
-        duration: 1600,
-      })
-    }
-
 
     // Scrollmagic start
     this.parallaxController = new ScrollMagic.Controller({
@@ -65,7 +46,6 @@ class AboutPage extends React.Component {
         duration: '200%'
       }
     })
-
 
     this.pinController = new ScrollMagic.Controller()
 
@@ -97,8 +77,30 @@ class AboutPage extends React.Component {
 
   }
 
+  //animatePhoto(targets) {
+    //return this.anime({
+      //targets: targets,
+      //translateX: {
+        //value: -50,
+        //duration: 400
+      //},
+      //rotate: {
+        //value: -5,
+        //duration: 300,
+        //easing: 'easeInSine'
+      //},
+      //scale: {
+        //value: 1.1,
+        //duration: 300,
+        //easing: 'easeInQuart'
+      //},
+      //elasticity: 200,
+      //direction: 'alternate',
+      //delay: 250 // All properties except 'scale' inherit 250ms delay
+    //});
+  //}
+
   greetingCallback(delay) {
-    console.log('callback called')
     const animatedMessageEl = document.querySelector('.AboutPage-greeting-message')
     setTimeout(() => {
       if (!animatedMessageEl) return
@@ -116,8 +118,9 @@ class AboutPage extends React.Component {
   introIncrementCallback(index) {
     const imageElement = document.querySelector('#AboutPage-block-intro-portrait')
 
-    if (index in this.introPhotos)
+    if (index in this.introPhotos) {
       imageElement.src = this.introPhotos[index]
+    }
   }
 
   redrawClickHandler() {
