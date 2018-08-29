@@ -161,7 +161,7 @@ class AboutPage extends React.Component {
           </div>
         </div>
         <div className="row AboutPage-block" id="AboutPage-block-0" style={{ background: '#010022'}}>
-          <img className="AboutPage-block-bg" id="AboutPage-block-0-bg" src={ portraitBg } />
+          <img className="AboutPage-block-bg" id="AboutPage-block-0-bg" src={ portraitBg } style={{ opacity: 0.7 }}/>
           <img className="AboutPage-block-portrait" id="AboutPage-block-intro-portrait" src={ portrait0 } />
           <AnimatedText
             ref="intro"
