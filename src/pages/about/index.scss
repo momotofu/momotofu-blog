@@ -88,10 +88,9 @@
       position: absolute;
       font-size: 48px;
       right: 32px;
-      margin: 4rem auto auto;
       max-width: 560px;
       padding: 0 15px;
-      transform: translateY(50%);
+      transform: translate(-15vw, 30vh);
 
       & .AnimatedText-message,
       & .AnimatedText-message-signifier {
@@ -104,7 +103,7 @@
         max-width: 300px;
         right: 0;
         left: 0;
-        margin-top: 1rem;
+        margin: 2rem auto auto;
       }
     }
   }

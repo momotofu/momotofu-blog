@@ -168,11 +168,11 @@ class AboutPage extends React.Component {
             active={ false }
             automated={ false }
             messages={
-              [`Oh hello again, that's me below...`,
-                `My wife took this picture while I was telling her about the new rasberry pi I bought.`,
-                `Thats us!`,
-                `I'm curious and creative, so I like to tinker around with things.`,
-                `The drive to take things apart and put them back together again eventually lead me to be programmer.`,
+              [`Oh hello again, this is me...`,
+                `...my wife took this picture while I was telling her about the new rasberry pi I bought.`,
+                `Thats me and my better half! Her name is Michan.`,
+                `My wife took this photo too while I was sculpting clay. P.S. I like making stuff`,
+                `Since I was kid I've always had a drive to take things apart and put them back together. This eventually lead me to be programmer`,
                 `I now work as a full-stack developer, so I get to design and build interesting web products.`
               ]
             }
