@@ -78,7 +78,7 @@ class AnimatedText extends React.Component {
       return
 
     if (this.props.incrementCallback)
-      this.props.incrementCallback()
+      this.props.incrementCallback(this.state.currentMessageIndex)
 
     this.setState({
       currentMessageIndex: this.state.currentMessageIndex + 1

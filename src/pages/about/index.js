@@ -98,9 +98,12 @@ class AboutPage extends React.Component {
   }
 
   greetingCallback(delay) {
+    console.log('callback called')
     const animatedMessageEl = document.querySelector('.AboutPage-greeting-message')
     setTimeout(() => {
+      if (!animatedMessageEl) return
       animatedMessageEl.classList.toggle('fade')
+
       setTimeout(() => {
         animatedMessageEl.parentNode.removeChild(animatedMessageEl)
         document.querySelector('.AboutPage-greeting-control-container')
