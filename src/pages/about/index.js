@@ -5,7 +5,9 @@ import { getParameterByName } from '../../utils'
 import './index.css'
 
 // images
-import portrait from './images/portrait.png'
+import portrait0 from './images/portrait_0.png'
+import portrait1 from './images/portrait_1.png'
+import portrait2 from './images/portrait_2.png'
 import portraitBg from './images/portrait-bg.jpg'
 import remoteBg from './images/deep-space.jpg'
 
@@ -15,6 +17,11 @@ class AboutPage extends React.Component {
     super(props)
 
     this.scenes = []
+    this.introPhotos = {
+        0: portrait0,
+        2: portrait1,
+        1: portrait2
+    }
   }
 
   componentWillUnmount() {
@@ -22,6 +29,7 @@ class AboutPage extends React.Component {
     this.pinController = null
     this.animateSquare = null
 
+    // this is needed otherwise scenese will through an exception
     for (let index in this.scenes) {
       this.scenes[index].on('start', () => {})
     }
@@ -102,8 +110,11 @@ class AboutPage extends React.Component {
     }, delay)
   }
 
-  introIncrementCallback() {
+  introIncrementCallback(index) {
+    const imageElement = document.querySelector('#AboutPage-block-intro-portrait')
 
+    if (index in this.introPhotos)
+      imageElement.src = this.introPhotos[index]
   }
 
   redrawClickHandler() {
@@ -148,7 +159,7 @@ class AboutPage extends React.Component {
         </div>
         <div className="row AboutPage-block" id="AboutPage-block-0">
           <img className="AboutPage-block-bg" id="AboutPage-block-0-bg" src={ portraitBg } />
-          <img className="AboutPage-block-portrait" src={ portrait } />
+          <img className="AboutPage-block-portrait" id="AboutPage-block-intro-portrait" src={ portrait0 } />
           <AnimatedText
             ref="intro"
             active={ false }
@@ -156,13 +167,14 @@ class AboutPage extends React.Component {
             messages={
               [`Oh hello again, that's me below...`,
                 `My wife took this picture while I was telling her about the new rasberry pi I bought.`,
+                `Thats us!`,
                 `I'm curious and creative, so I like to tinker around with things.`,
                 `The drive to take things apart and put them back together again eventually lead me to be programmer.`,
-                `I now work as a full-stack developer, so I get to design and build interesting web products. Yay!`
+                `I now work as a full-stack developer, so I get to design and build interesting web products.`
               ]
             }
             classString="AboutPage-intro-message"
-            incrementCallback={ () => { console.log('increment') } }
+            incrementCallback={ this.introIncrementCallback.bind(this) }
             callback={ this.greetingCallback.bind(this, 1200) } />
         </div>
         <div className="AboutPage-spacer"></div>
