@@ -39,6 +39,7 @@ class AboutPage extends React.Component {
   componentDidMount() {
     const Linear = window.Linear
     const ScrollMagic = window.ScrollMagic
+    this.introBlockImage = document.querySelector('#AboutPage-block-intro-portrait')
 
     // Scrollmagic start
     this.parallaxController = new ScrollMagic.Controller({
@@ -116,10 +117,8 @@ class AboutPage extends React.Component {
   }
 
   introIncrementCallback(index) {
-    const imageElement = document.querySelector('#AboutPage-block-intro-portrait')
-
     if (index in this.introPhotos) {
-      imageElement.src = this.introPhotos[index]
+      this.introBlockImage.src = this.introPhotos[index]
     }
   }
 
