@@ -133,6 +133,7 @@ class AboutPage extends React.Component {
 
   render() {
     const recipient = getParameterByName('recipient')
+    const introMessage = getParameterByName('introMessage')
 
     return (
       <div className="AboutPage">
@@ -168,17 +169,21 @@ class AboutPage extends React.Component {
             active={ false }
             automated={ false }
             messages={
-              [`Oh hello again, this is me...`,
+              [`Oh hello again${ recipient ? ' ' + recipient : ''}, this is me...`,
                 `...my wife took this picture while I was telling her about the new rasberry pi I bought.`,
-                `Thats me and my better half! Her name is Michan.`,
+                `Thats us! My better half. Her name is Michan.`,
                 `My wife took this photo too while I was sculpting clay. P.S. I like making stuff.`,
-                `Since I was kid I've always had a drive to take things apart and put them back together. This eventually lead me to be programmer`,
-                `I now work as a full-stack developer, so I get to design and build interesting web products.`
+                `Since I was kid I've always had a drive to take things apart and put them back together. This eventually lead me to be software engineer.`,
+                `${ introMessage ? introMessage : 'I now work as a full-stack developer, so I get to design and build interesting web products.'}`
               ]
             }
             classString="AboutPage-intro-message"
             incrementCallback={ this.introIncrementCallback.bind(this) }
             callback={ this.greetingCallback.bind(this, 1200) } />
+        </div>
+        <div className="AboutPage-spacer"></div>
+        <div className="row AboutPage-block">
+          <img className="AboutPage-block-bg" src={ remoteBg }/>
         </div>
         <div className="AboutPage-spacer"></div>
         <div className="row AboutPage-block">
