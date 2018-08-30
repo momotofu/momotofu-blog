@@ -8,6 +8,7 @@ import './index.css'
 import portrait0 from './images/portrait_0.png'
 import portrait1 from './images/portrait_1.png'
 import portrait2 from './images/portrait_2.png'
+import portrait3 from './images/portrait_3.png'
 import portraitBg from './images/portrait-bg.jpg'
 import arrow from './images/arrow.png'
 import remoteBg from './images/deep-space.jpg'
@@ -22,7 +23,8 @@ class AboutPage extends React.Component {
     this.introPhotos = {
         0: portrait0,
         2: portrait1,
-        1: portrait2
+        1: portrait2,
+        3: portrait3
     }
   }
 
