@@ -118,7 +118,7 @@ class AboutPage extends React.Component {
 
   introIncrementCallback(index) {
     if (index in this.introPhotos) {
-      this.introBlockImage.src = this.introPhotos[index]
+      this.introBlockImage.src = this.introPhotos[index] + `?${ Math.random()}`
     }
   }
 
