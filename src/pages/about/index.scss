@@ -130,6 +130,12 @@
     }
   }
 
+  &-remote {
+    &-gif {
+      position: absolute;
+    }
+  }
+
   &-block {
     position: absolute;
     background-color: $hauntar;

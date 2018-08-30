@@ -11,6 +11,7 @@ import portrait2 from './images/portrait_2.png'
 import portrait3 from './images/portrait_3.png'
 import portraitBg from './images/portrait-bg.jpg'
 import arrow from './images/arrow.png'
+import remote from './images/remote.gif'
 import remoteBg from './images/deep-space.jpg'
 
 
@@ -215,6 +216,7 @@ class AboutPage extends React.Component {
         <div className="AboutPage-spacer"></div>
         <div className="AboutPage-block d-flex">
           <img className="AboutPage-block-bg" src={ remoteBg }/>
+          <img className="AboutPage-remote-gif" src={ remote } />
         </div>
         <div className="AboutPage-spacer"></div>
         <div className="AboutPage-block d-flex">
