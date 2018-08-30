@@ -113,6 +113,7 @@
     background-color: $hauntar;
     left: 0;
     height: 100vh;
+    width: 100vw;
     overflow: hidden;
 
     &-portrait {
@@ -143,7 +144,7 @@
     }
 
     &-bg {
-      height: calc(100vh + 100px);
+      height: calc(100vh + 200px);
       width: 200%;
     }
 

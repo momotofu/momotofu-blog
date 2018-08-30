@@ -30,11 +30,11 @@ def draw_tree():
     t = turtle.Turtle()
     t.hideturtle()
     t.penup()
-    t.setpos(0, ${window.visualViewport.width > 470 ? -300 : -250})
+    t.setpos(0, ${window.innerWidth > 470 ? -300 : -250})
     t.pendown()
     t.color(wood_color)
     t.speed(0)
     t.left(90)
-    branch(t, 100, 20, ${window.visualViewport.width > 470 ? 0.8 : 0.68})
+    branch(t, 100, 20, ${window.innerWidth > 470 ? 0.8 : 0.68})
 
 draw_tree()`})();
