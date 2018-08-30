@@ -133,6 +133,13 @@
       &:active {
         transform: translateX(-10px);
       }
+
+      @media screen and (max-width: 600px) {
+        &:active, &:hover {
+          transform: none;
+          cursor: none;
+        }
+      }
     }
 
     &-bg {

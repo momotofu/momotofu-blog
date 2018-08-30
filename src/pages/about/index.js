@@ -164,7 +164,7 @@ class AboutPage extends React.Component {
           </div>
         </div>
         <div className="row AboutPage-block" id="AboutPage-block-0" style={{ background: '#010022'}}>
-          <img className="AboutPage-block-bg" id="AboutPage-block-0-bg" src={ portraitBg } style={{ opacity: 0.7 }}/>
+          <img className="AboutPage-block-bg" id="AboutPage-block-0-bg" src={ portraitBg } style={{ opacity: 0.7, background: '#010022' }}/>
           <img className="AboutPage-block-portrait" id="AboutPage-block-intro-portrait" src={ portrait0 } />
           <AnimatedText
             ref="intro"
@@ -174,7 +174,7 @@ class AboutPage extends React.Component {
               [`Oh hello again${ recipient ? ' ' + recipient : ''}, this is me...`,
                 `...my wife took this picture while I was telling her about the new rasberry pi I bought.`,
                 `Thats us! My better half. Her name is Michan.`,
-                `My wife took this photo too while I was sculpting clay. P.S. I like making stuff.`,
+                `This is me sculpting clay. P.S. I like making stuff.`,
                 `Since I was kid I've always had a drive to take things apart and put them back together. This eventually lead me to be software engineer.`,
                 `${ introMessage ? introMessage : 'I now work as a full-stack developer, so I get to design and build interesting web products.'}`
               ]
