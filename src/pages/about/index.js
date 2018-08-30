@@ -139,9 +139,11 @@ class AboutPage extends React.Component {
         animatedMessageEl.style.zIndex = -1
 
         const introArrow = document.querySelector('#AboutPage-intro-arrow')
+        const introCTA = document.querySelector('.AboutPage-intro-cta')
 
         introArrow.classList.add('moveUpDown')
         introArrow.classList.add('show')
+        introCTA.classList.add('show')
 
       }, 400)
     }, delay)
@@ -192,6 +194,7 @@ class AboutPage extends React.Component {
           <img className="AboutPage-block-bg" id="AboutPage-block-0-bg" src={ portraitBg } style={{ opacity: 0.7, background: '#010022' }}/>
           <img className="AboutPage-block-portrait" id="AboutPage-block-intro-portrait" src={ portrait0 } />
           <img className="AboutPage-intro-arrow" src={ arrow } id="AboutPage-intro-arrow" />
+          <h1 className="AboutPage-intro-cta">Keep scrolling</h1>
           <AnimatedText
             ref="intro"
             active={ false }

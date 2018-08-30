@@ -117,6 +117,17 @@
       max-height: 107px;
       opacity: 0;
     }
+
+    &-cta {
+      font-family: 'chris-regular';
+      position: absolute;
+      margin-top: 12rem;
+      opacity: 0;
+      left: 0;
+      right: 0;
+      text-align: center;
+      color: $bubbleBath;
+    }
   }
 
   &-block {
