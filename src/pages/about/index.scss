@@ -32,10 +32,12 @@
         outline: none;
       }
 
-      &:hover {
-        cursor: pointer;
-        animation: none;
-        border-bottom: solid 3px $neonPink;
+      @media (hover:hover) {
+        &:hover {
+          cursor: pointer;
+          animation: none;
+          border-bottom: solid 3px $neonPink;
+        }
       }
 
       &-container {
@@ -106,6 +108,15 @@
         margin: 2rem auto auto;
       }
     }
+
+    &-arrow {
+      position: absolute;
+      left: 0;
+      right: 0;
+      margin: 2rem auto auto;
+      max-height: 107px;
+      opacity: 0;
+    }
   }
 
   &-block {
@@ -166,4 +177,17 @@
   display: flex;
   position: absolute;
   z-index: -1;
+}
+
+.moveUpDown {
+  animation: moveUpDown 1s ease infinite;
+}
+
+@keyframes moveUpDown {
+  0%, 100% {
+    top: 0;
+  }
+  50% {
+    top: 30px;
+  }
 }

@@ -9,6 +9,7 @@ import portrait0 from './images/portrait_0.png'
 import portrait1 from './images/portrait_1.png'
 import portrait2 from './images/portrait_2.png'
 import portraitBg from './images/portrait-bg.jpg'
+import arrow from './images/arrow.png'
 import remoteBg from './images/deep-space.jpg'
 
 
@@ -108,11 +109,13 @@ class AboutPage extends React.Component {
       animatedMessageEl.classList.toggle('fade')
 
       setTimeout(() => {
-        animatedMessageEl.parentNode.removeChild(animatedMessageEl)
+        if (!animatedMessageEl) return
+        animatedMessageEl.style.zIndex = -1
+
         document.querySelector('.AboutPage-greeting-control-container')
           .classList
           .toggle('show')
-      }, 300)
+      }, 400)
     }, delay)
   }
 
@@ -120,6 +123,26 @@ class AboutPage extends React.Component {
     if (index in this.introPhotos) {
       this.introBlockImage.src = this.introPhotos[index] + `?${ Math.random()}`
     }
+  }
+
+  introCallback(delay) {
+    const animatedMessageEl = document.querySelector('.AboutPage-intro-message')
+
+    setTimeout(() => {
+      if (!animatedMessageEl) return
+      animatedMessageEl.classList.toggle('fade')
+
+      setTimeout(() => {
+        if (!animatedMessageEl) return
+        animatedMessageEl.style.zIndex = -1
+
+        const introArrow = document.querySelector('#AboutPage-intro-arrow')
+
+        introArrow.classList.add('moveUpDown')
+        introArrow.classList.add('show')
+
+      }, 400)
+    }, delay)
   }
 
   redrawClickHandler() {
@@ -166,6 +189,7 @@ class AboutPage extends React.Component {
         <div className="AboutPage-block d-flex" id="AboutPage-block-0" style={{ background: '#010022'}}>
           <img className="AboutPage-block-bg" id="AboutPage-block-0-bg" src={ portraitBg } style={{ opacity: 0.7, background: '#010022' }}/>
           <img className="AboutPage-block-portrait" id="AboutPage-block-intro-portrait" src={ portrait0 } />
+          <img className="AboutPage-intro-arrow" src={ arrow } id="AboutPage-intro-arrow" />
           <AnimatedText
             ref="intro"
             active={ false }
@@ -175,13 +199,13 @@ class AboutPage extends React.Component {
                 `...my wife took this picture while I was telling her about the new rasberry pi I bought.`,
                 `Thats us! My better half. Her name is Michan.`,
                 `This is me sculpting clay. P.S. I like making stuff.`,
-                `Since I was kid I've always had a drive to take things apart and put them back together. This eventually lead me to be software engineer.`,
+                `Since I was kid I've always had a drive to take things apart and put them back together. This eventually lead me to be a software engineer.`,
                 `${ introMessage ? introMessage : 'I now work as a full-stack developer, so I get to design and build interesting web products.'}`
               ]
             }
             classString="AboutPage-intro-message"
             incrementCallback={ this.introIncrementCallback.bind(this) }
-            callback={ this.greetingCallback.bind(this, 1200) } />
+            callback={ this.introCallback.bind(this, 1200) } />
         </div>
         <div className="AboutPage-spacer"></div>
         <div className="AboutPage-block d-flex">
