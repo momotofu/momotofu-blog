@@ -43,10 +43,12 @@
       outline: none;
     }
 
-    &:hover {
-      cursor: pointer;
-      animation: none;
-      border-bottom: solid 3px $neonPink;
+    @media (hover:hover) {
+      &:hover {
+        cursor: pointer;
+        animation: none;
+        border-bottom: solid 3px $neonPink;
+      }
     }
   }
 }
