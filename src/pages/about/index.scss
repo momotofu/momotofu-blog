@@ -137,7 +137,7 @@
       transform: translateY(50%);
 
       @media screen and (max-width: 600px) {
-        bottom: 29vh;
+        bottom: 34vh;
         left: 0;
         right: 0;
         margin: auto;
@@ -149,6 +149,7 @@
 
       @media screen and (max-width: 600px) {
         left: 0;
+        top: 6vh;
       }
     }
   }
