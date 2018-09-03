@@ -48,19 +48,27 @@ class AboutPage extends React.Component {
     this.introBlockImage = document.querySelector('#AboutPage-block-intro-portrait')
 
     // Scrollmagic start
-    this.parallaxController = new ScrollMagic.Controller({
+    this.parallaxController0 = new ScrollMagic.Controller({
       globalSceneOptions: {
         duration: '200%'
       }
     })
 
-    this.pinController = new ScrollMagic.Controller()
+    this.parallaxController1 = new ScrollMagic.Controller()
 
     this.scenes.push(new ScrollMagic.Scene()
-      .setTween(document.querySelector('#AboutPage-block-0-bg'), {y: '-30%', ease: Linear.easeNone})
+      .setTween(document.querySelector('#AboutPage-block-0-bg'), {y: '30%', ease: Linear.easeNone})
       .triggerElement(document.querySelector('#AboutPage-block-0'))
       .on('start', this.activateText.bind(this, 'intro'))
-      .addTo(this.parallaxController))
+      .addTo(this.parallaxController0))
+
+    this.scenes.push(new ScrollMagic.Scene({
+      duration: '200%'
+    })
+      .setTween(document.querySelector('#AboutPage-block-1-bg'), {x: '-15%', ease: Linear.easeNone})
+      .triggerElement(document.querySelector('#AboutPage-block-1'))
+      .on('start', this.activateText.bind(this, 'remote'))
+      .addTo(this.parallaxController1))
 
     //new ScrollMagic.Scene()
       //.setTween(document.getElementById('#backdrop'), {x: '-300%', ease: Linear.easeNone})
@@ -216,8 +224,8 @@ class AboutPage extends React.Component {
             callback={ this.introCallback.bind(this, 1200) } />
         </div>
         <div className="AboutPage-spacer"></div>
-        <div className="AboutPage-block d-flex">
-          <img className="AboutPage-block-bg" src={ remoteBg }/>
+        <div className="AboutPage-block d-flex" id="AboutPage-block-1">
+          <img className="AboutPage-block-bg" id="AboutPage-block-1-bg" src={ remoteBg }/>
           <AnimateImages
             autoStart={ false }
             classes="AboutPage-remote-movie"
