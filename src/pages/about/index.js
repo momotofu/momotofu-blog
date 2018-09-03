@@ -202,7 +202,11 @@ class AboutPage extends React.Component {
           </div>
         </div>
         <div className="AboutPage-block d-flex" id="AboutPage-block-0" style={{ background: '#010022'}}>
-          <img className="AboutPage-block-bg" id="AboutPage-block-0-bg" src={ portraitBg } style={{ opacity: 0.7, background: '#010022' }}/>
+          <img
+            className="AboutPage-block-bg"
+            id="AboutPage-block-0-bg"
+            src={ portraitBg }
+            style={{ opacity: 0.7, background: '#010022', marginTop: '-10%' }}/>
           <img className="AboutPage-block-portrait" id="AboutPage-block-intro-portrait" src={ portrait0 } />
           <img className="AboutPage-intro-arrow" src={ arrow } id="AboutPage-intro-arrow" />
           <h1 className="AboutPage-intro-cta">Keep scrolling</h1>
@@ -226,6 +230,20 @@ class AboutPage extends React.Component {
         <div className="AboutPage-spacer"></div>
         <div className="AboutPage-block d-flex" id="AboutPage-block-1">
           <img className="AboutPage-block-bg" id="AboutPage-block-1-bg" src={ remoteBg }/>
+          <AnimatedText
+            ref="remote"
+            active={ false }
+            automated={ false }
+            messages={
+              [`Did I fulfilled my childhood dream of speaking Japanese and living in Japan?`,
+                `I sure did!`,
+                `I work remotely from Japan for the USA. The best of both worlds.`,
+                `I make up for the time difference by waking up really early.`,`I'm punctual and flexible like minty bubble gum...`,
+                `Mmmmmhhmm`]
+            }
+            classString="AboutPage-intro-message AboutPage-remote-message"
+            incrementCallback={ this.introIncrementCallback.bind(this) }
+            callback={ this.introCallback.bind(this, 1200) } />
           <AnimateImages
             autoStart={ false }
             classes="AboutPage-remote-movie"

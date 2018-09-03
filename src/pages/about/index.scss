@@ -133,7 +133,7 @@
   &-remote {
     &-movie {
       position: absolute;
-      right: 32px;
+      right: 10vw;
       transform: translateY(50%);
 
       @media screen and (max-width: 600px) {
@@ -142,6 +142,10 @@
         right: 0;
         margin: auto;
       }
+    }
+
+    &-message {
+      left: 25vw;
     }
   }
 
