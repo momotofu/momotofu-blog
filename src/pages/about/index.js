@@ -236,7 +236,7 @@ class AboutPage extends React.Component {
             automated={ false }
             messages={
               [`Did I fulfilled my childhood dream of speaking Japanese and living in Japan?`,
-                `I sure did!`,
+                `I sure did! All that DragonBall Z eventually lead to something great.`,
                 `I work remotely from Japan for the USA. The best of both worlds.`,
                 `I make up for the time difference by waking up really early.`,`I'm punctual and flexible like minty bubble gum...`,
                 `Mmmmmhhmm`]
