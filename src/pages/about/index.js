@@ -245,7 +245,7 @@ class AboutPage extends React.Component {
             incrementCallback={ this.introIncrementCallback.bind(this) }
             callback={ this.introCallback.bind(this, 1200) } />
           <AnimateImages
-            autoStart={ false }
+            autoStart={ true }
             classes="AboutPage-remote-movie"
             images={ [remote0, remote1] }
             intervalDelay={ 300 }
