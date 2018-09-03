@@ -6,10 +6,13 @@ class AnimateImages extends React.Component {
    * Takes a series of images and reveals them
    * similar to a movie real.
    *
-   * component props are:
+   * state:
    * - index: index of image that is displayed
-   * - intervalDelay: delay between each progression of index
+   *
+   * component props are:
+   * - intervalDelay: delay in milliseconds between each progression of index
    * - images: array of images to iterate through
+   * - classes: classes string that is added to the image element
    */
 
   constructor(props) {
@@ -22,7 +25,7 @@ class AnimateImages extends React.Component {
 
   play() {
     const index = this.state.index
-    const imageLength = this.state.images.length
+    const imageLength = this.props.images.length
 
     if (index >= imageLength - 1)
       this.setState({ index: 0 }) // restart sequence
@@ -31,9 +34,20 @@ class AnimateImages extends React.Component {
   }
 
   componentDidMount() {
-    this.timerID = setInterval(() => {
-      this.play()
-    }, this.props.intervalDeley)
+    if (this.props.autoStart) {
+      this.timerID = setInterval(() => {
+        this.play()
+      }, this.props.intervalDelay)
+    }
+
+  }
+
+  pause() {
+    clearInterval(this.timerID)
+  }
+
+  componentWillUnmount() {
+    this.pause()
   }
 
   render() {

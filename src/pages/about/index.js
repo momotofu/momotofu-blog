@@ -1,6 +1,7 @@
 import React from 'react'
 import SakuraTree from '../../components/sakuraTree'
 import AnimatedText from '../../components/animatedText'
+import AnimateImages from '../../components/animateImages'
 import { getParameterByName } from '../../utils'
 import './index.css'
 
@@ -11,7 +12,8 @@ import portrait2 from './images/portrait_2.png'
 import portrait3 from './images/portrait_3.png'
 import portraitBg from './images/portrait-bg.jpg'
 import arrow from './images/arrow.png'
-import remote from './images/remote.gif'
+import remote0 from './images/remote_0.png'
+import remote1 from './images/remote_1.png'
 import remoteBg from './images/deep-space.jpg'
 
 
@@ -216,7 +218,12 @@ class AboutPage extends React.Component {
         <div className="AboutPage-spacer"></div>
         <div className="AboutPage-block d-flex">
           <img className="AboutPage-block-bg" src={ remoteBg }/>
-          <img className="AboutPage-remote-gif" src={ remote } />
+          <AnimateImages
+            autoStart={ false }
+            classes="AboutPage-remote-movie"
+            images={ [remote0, remote1] }
+            intervalDelay={ 300 }
+          />
         </div>
         <div className="AboutPage-spacer"></div>
         <div className="AboutPage-block d-flex">

@@ -131,8 +131,17 @@
   }
 
   &-remote {
-    &-gif {
+    &-movie {
       position: absolute;
+      right: 32px;
+      transform: translateY(50%);
+
+      @media screen and (max-width: 600px) {
+        bottom: 15px;
+        left: 0;
+        right: 0;
+        margin: auto;
+      }
     }
   }
 
