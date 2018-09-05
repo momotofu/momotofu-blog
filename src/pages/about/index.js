@@ -256,7 +256,7 @@ class AboutPage extends React.Component {
             messages={
               [`Did I mention I fulfilled my childhood dream of speaking Japanese and living in Japan?`,
                 `I sure did! All that DragonBall Z eventually lead to something great.`,
-                `I work REMOTELY from Japan for the USA.`,
+                `I work remotely from Japan for the USA.`,
                 `I make up for the time difference by waking up really early.`,
                 `My punctuality and flexibility are like minty bubble gum...`,
                 `Mmmmmhhmm`]

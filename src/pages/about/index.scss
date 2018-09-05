@@ -175,8 +175,16 @@
       transform: translateY(calc(50vh - 77px));
 
       @media (hover:hover) {
-        cursor: pointer;
+        &:hover {
+          cursor: pointer;
+          opacity: 0.8;
+        }
       }
+
+      &:active {
+        opacity: 1;
+      }
+
 
       &-signifier {
         font-family: 'chris-regular';
