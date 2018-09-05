@@ -138,8 +138,8 @@ class AboutPage extends React.Component {
     }
   }
 
-  introCallback(delay) {
-    const animatedMessageEl = document.querySelector('.AboutPage-intro-message')
+  continueCallback(delay, selector) {
+    const animatedMessageEl = document.querySelector(`.AboutPage-${selector}-message`)
 
     setTimeout(() => {
       if (!animatedMessageEl) return
@@ -149,8 +149,8 @@ class AboutPage extends React.Component {
         if (!animatedMessageEl) return
         animatedMessageEl.style.zIndex = -1
 
-        const introArrow = document.querySelector('#AboutPage-intro-arrow')
-        const introCTA = document.querySelector('.AboutPage-intro-cta')
+        const introArrow = document.querySelector(`#AboutPage-${selector}-arrow`)
+        const introCTA = document.querySelector(`#AboutPage-${selector}-cta`)
 
         introArrow.classList.add('moveUpDown')
         introArrow.classList.add('show')
@@ -225,11 +225,13 @@ class AboutPage extends React.Component {
             }
             classString="AboutPage-intro-message"
             incrementCallback={ this.introIncrementCallback.bind(this) }
-            callback={ this.introCallback.bind(this, 1200) } />
+            callback={ this.continueCallback.bind(this, 1200, 'intro') } />
         </div>
         <div className="AboutPage-spacer"></div>
         <div className="AboutPage-block d-flex" id="AboutPage-block-1">
           <img className="AboutPage-block-bg" id="AboutPage-block-1-bg" src={ remoteBg }/>
+          <img className="AboutPage-intro-arrow" src={ arrow } id="AboutPage-remote-arrow" />
+          <h1 className="AboutPage-intro-cta" id="AboutPage-remote-cta">Keep scrolling</h1>
           <AnimatedText
             ref="remote"
             active={ false }
@@ -243,7 +245,7 @@ class AboutPage extends React.Component {
             }
             classString="AboutPage-intro-message AboutPage-remote-message"
             incrementCallback={ this.introIncrementCallback.bind(this) }
-            callback={ this.introCallback.bind(this, 1200) } />
+            callback={ this.continueCallback.bind(this, 1200, 'remote') } />
           <AnimateImages
             autoStart={ true }
             classes="AboutPage-remote-movie"
