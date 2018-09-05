@@ -177,8 +177,20 @@ class AboutPage extends React.Component {
     }
   }
 
-  toggleLightSwitch() {
+  lightSwitchClickHandler() {
+    // toggle lightswitch
     this.refs['lightSwitch'].increment()
+
+    // toggle #AboutPage-contact element background color
+    const offColor = 'rgb(12, 3, 24)'
+    const contactElement = document.querySelector('.AboutPage-contact')
+
+    const color = getComputedStyle(contactElement ,null).getPropertyValue('background-color');
+
+    if (color === offColor)
+      contactElement.style.backgroundColor = '#fff'
+    else
+      contactElement.style.backgroundColor = offColor
   }
 
   render() {
@@ -220,7 +232,6 @@ class AboutPage extends React.Component {
           <AnimateImages
             ref={ 'introPortrait' }
             autoStart={ false }
-            onClick={ this.toggleLightSwitch.bind(this) }
             classes="AboutPage-block-portrait"
             images={ [portrait0, portrait1, portrait2, portrait3] }
             intervalDelay={ 0 }
@@ -271,12 +282,12 @@ class AboutPage extends React.Component {
           />
         </div>
         <div className="AboutPage-spacer"></div>
-        <div className="AboutPage-block d-flex">
+        <div className="AboutPage-block d-flex AboutPage-contact">
           <h3 className="AboutPage-contact-switch-signifier">Click</h3>
           <AnimateImages
             ref={ 'lightSwitch' }
             autoStart={ false }
-            onClick={ this.toggleLightSwitch.bind(this) }
+            onClick={ this.lightSwitchClickHandler.bind(this) }
             classes="AboutPage-contact-switch"
             images={ [lightSwitchOn, lightSwitchOff] }
             intervalDelay={ 0 }
