@@ -209,7 +209,7 @@ class AboutPage extends React.Component {
             style={{ opacity: 0.7, background: '#010022', marginTop: '-10%' }}/>
           <img className="AboutPage-block-portrait" id="AboutPage-block-intro-portrait" src={ portrait0 } />
           <img className="AboutPage-intro-arrow" src={ arrow } id="AboutPage-intro-arrow" />
-          <h1 className="AboutPage-intro-cta">Keep scrolling</h1>
+          <h1 className="AboutPage-intro-cta" id="AboutPage-intro-cta">Keep scrolling</h1>
           <AnimatedText
             ref="intro"
             active={ false }
@@ -219,7 +219,7 @@ class AboutPage extends React.Component {
                 `...my wife took this picture while I was telling her about the new rasberry pi I bought.`,
                 `Thats us! My better half. Her name is Michan.`,
                 `This is me sculpting clay. P.S. I like making stuff.`,
-                `Since I was kid I've always had a drive to take things apart and put them back together. This eventually lead me to be a software engineer.`,
+                `Since I was kid people would often find me staring of into space imagining things or thinking deeply about something.`,
                 `${ introMessage ? introMessage : 'I now work as a full-stack developer, so I get to design and build interesting web products.'}`
               ]
             }
@@ -237,14 +237,13 @@ class AboutPage extends React.Component {
             active={ false }
             automated={ false }
             messages={
-              [`Did I fulfilled my childhood dream of speaking Japanese and living in Japan?`,
+              [`Did I mention I fulfilled my childhood dream of speaking Japanese and living in Japan?`,
                 `I sure did! All that DragonBall Z eventually lead to something great.`,
                 `I work remotely from Japan for the USA. The best of both worlds.`,
                 `I make up for the time difference by waking up really early.`,`I'm punctual and flexible like minty bubble gum...`,
                 `Mmmmmhhmm`]
             }
             classString="AboutPage-intro-message AboutPage-remote-message"
-            incrementCallback={ this.introIncrementCallback.bind(this) }
             callback={ this.continueCallback.bind(this, 1200, 'remote') } />
           <AnimateImages
             autoStart={ true }
