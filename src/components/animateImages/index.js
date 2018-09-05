@@ -23,38 +23,46 @@ class AnimateImages extends React.Component {
     }
   }
 
-  play() {
-    this.timerID = setInterval(() => {
-      const index = this.state.index
-      const imageLength = this.props.images.length
-
-      if (index >= imageLength - 1)
-        this.setState({ index: 0 }) // restart sequence
-      else
-        this.setState({ index: index + 1}) // progress forward in sequence
-    }, this.props.intervalDelay)
-
-  }
-
+  // lifecycle methods
   componentDidMount() {
     if (this.props.autoStart) {
       this.play()
     }
   }
 
+  componentWillUnmount() {
+    this.pause()
+  }
+
+  // general methods
+  play() {
+    this.timerID = setInterval(() => {
+      this.increment()
+    }, this.props.intervalDelay)
+
+  }
+
   pause() {
     clearInterval(this.timerID)
   }
 
-  componentWillUnmount() {
-    this.pause()
+  increment() {
+    const index = this.state.index
+    const imageLength = this.props.images.length
+
+    if (index >= imageLength - 1)
+      this.setState({ index: 0 }) // restart sequence
+    else
+      this.setState({ index: index + 1}) // progress forward in sequence
   }
+
 
   render() {
     return (
       <img
         className={ `${this.props.classes}` }
-        src={ this.props.images[this.state.index] } />
+        src={ this.props.images[this.state.index] }
+        onClick={ this.props.onClick ? this.props.onClick : () => {} } />
     )
   }
 }

@@ -154,6 +154,20 @@
     }
   }
 
+  &-contact {
+    &-switch {
+      position: absolute;
+      left: 0;
+      right: 0;
+      margin: auto;
+      transform: translateY(calc(50vh - 77px));
+
+      @media (hover:hover) {
+        cursor: pointer;
+      }
+    }
+  }
+
   &-block {
     position: absolute;
     background-color: $hauntar;

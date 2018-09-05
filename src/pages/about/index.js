@@ -15,6 +15,8 @@ import arrow from './images/arrow.png'
 import remote0 from './images/remote_0.png'
 import remote1 from './images/remote_1.png'
 import remoteBg from './images/deep-space.jpg'
+import lightSwitchOn from './images/lightswitch_on.png'
+import lightSwitchOff from './images/lightswitch_off.png'
 
 
 class AboutPage extends React.Component {
@@ -171,6 +173,10 @@ class AboutPage extends React.Component {
     }
   }
 
+  toggleLightSwitch() {
+    this.refs['lightSwitch'].increment()
+  }
+
   render() {
     const recipient = getParameterByName('recipient')
     const introMessage = getParameterByName('introMessage')
@@ -239,14 +245,15 @@ class AboutPage extends React.Component {
             messages={
               [`Did I mention I fulfilled my childhood dream of speaking Japanese and living in Japan?`,
                 `I sure did! All that DragonBall Z eventually lead to something great.`,
-                `I work remotely from Japan for the USA. The best of both worlds.`,
-                `I make up for the time difference by waking up really early.`,`I'm punctual and flexible like minty bubble gum...`,
+                `I work REMOTELY from Japan for the USA.`,
+                `I make up for the time difference by waking up really early.`,
+                `My punctuality and flexibility are like minty bubble gum...`,
                 `Mmmmmhhmm`]
             }
             classString="AboutPage-intro-message AboutPage-remote-message"
             callback={ this.continueCallback.bind(this, 1200, 'remote') } />
           <AnimateImages
-            autoStart={ true }
+            autoStart={ false }
             classes="AboutPage-remote-movie"
             images={ [remote0, remote1] }
             intervalDelay={ 300 }
@@ -254,7 +261,14 @@ class AboutPage extends React.Component {
         </div>
         <div className="AboutPage-spacer"></div>
         <div className="AboutPage-block d-flex">
-          <img className="AboutPage-block-bg" src={ remoteBg }/>
+          <AnimateImages
+            ref={ 'lightSwitch' }
+            autoStart={ false }
+            onClick={ this.toggleLightSwitch.bind(this) }
+            classes="AboutPage-contact-switch"
+            images={ [lightSwitchOn, lightSwitchOff] }
+            intervalDelay={ 300 }
+          />
         </div>
         <div className="AboutPage-spacer"></div>
 
