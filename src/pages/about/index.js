@@ -7,8 +7,8 @@ import './index.css'
 
 // images
 import portrait0 from './images/portrait_0.png'
-import portrait1 from './images/portrait_1.png'
-import portrait2 from './images/portrait_2.png'
+import portrait1 from './images/portrait_2.png'
+import portrait2 from './images/portrait_1.png'
 import portrait3 from './images/portrait_3.png'
 import portraitBg from './images/portrait-bg.jpg'
 import arrow from './images/arrow.png'
@@ -25,12 +25,6 @@ class AboutPage extends React.Component {
 
     this.scenes = []
     this.anime = window.anime
-    this.introPhotos = {
-        0: portrait0,
-        2: portrait1,
-        1: portrait2,
-        3: portrait3
-    }
   }
 
   componentWillUnmount() {
@@ -135,8 +129,18 @@ class AboutPage extends React.Component {
   }
 
   introIncrementCallback(index) {
-    if (index in this.introPhotos) {
-      this.introBlockImage.src = this.introPhotos[index] + `?${ Math.random()}`
+    const portraitComponent = this.refs['introPortrait']
+
+    switch(index) {
+      case 1:
+        portraitComponent.increment()
+        break
+      case 2:
+        portraitComponent.increment()
+        break
+      case 3:
+        portraitComponent.increment()
+        break
     }
   }
 
@@ -213,7 +217,14 @@ class AboutPage extends React.Component {
             id="AboutPage-block-0-bg"
             src={ portraitBg }
             style={{ opacity: 0.7, background: '#010022', marginTop: '-10%' }}/>
-          <img className="AboutPage-block-portrait" id="AboutPage-block-intro-portrait" src={ portrait0 } />
+          <AnimateImages
+            ref={ 'introPortrait' }
+            autoStart={ false }
+            onClick={ this.toggleLightSwitch.bind(this) }
+            classes="AboutPage-block-portrait"
+            images={ [portrait0, portrait1, portrait2, portrait3] }
+            intervalDelay={ 0 }
+          />
           <img className="AboutPage-intro-arrow" src={ arrow } id="AboutPage-intro-arrow" />
           <h1 className="AboutPage-intro-cta" id="AboutPage-intro-cta">Keep scrolling</h1>
           <AnimatedText
@@ -268,7 +279,7 @@ class AboutPage extends React.Component {
             onClick={ this.toggleLightSwitch.bind(this) }
             classes="AboutPage-contact-switch"
             images={ [lightSwitchOn, lightSwitchOff] }
-            intervalDelay={ 300 }
+            intervalDelay={ 0 }
           />
         </div>
         <div className="AboutPage-spacer"></div>
