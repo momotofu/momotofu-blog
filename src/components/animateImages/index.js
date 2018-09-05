@@ -24,22 +24,22 @@ class AnimateImages extends React.Component {
   }
 
   play() {
-    const index = this.state.index
-    const imageLength = this.props.images.length
+    this.timerID = setInterval(() => {
+      const index = this.state.index
+      const imageLength = this.props.images.length
 
-    if (index >= imageLength - 1)
-      this.setState({ index: 0 }) // restart sequence
-    else
-      this.setState({ index: index + 1}) // progress forward in sequence
+      if (index >= imageLength - 1)
+        this.setState({ index: 0 }) // restart sequence
+      else
+        this.setState({ index: index + 1}) // progress forward in sequence
+    }, this.props.intervalDelay)
+
   }
 
   componentDidMount() {
     if (this.props.autoStart) {
-      this.timerID = setInterval(() => {
-        this.play()
-      }, this.props.intervalDelay)
+      this.play()
     }
-
   }
 
   pause() {
