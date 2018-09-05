@@ -182,15 +182,24 @@ class AboutPage extends React.Component {
     this.refs['lightSwitch'].increment()
 
     // toggle #AboutPage-contact element background color
-    const offColor = 'rgb(12, 3, 24)'
     const contactElement = document.querySelector('.AboutPage-contact')
+    const contactSignifier = document.querySelector('.AboutPage-contact-switch-signifier')
 
+    const offColor = 'rgb(12, 3, 24)'
+    const onColor = '#fff'
     const color = getComputedStyle(contactElement ,null).getPropertyValue('background-color');
+    const isOffColor = (color == offColor)
 
-    if (color === offColor)
-      contactElement.style.backgroundColor = '#fff'
-    else
+    // update elements with new colors
+    if (isOffColor) {
+      contactElement.style.backgroundColor = onColor
+      contactSignifier.style.color = offColor
+      contactSignifier.innerText = 'Click off'
+    } else {
       contactElement.style.backgroundColor = offColor
+      contactSignifier.style.color = onColor
+      contactSignifier.innerText = 'Click on'
+    }
   }
 
   render() {
@@ -283,7 +292,7 @@ class AboutPage extends React.Component {
         </div>
         <div className="AboutPage-spacer"></div>
         <div className="AboutPage-block d-flex AboutPage-contact">
-          <h3 className="AboutPage-contact-switch-signifier">Click</h3>
+          <h3 className="AboutPage-contact-switch-signifier">Click on</h3>
           <AnimateImages
             ref={ 'lightSwitch' }
             autoStart={ false }
