@@ -253,7 +253,7 @@ class AboutPage extends React.Component {
             classString="AboutPage-intro-message AboutPage-remote-message"
             callback={ this.continueCallback.bind(this, 1200, 'remote') } />
           <AnimateImages
-            autoStart={ false }
+            autoStart={ true }
             classes="AboutPage-remote-movie"
             images={ [remote0, remote1] }
             intervalDelay={ 300 }
@@ -261,6 +261,7 @@ class AboutPage extends React.Component {
         </div>
         <div className="AboutPage-spacer"></div>
         <div className="AboutPage-block d-flex">
+          <h3 className="AboutPage-contact-switch-signifier">Click</h3>
           <AnimateImages
             ref={ 'lightSwitch' }
             autoStart={ false }

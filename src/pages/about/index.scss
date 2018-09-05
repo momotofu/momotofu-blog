@@ -165,6 +165,16 @@
       @media (hover:hover) {
         cursor: pointer;
       }
+
+      &-signifier {
+        font-family: 'chris-regular';
+        color: $bubbleBath;
+        position: absolute;
+        left: 0;
+        right: 0;
+        text-align: center;
+        transform: translateY(calc(50vh - 104px));
+      }
     }
   }
 
