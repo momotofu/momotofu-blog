@@ -136,7 +136,11 @@
       right: 10vw;
       transform: translateY(50%);
 
-      @media screen and (max-width: 600px) {
+      @media screen and (max-width: 1100px) {
+        right: 3vw;
+      }
+
+      @media screen and (max-width: 800px) {
         bottom: 34vh;
         left: 0;
         right: 0;
@@ -146,6 +150,14 @@
 
     &-message {
       left: 25vw;
+
+      @media screen and (max-width: 1200px) {
+        left: 10vw;
+      }
+
+      @media screen and (max-width: 1100px) {
+        left: 3vw;
+      }
 
       @media screen and (max-width: 600px) {
         left: 0;
