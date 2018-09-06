@@ -294,7 +294,8 @@ class AboutPage extends React.Component {
         <div className="AboutPage-spacer"></div>
         <div className="AboutPage-block d-flex AboutPage-contact">
           <h1 className="AboutPage-contact-message">
-            {contactMessage ? contactMessage : 'It\'s a hidden message!!! Wanna make something sweet? Need a digital tune up? Or just wannna say hi? Send me a message below.'}
+            {contactMessage ? contactMessage : 'It\'s a hidden message!!! Wanna make something sweet? Need a digital tune up? Or just wannna say hi?'}{' '}
+            <a href="/contact" className="AboutPage-contact-link">Go to the contact page</a>
           </h1>
           <h3 className="AboutPage-contact-switch-signifier">Click on</h3>
           <AnimateImages
@@ -305,6 +306,9 @@ class AboutPage extends React.Component {
             images={ [lightSwitchOn, lightSwitchOff] }
             intervalDelay={ 0 }
           />
+          <h5 className="AboutPage-contact-fine-print">
+            THE FINE PRINT: By clicking on the button above "you" which shall hereby be refered to as "I" do agree to the following statements: I solemnly agree to be kind to others. I solemnly agree to smile when smiled to. I solemnly agree to eatch ketchup with french fries or fry sauce, or any other tasteful sauce. I solemnly agree that this contract is just a comedic but serious attempt at humour. I agree. And I also solemnly agree that this contract is invalid, unbinding, and a thigh-slapper. That being said I agree that chocolate is probably one of the best flavors on Earth, or maybe cheddar cheeze. And I like the color white. I agree that "Click on" and "Click off" is simular to the maxim from Karate Kid "Wax on" and "Wax off." alliteration... Trafulaful. Trafulaful. Do da' diddy didaly don' dune dom. But in all seriousness, there is one truth. Ask me about it sometime.
+          </h5>
         </div>
         <div className="AboutPage-spacer"></div>
       </div>

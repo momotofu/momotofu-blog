@@ -169,6 +169,41 @@
   &-contact {
     background-color: $hauntar;
 
+    &-link {
+      border-bottom: solid 1px;
+      color: $hauntar;
+      transition: border-bottom .3s ease, color .3s ease;
+      animation: pulse .5s infinite;
+      animation-timing-function: ease-out;
+      animation-direction: alternate;
+
+      @media screen and (hover:hover) {
+        &:hover {
+          color: $hauntar;
+          opacity: 0.7;
+          text-decoration: none;
+          border-bottom: solid 3px;
+        }
+      }
+    }
+
+    &-fine-print {
+      color: $hauntar;
+      font-family: chris-regular;
+      line-height: 1em;
+      font-size: 1rem;
+      max-width: 500px;
+      position: absolute;
+      bottom: 50px;
+      left: 0;
+      right: 0;
+      margin: auto;
+
+      @media screen and (max-width: 600px) {
+        margin: auto 2rem;
+      }
+    }
+
     &-message {
       font-family: 'chris-regular';
       color: $hauntar;
@@ -285,5 +320,14 @@
   }
   50% {
     top: 30px;
+  }
+}
+
+@keyframes pulse {
+  0% {
+    border-bottom: solid 1px;
+  }
+  100% {
+    border-bottom: solid 3px;
   }
 }
