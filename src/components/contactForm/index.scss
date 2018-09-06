@@ -1,0 +1,118 @@
+@import '../../styles/color.scss';
+
+.ContactPage {
+
+  &-form {
+    display: flex;
+    flex-direction: column;
+    max-width: 497px;
+    width: 100%;
+    font-family: 'chris-regular';
+    font-size: 36px;
+    line-height: 0.5em;
+
+    &-message {
+      border-radius: 2px;
+      font-size: 15px;
+      align-items: center;
+      padding: 1.5rem;
+      margin-bottom: 23.75rem;
+      display: none;
+    }
+
+    &-input-items {
+      border: 2px solid $charcoal;
+      border-radius: 2px;
+      margin-bottom: 2rem;
+      transition: all .3s ease;
+
+      &-content {
+        display: flex;
+        height: 100%;
+        position: relative;
+        background: $bubbleBath;
+
+        &:before {
+          background: $charcoal;
+          content: '';
+          height: 2px;
+          position: absolute;
+          left: 1.5rem;
+          width: calc(100% - 1.5rem );
+        }
+
+        &-label {
+          display: flex;
+          align-items: center;
+          font-weight: bold;
+          min-width: 5rem;
+          padding: 1.5rem;
+        }
+
+        &-input {
+          font-size: 36px;
+          color: $hauntar;
+          box-sizing: border-box;
+          background: transparent;
+          padding: 1.5rem;
+          width: 100%;
+          height: 4rem;
+          outline: none;
+          text-align: right;
+          border: none;
+        }
+
+        &-textarea {
+          resize: none;
+          text-align: left;
+          height: 12rem;
+          line-height: 1em;
+        }
+
+        &:first-child {
+          &:before {
+            content: none;
+          }
+        }
+      }
+    }
+
+    &-button {
+      -webkit-appearance: none;
+      border: 2px solid $charcoal;
+      background: $tangerine;
+      color: $hauntar;
+      cursor: pointer;
+      font-size: 36px;
+      font-weight: 400;
+      height: 4rem;
+      letter-spacing: 0.06em;
+      opacity: .8;
+      outline: none;
+      text-decoration: none;
+      text-transform: uppercase;
+      transition: all .26s ease;
+      word-spacing: 1px;
+      &:hover {
+        background: $electricity;
+      }
+      &:active {
+        transition: all .05s ease;
+        background: $neonPink;
+      }
+    }
+  }
+}
+
+  //color: charcoal;
+//::-webkit-input-placeholder {
+//}
+  //color: charcoal;
+//::-moz-placeholder {
+//}
+  //color: charcoal;
+//:-ms-input-placeholder {
+//}
+  //color: charcoal;
+//:-moz-placeholder {
+//}

@@ -26,7 +26,7 @@ class ContactForm extends React.Component {
   render() {
     return (
       <form
-        className='ContactPage-form'
+        className={ `ContactPage-form${ this.props.classes ? ' ' + this.props.classes : ''}` }
         id='ContactPage-Form'
         onSubmit={ this.sendForm }>
         <div className='ContactPage-form-input-items'>
