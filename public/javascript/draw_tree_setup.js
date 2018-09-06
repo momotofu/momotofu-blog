@@ -6,6 +6,7 @@ function builtinRead(x) {
 
 function runit() {
   let canvas = document.getElementById('hero-canvas');
+  if (!canvas) return;
 	let prog = window.turtle_code;
 	Sk.configure({read:builtinRead});
 	(Sk.TurtleGraphics || (Sk.TurtleGraphics = {})).target = 'hero-canvas';

@@ -9,6 +9,11 @@ class ContactForm extends React.Component {
    *
    * component props are:
    */
+  constructor(props) {
+    super(props)
+
+    this.$ = window.$
+  }
 
   // lifecycle methods
   componentDidMount() {
