@@ -7,6 +7,20 @@ import './index.css'
 import { toggleIsActiveOn } from '../../utils'
 
 class NavBar extends React.Component {
+  /**
+   * NavLink Component
+   *
+   * state: None
+   *
+   * component props are:
+   * - navLinks: an array of strings that will be used to render links to
+   *   pages.
+   */
+
+  constructor(props) {
+    super(props)
+  }
+
   componentDidMount() {
     this.hamburger = document.getElementsByClassName('NavBar-hamburger-middle')[0]
     this.navBarList = document.getElementsByClassName('NavBar-list')[0]

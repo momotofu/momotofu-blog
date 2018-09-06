@@ -10,6 +10,7 @@ class ContactPage extends React.Component {
    *
    * component props are:
    */
+
   constructor(props) {
     super(props)
 
