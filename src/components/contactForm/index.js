@@ -1,7 +1,7 @@
 import React from 'react'
 import './index.css'
 
-class contactForm extends React.Component {
+class ContactForm extends React.Component {
   /**
    * contact form
    *
@@ -73,4 +73,4 @@ class contactForm extends React.Component {
   }
 }
 
-export default AnimateImages
+export default ContactForm

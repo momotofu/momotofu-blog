@@ -10,6 +10,7 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 //import 'bootstrap/dist/css/bootstrap-reboot.min.css'
 
 import AboutPage from './pages/about'
+import ContactPage from './pages/contact'
 import NavBar from './components/navbar'
 
 
@@ -23,9 +24,11 @@ class App extends Component {
               <Redirect to="/about"/>
           )}/>
           <Route exact path="/about" component={ AboutPage } />
+          {/*
           <Route path="/blog" />
           <Route path="/contributions" />
-          <Route path="/contact" />
+          */}
+          <Route path="/contact" component={ ContactPage }/>
         </div>
       </div>
     )
