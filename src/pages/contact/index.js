@@ -29,7 +29,9 @@ class ContactPage extends React.Component {
     return (
       <div className="ContactPage">
         <div className="ContactPage-block">
-          <ContactForm classes="ContactPage-form"/>
+          <ContactForm
+            classes="ContactPage-form"
+            formMessage="Lets make something!"/>
         </div>
       </div>
     )

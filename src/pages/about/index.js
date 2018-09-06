@@ -65,51 +65,7 @@ class AboutPage extends React.Component {
       .triggerElement(document.querySelector('#AboutPage-block-1'))
       .on('start', this.activateText.bind(this, 'remote'))
       .addTo(this.parallaxController1))
-
-    //new ScrollMagic.Scene()
-      //.setTween(document.getElementById('#backdrop'), {x: '-300%', ease: Linear.easeNone})
-      //.addTo(this.parallaxController)
-    //new ScrollMagic.Scene({ triggerElement: '#trigger0', duration: 1600 })
-      //.setPin(document.getElementById('pin0'))
-      //.addIndicators({name: '1 (duration: 800)'})
-      //.addTo(this.pinController)
-
-    //this.sceneOne = new ScrollMagic.Scene({ triggerElement: '#trigger1', duration: 600 })
-      //.setPin(document.getElementById('#pin1'))
-      ////.addIndicators({name: '1 (duration: 300)'})
-      //.on('start', animateSquare.bind(this))
-      //.addTo(this.pinController)
-
-    //new ScrollMagic.Scene({ triggerElement: '#trigger2', duration: 600 })
-      //.setPin(document.getElementById('#pin2'))
-      ////.addIndicators({name: '1 (duration: 300)'})
-      //.addTo(this.pinController)
-    //// Scrollmagic end
-
   }
-
-  //animatePhoto(targets) {
-    //return this.anime({
-      //targets: targets,
-      //translateX: {
-        //value: -50,
-        //duration: 400
-      //},
-      //rotate: {
-        //value: -5,
-        //duration: 300,
-        //easing: 'easeInSine'
-      //},
-      //scale: {
-        //value: 1.1,
-        //duration: 300,
-        //easing: 'easeInQuart'
-      //},
-      //elasticity: 200,
-      //direction: 'alternate',
-      //delay: 250 // All properties except 'scale' inherit 250ms delay
-    //});
-  //}
 
   greetingCallback(delay) {
     const animatedMessageEl = document.querySelector('.AboutPage-greeting-message')
@@ -140,6 +96,8 @@ class AboutPage extends React.Component {
         break
       case 3:
         portraitComponent.increment()
+        break
+      default:
         break
     }
   }
@@ -188,7 +146,7 @@ class AboutPage extends React.Component {
     const offColor = 'rgb(12, 3, 24)'
     const onColor = '#fff'
     const color = getComputedStyle(contactElement ,null).getPropertyValue('background-color');
-    const isOffColor = (color == offColor)
+    const isOffColor = (color === offColor)
 
     // update elements with new colors
     if (isOffColor) {
@@ -235,6 +193,7 @@ class AboutPage extends React.Component {
         </div>
         <div className="AboutPage-block d-flex" id="AboutPage-block-0" style={{ background: '#010022'}}>
           <img
+            alt=""
             className="AboutPage-block-bg"
             id="AboutPage-block-0-bg"
             src={ portraitBg }
@@ -246,7 +205,7 @@ class AboutPage extends React.Component {
             images={ [portrait0, portrait1, portrait2, portrait3] }
             intervalDelay={ 0 }
           />
-          <img className="AboutPage-intro-arrow" src={ arrow } id="AboutPage-intro-arrow" />
+          <img alt="" className="AboutPage-intro-arrow" src={ arrow } id="AboutPage-intro-arrow" />
           <h1 className="AboutPage-intro-cta" id="AboutPage-intro-cta">Keep scrolling</h1>
           <AnimatedText
             ref="intro"
@@ -267,8 +226,8 @@ class AboutPage extends React.Component {
         </div>
         <div className="AboutPage-spacer"></div>
         <div className="AboutPage-block d-flex" id="AboutPage-block-1">
-          <img className="AboutPage-block-bg" id="AboutPage-block-1-bg" src={ remoteBg }/>
-          <img className="AboutPage-intro-arrow" src={ arrow } id="AboutPage-remote-arrow" />
+          <img alt="" className="AboutPage-block-bg" id="AboutPage-block-1-bg" src={ remoteBg }/>
+          <img alt="" className="AboutPage-intro-arrow" src={ arrow } id="AboutPage-remote-arrow" />
           <h1 className="AboutPage-intro-cta" id="AboutPage-remote-cta">Keep scrolling</h1>
           <AnimatedText
             ref="remote"

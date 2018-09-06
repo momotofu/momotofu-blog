@@ -60,6 +60,7 @@ class AnimateImages extends React.Component {
   render() {
     return (
       <img
+        alt=""
         className={ `${this.props.classes}` }
         src={ this.props.images[this.state.index] }
         onClick={ this.props.onClick ? this.props.onClick : () => {} } />

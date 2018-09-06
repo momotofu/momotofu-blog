@@ -16,7 +16,7 @@ export const generateRandomIDHash = (el) => {
 export const getParameterByName = (name, url) => {
     if (!url) url = window.location.href
 
-    name = name.replace(/[\[\]]/g, '\\$&')
+    name = name.replace(/[[\]]/g, '\\$&')
     const regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
         results = regex.exec(url)
 

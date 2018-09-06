@@ -97,7 +97,7 @@ class AnimatedText extends React.Component {
   }
 
   componentDidUpdate() {
-    if (this.state.active && this.state.currentMessageIndex == -1) {
+    if (this.state.active && this.state.currentMessageIndex === -1) {
       this.incrementMessageIndex()
     }
 

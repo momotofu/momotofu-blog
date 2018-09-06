@@ -17,10 +17,6 @@ class NavBar extends React.Component {
    *   pages.
    */
 
-  constructor(props) {
-    super(props)
-  }
-
   componentDidMount() {
     this.hamburger = document.getElementsByClassName('NavBar-hamburger-middle')[0]
     this.navBarList = document.getElementsByClassName('NavBar-list')[0]
@@ -47,9 +43,9 @@ class NavBar extends React.Component {
   }
 
   renderNavLinks() {
-    return this.props.navLinks.map((pageName) => {
+    return this.props.navLinks.map((pageName, index) => {
       return (
-          <li>
+          <li key={ index }>
             <NavLink
               className="signifier"
               to={ `/${pageName.toLowerCase()}` }

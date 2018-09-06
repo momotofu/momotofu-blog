@@ -10,10 +10,6 @@ class ContactForm extends React.Component {
    * component props are:
    */
 
-  constructor(props) {
-    super(props)
-  }
-
   // lifecycle methods
   componentDidMount() {
   }
@@ -25,50 +21,56 @@ class ContactForm extends React.Component {
 
   render() {
     return (
-      <form
-        className={ `ContactPage-form${ this.props.classes ? ' ' + this.props.classes : ''}` }
-        id='ContactPage-Form'
-        onSubmit={ this.sendForm }>
-        <div className='ContactPage-form-input-items'>
-          <div className='ContactPage-form-input-items-content'>
-            <div className='ContactPage-form-input-items-content-label'>
-              Name
-            </div>
-            <input
-              id='name'
-              className='ContactPage-form-input-items-content-input'
-              type='text'
-              placeholder='Name'
-              />
-          </div>
-          <div className='ContactPage-form-input-items-content'>
-            <div className='ContactPage-form-input-items-content-label'>
-              Email
-            </div>
-            <input
-              id='email'
-              className='ContactPage-form-input-items-content-input'
-              type='text'
-              placeholder='Email'
-              />
-          </div>
+      <div>
+        <div className='ContactPage-form-message' id='ContactPage-form-message'>
+          {this.props.formMessage}
         </div>
-        <div className='ContactPage-form-input-items'>
-          <div className='ContactPage-form-input-items-content'>
-            <textarea
-              id='message'
-              className='ContactPage-form-input-items-content-input ContactPage-form-input-items-content-textarea'
-              type='text'
-              placeholder='Write something...'
-              />
+
+        <form
+          className={ `ContactPage-form${ this.props.classes ? ' ' + this.props.classes : ''}` }
+          id='ContactPage-Form'
+          onSubmit={ this.sendForm }>
+          <div className='ContactPage-form-input-items'>
+            <div className='ContactPage-form-input-items-content'>
+              <div className='ContactPage-form-input-items-content-label'>
+                Name
+              </div>
+              <input
+                id='name'
+                className='ContactPage-form-input-items-content-input'
+                type='text'
+                placeholder='Name'
+                />
+            </div>
+            <div className='ContactPage-form-input-items-content'>
+              <div className='ContactPage-form-input-items-content-label'>
+                Email
+              </div>
+              <input
+                id='email'
+                className='ContactPage-form-input-items-content-input'
+                type='text'
+                placeholder='Email'
+                />
+            </div>
           </div>
-        </div>
-        <input
-          className='ContactPage-form-button'
-          type='submit'
-          value='Send'>
-        </input>
-      </form>
+          <div className='ContactPage-form-input-items'>
+            <div className='ContactPage-form-input-items-content'>
+              <textarea
+                id='message'
+                className='ContactPage-form-input-items-content-input ContactPage-form-input-items-content-textarea'
+                type='text'
+                placeholder='Write something...'
+                />
+            </div>
+          </div>
+          <input
+            className='ContactPage-form-button'
+            type='submit'
+            value='Send'>
+          </input>
+        </form>
+      </div>
     )
   }
 }
