@@ -205,6 +205,7 @@ class AboutPage extends React.Component {
   render() {
     const recipient = getParameterByName('recipient')
     const introMessage = getParameterByName('introMessage')
+    const contactMessage = getParameterByName('contactMessage')
 
     return (
       <div className="AboutPage">
@@ -292,6 +293,9 @@ class AboutPage extends React.Component {
         </div>
         <div className="AboutPage-spacer"></div>
         <div className="AboutPage-block d-flex AboutPage-contact">
+          <h1 className="AboutPage-contact-message">
+            {contactMessage ? contactMessage : 'It\'s a hidden message!!! Wanna make something sweet? Need a digital tune up? Or just wannna say hi? Send me a message below.'}
+          </h1>
           <h3 className="AboutPage-contact-switch-signifier">Click on</h3>
           <AnimateImages
             ref={ 'lightSwitch' }
@@ -303,25 +307,6 @@ class AboutPage extends React.Component {
           />
         </div>
         <div className="AboutPage-spacer"></div>
-
-        {/*<div id="trigger1"></div>
-        <div id="#pin1" style={{ width: '100%', height: '200px', background: 'blue' }}>
-          <div id="motionPath">
-            <div className="motionSquare"style={{
-              width: '100px',
-              height: '100px',
-              backgroundColor: 'green',
-              display: 'inline-block'}}></div>
-            <svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 481 241"><title>test</title><path id="path" d="M780,284a120,120,0,0,1-240,0,120,120,0,0,0-240,0" transform="translate(-299.5 -163.5)" style={{fill: '#fff', stroke: '#000', strokeMiterlimit:'10'}}/></svg>
-          </div>
-        </div> */}
-        {/*
-        <div id="trigger2"></div>
-        <div id="#pin2" style={{ width: '100%', height: '200px', background: 'blue' }}>
-        </div>
-        <section id="TestTween" style={{ width: '100%', background: 'pink', height: '700px'}}>
-        </section>
-        */}
       </div>
     )
   }

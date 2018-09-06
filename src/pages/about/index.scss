@@ -169,6 +169,21 @@
   &-contact {
     background-color: $hauntar;
 
+    &-message {
+      font-family: 'chris-regular';
+      color: $hauntar;
+      text-align: left;
+      margin: 4rem auto;
+      max-width: 506px;
+      font-size: 48px;
+      line-height: 1em;
+
+      @media screen and (max-width: 600px) {
+        font-size: 36px;
+        margin: 3rem 3rem;
+      }
+    }
+
     &-switch {
       position: absolute;
       left: 0;
