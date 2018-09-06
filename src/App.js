@@ -18,7 +18,7 @@ class App extends Component {
   render() {
     return (
       <div>
-        <NavBar />
+        <NavBar navLinks={ ['About', 'Contact'] }/>
         <div className="container" style={{ paddingLeft: 0, paddingRight: 0 }}>
           <Route exact path="/" render={() => (
               <Redirect to="/about"/>

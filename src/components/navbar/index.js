@@ -32,6 +32,19 @@ class NavBar extends React.Component {
       return true
   }
 
+  renderNavLinks() {
+    return this.props.navLinks.map((pageName) => {
+      return (
+          <li>
+            <NavLink
+              className="signifier"
+              to={ `/${pageName.toLowerCase()}` }
+              isActive={ this.handleNavLinkClick.bind(this) }>{ `${pageName}` }</NavLink>
+          </li>
+      )
+    })
+  }
+
   render() {
     return (
       <div className="NavBar">
@@ -42,30 +55,7 @@ class NavBar extends React.Component {
           </div>
         </div>
         <ul className="NavBar-list">
-          <li>
-            <NavLink
-              className="signifier"
-              to="/about"
-              isActive={ this.handleNavLinkClick.bind(this) }>About</NavLink>
-          </li>
-          <li>
-            <NavLink
-              className="signifier"
-              to="/blog"
-              isActive={ this.handleNavLinkClick.bind(this) }>Blog</NavLink>
-          </li>
-          <li>
-            <NavLink
-              className="signifier"
-              to="/contributions"
-              isActive={ this.handleNavLinkClick.bind(this) }>Contributions</NavLink>
-          </li>
-          <li>
-            <NavLink
-              className="signifier"
-              to="/contact"
-              isActive={ this.handleNavLinkClick.bind(this) }>Contact</NavLink>
-          </li>
+          { this.renderNavLinks() }
         </ul>
       </div>
     )
