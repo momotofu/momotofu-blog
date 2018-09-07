@@ -34,7 +34,7 @@ class ContactForm extends React.Component {
     const that = this
     const messageContainer = document.getElementById('ContactPage-form-message')
     const sendMessage = document.createTextNode(this.messageStatus.sending)
-    const url = process.env.NODE_ENV === 'development' ? 'http://localhost:5000/recieveForm' : 'https://momotofu-api-prod.herokuapp.com/recievForm'
+    const url = process.env.NODE_ENV === 'development' ? 'http://localhost:5000/receiveForm' : 'https://momotofu-api-prod.herokuapp.com/receiveForm'
     document.getElementById('ContactPage-Form').style.display = 'none'
 
     messageContainer.style.display = 'flex'
