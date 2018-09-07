@@ -2,6 +2,7 @@ import React from 'react'
 import SakuraTree from '../../components/sakuraTree'
 import AnimatedText from '../../components/animatedText'
 import AnimateImages from '../../components/animateImages'
+import { Link } from 'react-router-dom'
 import { getParameterByName } from '../../utils'
 import './index.css'
 
@@ -254,7 +255,7 @@ class AboutPage extends React.Component {
         <div className="AboutPage-block d-flex AboutPage-contact">
           <h1 className="AboutPage-contact-message">
             {contactMessage ? contactMessage : 'It\'s a hidden message!!! Wanna make something sweet? Need a digital tune up? Or just wannna say hi?'}{' '}
-            <a href="/contact" className="AboutPage-contact-link">Go to the contact page</a>
+            <Link to="/contact" className="AboutPage-contact-link">Go to the contact page</Link>
           </h1>
           <h3 className="AboutPage-contact-switch-signifier">Click on</h3>
           <AnimateImages
