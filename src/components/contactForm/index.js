@@ -1,5 +1,6 @@
 import React from 'react'
 import './index.css'
+const $ = window.$
 
 class ContactForm extends React.Component {
   /**
@@ -12,7 +13,11 @@ class ContactForm extends React.Component {
   constructor(props) {
     super(props)
 
-    this.$ = window.$
+    this.messageStatus = {
+      sending: 'Routing message...',
+      success: 'Your message arrived in Momotofu\'s inbox.',
+      error: 'Something went wrong, refresh the page and try again.'
+    }
   }
 
   // lifecycle methods
@@ -23,6 +28,37 @@ class ContactForm extends React.Component {
   }
 
   // general methods
+  sendForm(event) {
+    event.preventDefault()
+
+    const that = this
+    const messageContainer = document.getElementById('ContactPage-form-message')
+    const sendMessage = document.createTextNode(this.messageStatus.sending)
+    const url = process.env.NODE_ENV === 'development' ? 'http://localhost:5000/recieveForm' : 'https://momotofu-api-prod.herokuapp.com/recievForm'
+    document.getElementById('ContactPage-Form').style.display = 'none'
+
+    messageContainer.style.display = 'flex'
+    messageContainer.appendChild(sendMessage)
+
+    $.ajax(url, {
+      method: 'POST',
+      data: {
+        name: $('#name').val(),
+        email: $('#email').val(),
+        message: $('#message').val(),
+      },
+      success: function(data) {
+        messageContainer.removeChild(messageContainer.lastChild)
+        messageContainer.appendChild(document.createTextNode(that.messageStatus.success))
+        console.log('sent data: ', data)
+      },
+      error: function(xhr, status, err) {
+        messageContainer.removeChild(messageContainer.lastChild)
+        messageContainer.appendChild(document.createTextNode(that.messageStatus.error))
+        console.error(status, err.toString());
+      }
+    })
+  }
 
   render() {
     return (
@@ -34,7 +70,7 @@ class ContactForm extends React.Component {
         <form
           className={ `ContactPage-form${ this.props.classes ? ' ' + this.props.classes : ''}` }
           id='ContactPage-Form'
-          onSubmit={ this.sendForm }>
+          onSubmit={ this.sendForm.bind(this) }>
           <div className='ContactPage-form-input-items'>
             <div className='ContactPage-form-input-items-content'>
               <div className='ContactPage-form-input-items-content-label'>
