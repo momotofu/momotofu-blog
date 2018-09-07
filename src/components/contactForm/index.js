@@ -42,11 +42,13 @@ class ContactForm extends React.Component {
 
     $.ajax(url, {
       method: 'POST',
-      data: {
+      crossDomain: true,
+      dataType: 'json',
+      data: JSON.stringify({
         name: $('#name').val(),
         email: $('#email').val(),
         message: $('#message').val(),
-      },
+      }),
       success: function(data) {
         messageContainer.removeChild(messageContainer.lastChild)
         messageContainer.appendChild(document.createTextNode(that.messageStatus.success))
