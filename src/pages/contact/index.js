@@ -31,7 +31,7 @@ class ContactPage extends React.Component {
         <div className="ContactPage-block">
           <ContactForm
             classes="ContactPage-form"
-            formMessage="Lets make something!"/>
+          />
         </div>
       </div>
     )

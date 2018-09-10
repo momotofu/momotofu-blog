@@ -66,7 +66,6 @@ class ContactForm extends React.Component {
     return (
       <div>
         <div className='ContactPage-form-message' id='ContactPage-form-message'>
-          {this.props.formMessage}
         </div>
 
         <form
