@@ -6,7 +6,7 @@ export const addWorksVisibilityFilter = filter => ({
   type: types.ADD_WORKS_VISIBILITY_FILTER,
   filter
 })
-export const addWorksVisibilityFilter = filter => ({
+export const removeWorksVisibilityFilter = filter => ({
   type: types.REMOVE_WORKS_VISIBILITY_FILTER,
   filter
 })
