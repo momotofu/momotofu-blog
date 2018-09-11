@@ -1,12 +1,13 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
+import React from 'react'
+import ReactDOM from 'react-dom'
+import { createStore } from 'redux'
 import {
   BrowserRouter as Router
 } from 'react-router-dom'
 
-import App from './App';
+import App from './App'
 import ScrollToTop from './components/scrollToTop'
-import registerServiceWorker from './registerServiceWorker';
+import registerServiceWorker from './registerServiceWorker'
 
 ReactDOM.render((
   <Router>
@@ -14,5 +15,5 @@ ReactDOM.render((
       <App />
     </ScrollToTop>
   </Router>
-), document.getElementById('root'));
-registerServiceWorker();
+), document.getElementById('root'))
+registerServiceWorker()

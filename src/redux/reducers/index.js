@@ -1,10 +1,10 @@
 import { combineReducers } from 'redux'
-import worksVisibilityFilter from './worksVisibilityFilter'
-import toggleModal from './toggleModal'
+import worksVisibilityFilters from './worksVisibilityFilters'
+import worksModal from './toggleModal'
 
 const rootReducer = combineReducers({
-  worksVisibilityFilter,
-  toggleModal
+  worksVisibilityFilters,
+  worksModal
 })
 
 export default rootReducer
