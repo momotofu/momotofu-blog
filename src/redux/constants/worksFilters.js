@@ -1,4 +1,3 @@
-export const SHOW_ALL = 'show_all'
 export const PROFESSIONAL = 'professional'
 export const OPEN_SOURCE = 'open_source'
 export const CONTRACT = 'contract'
