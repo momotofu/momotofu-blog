@@ -1,3 +1,4 @@
 import * as types from '../constants/actionTypes'
 
-export const addTodo = text => ({ type: types.TOGGLE_MODAL })
+export const toggleModal => ({ type: types.TOGGLE_MODAL })
+export const setWorksVisiblitityFilter = filter => ({ type: types.SET_WORKS_FILTER, filter })

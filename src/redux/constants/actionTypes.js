@@ -1,1 +1,2 @@
 export const TOGGLE_MODAL = 'TOGGLE_MODAL'
+export const SET_WORKS_FILTER =  'SET_WORKS_FILTER'
