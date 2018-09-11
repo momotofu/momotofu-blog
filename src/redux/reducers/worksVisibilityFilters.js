@@ -12,16 +12,18 @@ const initialState = {
 const worksVisibilityFilters = (state = initialState, action) => {
   switch (action.type) {
     case ADD_WORKS_VISIBILITY_FILTER:
-      if (state.indexOf(action.filter) === -1)
+      console.log('filter state: ', state)
+      if (state.filters.indexOf(action.filter) === -1)
         return Object.assign({}, state, {
-          filters: state.filters.push(action.filter)
+          filters: state.filters.concat(action.filter)
         })
       else
         return state
     case REMOVE_WORKS_VISIBILITY_FILTER:
-      if (state.indexOf(action.filter) !== -1)
+      if (state.filters.indexOf(action.filter) !== -1)
         return Object.assign({}, state, {
-          filters: state.filters.splice(state.indexOf(action.filter), 1)
+          filters: state.filters.filter(filter =>
+            filter !== action.filter)
         })
       else
         return state
