@@ -6,8 +6,11 @@ import {
 } from 'react-router-dom'
 
 import App from './App'
+import rootReducer from './redux/reducers'
 import ScrollToTop from './components/scrollToTop'
 import registerServiceWorker from './registerServiceWorker'
+
+const store = createStore(rootReducer)
 
 ReactDOM.render((
   <Router>
