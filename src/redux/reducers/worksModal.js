@@ -7,7 +7,7 @@ const initialState = {
 const worksModal = (state = initialState, action) => {
   switch (action.type) {
     case TOGGLE_WORKS_MODAL:
-      return object.assign({}, state, {
+      return Object.assign({}, state, {
         isModalVisible: !state.isModalVisible
       })
     default:

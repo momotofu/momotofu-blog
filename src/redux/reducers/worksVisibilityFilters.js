@@ -11,22 +11,22 @@ const initialState = {
 
 const worksVisibilityFilters = (state = initialState, action) => {
   switch (action.type) {
-    case ADD_WORKS_VISBILITY_FILTER:
+    case ADD_WORKS_VISIBILITY_FILTER:
       if (state.indexOf(action.filter) === -1)
-        return object.assign({}, state, {
+        return Object.assign({}, state, {
           filters: state.filters.push(action.filter)
         })
       else
         return state
     case REMOVE_WORKS_VISIBILITY_FILTER:
       if (state.indexOf(action.filter) !== -1)
-        return object.assign({}, state, {
+        return Object.assign({}, state, {
           filters: state.filters.splice(state.indexOf(action.filter), 1)
         })
       else
         return state
-    case TOGGLE_WORKS_VISBILITY_FILTERS:
-      return object.assign({}, state, {
+    case TOGGLE_WORKS_VISIBILITY_FILTERS:
+      return Object.assign({}, state, {
         showFilters: !state.showFilters
       })
     default:
@@ -34,4 +34,4 @@ const worksVisibilityFilters = (state = initialState, action) => {
   }
 }
 
-export default worksVisbilityFilters
+export default worksVisibilityFilters
