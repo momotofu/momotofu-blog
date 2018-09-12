@@ -53,7 +53,7 @@ class AnimateImages extends React.Component {
     if (index >= imageLength - 1)
       this.setState({ index: 0 }) // restart sequence
     else
-      this.setState({ index: index + 1}) // progress forward in sequence
+      this.setState((state, props) => ({ index: state.index + 1 })) // progress forward in sequence
   }
 
 
