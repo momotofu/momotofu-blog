@@ -275,22 +275,6 @@
       height: auto;
       bottom: 0;
       transition: all 0.3s ease;
-
-      &:hover {
-        cursor: pointer;
-        transform: scale(1.1);
-      }
-
-      &:active {
-        transform: translateX(-10px);
-      }
-
-      @media screen and (max-width: 600px) {
-        &:active, &:hover {
-          transform: none;
-          cursor: none;
-        }
-      }
     }
 
     &-bg {
