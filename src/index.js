@@ -1,6 +1,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import { createStore } from 'redux'
+import { Provider } from 'react-redux'
 import {
   BrowserRouter as Router
 } from 'react-router-dom'
@@ -21,7 +22,9 @@ if (process.env.NODE_ENV !== 'production') {
 ReactDOM.render((
   <Router>
     <ScrollToTop>
-      <App />
+      <Provider store={ store }>
+        <App />
+      </Provider>
     </ScrollToTop>
   </Router>
 ), document.getElementById('root'))
