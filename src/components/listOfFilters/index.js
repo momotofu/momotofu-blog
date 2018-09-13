@@ -21,11 +21,15 @@ class ListOfFilters extends React.Component {
     })
   }
 
+  animateFilterPanel() {
+    this.props.toggleIsShowing()
+  }
+
   render() {
     const text = this.props.isShowing ? 'Hide filters' : 'Show filters'
     return (
       <div className="Filters">
-        <button onClick={ this.props.toggleIsShowing } >{text}</button>
+        <button onClick={ this.animateFilterPanel.bind(this) } >{text}</button>
         <div className="Filters-panel">
           { this.renderFilters() }
         </div>

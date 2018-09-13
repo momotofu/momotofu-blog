@@ -2,9 +2,13 @@ import React from 'react'
 import { generateRandomIDHash } from '../../utils'
 import './index.css'
 
-const Checkbox = ({ label, isChecked, onChange }) => {
+const Checkbox = ({ label, isChecked, toggleFilter }) => {
   const id = generateRandomIDHash() + label
-  console.log('isChecked: ', isChecked)
+  const handleChange = (event) => {
+    toggleFilter()
+    event.stopPropagation()
+  }
+
   return (
     <div>
       <input
@@ -12,7 +16,7 @@ const Checkbox = ({ label, isChecked, onChange }) => {
         id={ id }
         checked={ isChecked }
         value={ label }
-        onChange={ onChange } />
+        onChange={ handleChange } />
       <label htmlFor={ id }>{ label }</label>
     </div>
   )

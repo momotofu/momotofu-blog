@@ -10,9 +10,7 @@ const mapStateToProps = (state, ownProps) => {
 }}
 
 const mapDispatchToProps = (dispatch, ownProps) => ({
-  onChange: (event) => {
-    dispatch(toggleWorksVisibilityFilter(ownProps.label))
-  }
+  toggleFilter: () => dispatch(toggleWorksVisibilityFilter(ownProps.label))
 })
 
 
