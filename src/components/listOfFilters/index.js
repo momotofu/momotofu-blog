@@ -19,6 +19,9 @@ class ListOfFilters extends React.Component {
   }
 
   componentDidMount() {
+    this.filterPanel = document.querySelector(`#Filters-panel-${this.ID}`)
+    if (this.props.isShowing) this.filterPanel.style.height = '100%'
+    else this.filterPanel.style.height = '0%'
   }
 
   renderFilters() {
@@ -53,7 +56,9 @@ class ListOfFilters extends React.Component {
     return (
       <div className="Filters">
         <button onClick={ this.animateFilterPanel.bind(this) } >{ text }</button>
-        <div className="Filters-panel" id={ `Filters-panel-${this.ID}` }>
+        <div
+          className="Filters-panel"
+          id={ `Filters-panel-${this.ID}` }>
           { this.renderFilters() }
         </div>
       </div>
