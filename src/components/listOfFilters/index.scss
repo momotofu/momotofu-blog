@@ -1,1 +1,10 @@
 @import '../../styles/color.scss';
+
+.Filters {
+  width: 100%;
+
+  &-panel {
+    height: 100%;
+    overflow: hidden;
+  }
+}

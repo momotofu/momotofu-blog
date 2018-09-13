@@ -10,6 +10,10 @@ export const removeWorksVisibilityFilter = filter => ({
   type: types.REMOVE_WORKS_VISIBILITY_FILTER,
   filter
 })
+export const toggleWorksVisibilityFilter = filter => ({
+  type: types.TOGGLE_WORKS_VISIBILITY_FILTER,
+  filter
+})
 export const toggleWorksVisibilityFilters = () => ({
   type: types.TOGGLE_WORKS_VISIBILITY_FILTERS
 })

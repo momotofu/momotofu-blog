@@ -1,5 +1,7 @@
 import React from 'react'
 import './index.css'
+import { generateRandomIDHash } from '../../utils'
+import WorksCheckbox from '../../redux/containers/worksCheckbox'
 
 class ListOfFilters extends React.Component {
   /**
@@ -9,12 +11,23 @@ class ListOfFilters extends React.Component {
    * component props are:
    */
 
+  renderFilters() {
+    return this.props.filters.map((filter, index) => {
+      return (
+        <WorksCheckbox
+          label={ filter }
+          key={ index + generateRandomIDHash() } />
+      )
+    })
+  }
+
   render() {
     const text = this.props.isShowing ? 'Hide filters' : 'Show filters'
     return (
       <div className="Filters">
         <button onClick={ this.props.toggleIsShowing } >{text}</button>
         <div className="Filters-panel">
+          { this.renderFilters() }
         </div>
       </div>
     )

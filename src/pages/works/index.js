@@ -1,5 +1,6 @@
 import React from 'react'
 import './index.css'
+import WorksVisibilityFilters from '../../redux/containers/worksFilters'
 
 class WorksPage extends React.Component {
   /**
@@ -20,6 +21,7 @@ class WorksPage extends React.Component {
   render() {
     return (
       <div className="row">
+        <WorksVisibilityFilters filters={ ['JavaScript', 'Python', 'Java'] } />
       </div>
     )
   }
