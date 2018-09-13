@@ -4,12 +4,19 @@ import {
 } from '../actions'
 import WorksCheckbox from '../../components/checkbox'
 
+const mapStateToProps = (state, ownProps) => {
+  return {
+  isChecked: state.worksVisibilityFilters.filters.indexOf(ownProps.label) !== -1
+}}
+
 const mapDispatchToProps = (dispatch, ownProps) => ({
-  onClick: () => dispatch(toggleWorksVisibilityFilter(ownProps.label))
+  onChange: (event) => {
+    dispatch(toggleWorksVisibilityFilter(ownProps.label))
+  }
 })
 
 
 export default connect(
-  null,
+  mapStateToProps,
   mapDispatchToProps
 )(WorksCheckbox)
