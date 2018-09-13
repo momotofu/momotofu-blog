@@ -11,26 +11,49 @@ class ListOfFilters extends React.Component {
    * component props are:
    */
 
+  constructor(props) {
+    super(props)
+
+    this.anime = window.anime
+    this.ID = generateRandomIDHash()
+  }
+
+  componentDidMount() {
+  }
+
   renderFilters() {
     return this.props.filters.map((filter, index) => {
       return (
         <WorksCheckbox
           label={ filter }
-          key={ index + generateRandomIDHash() } />
+          key={ index + this.ID } />
       )
+    })
+  }
+
+  getFilterPanelAnimation() {
+    return this.anime({
+      targets: document.querySelector(`#Filters-panel-${this.ID}`),
+      height: this.props.isShowing ? '0%' : '100%',
+      duration: 300,
+      autoplay: false,
+      easing: 'easeInCubic'
     })
   }
 
   animateFilterPanel() {
     this.props.toggleIsShowing()
+    if (this.panelAnimation) this.panelAnimation.reset()
+    this.panelAnimation = this.getFilterPanelAnimation()
+    this.panelAnimation.play()
   }
 
   render() {
     const text = this.props.isShowing ? 'Hide filters' : 'Show filters'
     return (
       <div className="Filters">
-        <button onClick={ this.animateFilterPanel.bind(this) } >{text}</button>
-        <div className="Filters-panel">
+        <button onClick={ this.animateFilterPanel.bind(this) } >{ text }</button>
+        <div className="Filters-panel" id={ `Filters-panel-${this.ID}` }>
           { this.renderFilters() }
         </div>
       </div>
