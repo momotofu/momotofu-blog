@@ -9,7 +9,7 @@ export const getVisibleWorks = createSelector(
     if (filters.length === 0) return works
 
     return works.filter((work) => {
-      return work.tags.some(tag => filters.indexOf(tag) !== -1)
+      return filters.every((filter) => work.tags.indexOf(filter) !== -1)
     })
   }
 )
