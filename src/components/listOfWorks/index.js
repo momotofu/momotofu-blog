@@ -17,7 +17,7 @@ class ListOfWorks extends React.Component {
       let topTags = []
       for (let i = 0; i < 3 && i < work.tags.length - 1; i++) {
         topTags.push(
-          <span key={ i + 'span' + generateRandomIDHash() }>work.tags[i]</span>
+          <span key={ i + 'span' + generateRandomIDHash() }>{ work.tags[i] }</span>
         )
       }
       return (
