@@ -5,7 +5,7 @@ const initialState = [
     repoUrl: 'https://github.com/momotofu/OsakaSpots',
     thumbnailImageURL: '',
     presentationImageURL: '',
-    tags: ['Fuse.js', 'Python', 'Knex.js', 'Objection.js', 'Express.js', 'Node.js', 'Knockout.js', 'Nodemon', 'concurrently.js', 'Stylus', 'Pug', 'Webpack', 'SQLite3', 'Google Maps JavaScript API', 'Yelp Fusion API', 'Bash', 'JavaScript']
+    tags: ['Fuse.js', 'Knex.js', 'Objection.js', 'Express.js', 'Node.js', 'Knockout.js', 'Nodemon', 'concurrently.js', 'Stylus', 'Pug', 'Webpack', 'SQLite3', 'Google Maps JavaScript API', 'Yelp Fusion API', 'Bash', 'JavaScript']
   },
   {
     title: 'Catalogger',

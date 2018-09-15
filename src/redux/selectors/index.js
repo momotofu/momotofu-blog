@@ -9,7 +9,8 @@ export const getVisibleWorks = createSelector(
     if (filters.length === 0) return works
 
     return works.filter((work) => {
-      return filters.every((filter) => work.tags.indexOf(filter) !== -1)
+      const lowerCaseTags = work.tags.map(work => work.toLowerCase())
+      return filters.every((filter) => lowerCaseTags.indexOf(filter.toLowerCase()) !== -1)
     })
   }
 )
