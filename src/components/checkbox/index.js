@@ -2,7 +2,7 @@ import React from 'react'
 import { generateRandomIDHash } from '../../utils'
 import './index.css'
 
-const Checkbox = ({ label, isChecked, toggleFilter }) => {
+const Checkbox = ({ label, isChecked, toggleFilter, className }) => {
   const id = generateRandomIDHash() + label
   const handleChange = (event) => {
     toggleFilter()
@@ -10,7 +10,7 @@ const Checkbox = ({ label, isChecked, toggleFilter }) => {
   }
 
   return (
-    <div>
+    <div className={ className }>
       <input
         type="checkbox"
         id={ id }

@@ -28,6 +28,7 @@ class ListOfFilters extends React.Component {
     return this.props.filters.map((filter, index) => {
       return (
         <WorksCheckbox
+          className="Filters-panel-filter"
           label={ filter }
           key={ index + this.ID } />
       )
