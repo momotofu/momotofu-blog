@@ -16,6 +16,7 @@ class ListOfFilters extends React.Component {
 
     this.anime = window.anime
     this.ID = generateRandomIDHash()
+    this.panelHeight = '32px'
   }
 
   componentDidMount() {
@@ -28,7 +29,7 @@ class ListOfFilters extends React.Component {
     return this.props.filters.map((filter, index) => {
       return (
         <WorksCheckbox
-          className="Filters-panel-filter"
+          className={ `Filters-panel-filter ${ this.props.isShowing ? '' : 'd-none' }` }
           label={ filter }
           key={ index + this.ID } />
       )
@@ -38,7 +39,7 @@ class ListOfFilters extends React.Component {
   getFilterPanelAnimation() {
     return this.anime({
       targets: document.querySelector(`#Filters-panel-${this.ID}`),
-      height: this.props.isShowing ? '0%' : '100%',
+      height: this.props.isShowing ? '0' : this.panelHeight,
       duration: 300,
       autoplay: false,
       easing: 'easeInCubic'

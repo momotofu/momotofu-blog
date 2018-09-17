@@ -4,12 +4,10 @@
   width: 100%;
 
   &-panel {
-    position: relative;
     overflow: hidden;
     background: $bubbleBath;
 
     &-filter {
-      position: absolute;
     }
   }
 }

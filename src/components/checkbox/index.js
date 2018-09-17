@@ -12,12 +12,17 @@ const Checkbox = ({ label, isChecked, toggleFilter, className }) => {
   return (
     <div className={ className }>
       <input
+        className="Checkbox-input"
         type="checkbox"
         id={ id }
         checked={ isChecked }
         value={ label }
         onChange={ handleChange } />
-      <label htmlFor={ id }>{ label }</label>
+      <label
+        className="Checkbox-label"
+        htmlFor={ id }>
+        { label }
+      </label>
     </div>
   )
 }
