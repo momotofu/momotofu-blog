@@ -21,9 +21,14 @@ class WorksPage extends React.Component {
 
   render() {
     return (
-      <div className="row">
-        <WorksVisibilityFilters filters={ ['JavaScript', 'Python', 'Java'] } />
-        <WorksList />
+      <div className="container-nested">
+        <div className="row pt-5">
+          <WorksVisibilityFilters
+            filters={
+              ['JavaScript', 'Python', 'Java', 'Open Source', 'Swift', 'Contract']
+            } />
+        </div>
+        <WorksList className="row" />
       </div>
     )
   }

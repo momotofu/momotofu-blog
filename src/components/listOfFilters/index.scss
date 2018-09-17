@@ -3,11 +3,18 @@
 .Filters {
   width: 100%;
 
+  &-show-button {
+    font-size: 1.5rem;
+  }
+
   &-panel {
+    background: charcoal;
     overflow: hidden;
-    background: $bubbleBath;
+    background: $charcoal;
+    display: flex;
 
     &-filter {
+      color: $bubbleBath;
     }
   }
 }

@@ -21,7 +21,7 @@ class ListOfWorks extends React.Component {
         )
       }
       return (
-        <div key={ index + 'div' + generateRandomIDHash() }>
+        <div className="Works-card col-lg-6" key={ index + 'div' + generateRandomIDHash() }>
           <h1>{ work.title }</h1>
           <h3>{ work.description }</h3>
           <div>
@@ -32,7 +32,7 @@ class ListOfWorks extends React.Component {
     })
 
     return (
-      <div>
+      <div className={ this.props.className }>
         { works }
       </div>
     )

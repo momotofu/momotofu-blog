@@ -16,12 +16,12 @@ class ListOfFilters extends React.Component {
 
     this.anime = window.anime
     this.ID = generateRandomIDHash()
-    this.panelHeight = '32px'
+    this.panelHeight = '48px'
   }
 
   componentDidMount() {
     this.filterPanel = document.querySelector(`#Filters-panel-${this.ID}`)
-    if (this.props.isShowing) this.filterPanel.style.height = '100%'
+    if (this.props.isShowing) this.filterPanel.style.height = this.panelHeight
     else this.filterPanel.style.height = '0%'
   }
 
@@ -57,7 +57,9 @@ class ListOfFilters extends React.Component {
     const text = this.props.isShowing ? 'Hide filters' : 'Show filters'
     return (
       <div className="Filters">
-        <button onClick={ this.animateFilterPanel.bind(this) } >{ text }</button>
+        <button
+          onClick={ this.animateFilterPanel.bind(this) }
+          className="Filters-show-button">{ text }</button>
         <div
           className="Filters-panel"
           id={ `Filters-panel-${this.ID}` }>
