@@ -33,9 +33,11 @@
       color: $electricity;
     }
 
-    &[type="checkbox"]:hover {
-      &:after {
-        content: 'X';
+    @media screen and (hover:hover) {
+      &[type="checkbox"]:hover {
+        &:after {
+          content: 'X';
+        }
       }
     }
   }
