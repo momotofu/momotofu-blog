@@ -2,6 +2,7 @@
 
 .Filters {
   width: 100%;
+  padding: .5rem;
 
   &-show-button {
     font-size: 1.5rem;
@@ -19,6 +20,7 @@
       align-items: center;
       color: $bubbleBath;
       margin-right: 1rem;
+      margin-top: -4px;
     }
   }
 }
