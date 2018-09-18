@@ -175,7 +175,7 @@ class AboutPage extends React.Component {
             messages={
               [`Hello${ recipient ? ' ' + recipient : ''},|Welcome to my webby bio.| I'm Christopher...`,
               `Check it out!`,
-              `The Sakura tree below is actually a python program I wrote.`,
+              `The Sakura tree below is actually a python program I wrote. And it's running right now.`,
               `It uses the pattern of recursion to generate and render a tree similar to the way nature does.`,
               `The program draws a new tree each time.`,
               `It'll take a sec for the tree to grow, so enjoy the little squiggles or continue scrolling on through.`]
@@ -186,7 +186,7 @@ class AboutPage extends React.Component {
             <button
               className="AboutPage-greeting-control"
               style={{left: 0}}
-              onClick={ this.redrawClickHandler }>Redraw tree</button>
+              onClick={ this.redrawClickHandler }>Draw a new tree</button>
           </div>
           <div className="AboutPage-SakuraTree">
             <SakuraTree />
