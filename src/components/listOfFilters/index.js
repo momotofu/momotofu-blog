@@ -16,7 +16,7 @@ class ListOfFilters extends React.Component {
 
     this.anime = window.anime
     this.ID = generateRandomIDHash()
-    this.panelHeight = '48px'
+    this.panelHeight = window.innerWidth < 600 ? '98px' : '48px'
   }
 
   componentDidMount() {

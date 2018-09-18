@@ -12,6 +12,7 @@
     overflow: hidden;
     background: $charcoal;
     display: flex;
+    flex-wrap: wrap;
 
     &-filter {
       color: $bubbleBath;

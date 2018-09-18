@@ -1,4 +1,16 @@
+@import '../../styles/color.scss';
+
 .Works {
   &-card {
+    border: 2px solid $charcoal;
+    border-radius: 3px;
+    padding: 1rem;
+    margin: .5rem -.75rem;
+
+    @media screen and (hover:hover) {
+      &:hover {
+        cursor: pointer;
+      }
+    }
   }
 }
