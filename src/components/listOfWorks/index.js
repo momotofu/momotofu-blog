@@ -12,7 +12,6 @@ class ListOfWorks extends React.Component {
    */
 
   render() {
-    console.log(this.props)
     const works = this.props.filteredWorks.map((work, index) => {
       let topTags = []
       for (let i = 0; i < 3 && i < work.tags.length - 1; i++) {
