@@ -11,6 +11,10 @@ class ListOfWorks extends React.Component {
    * component props are:
    */
 
+  cardClickHandler(work, event) {
+    this.props.toggleWorksModal()
+  }
+
   render() {
     const works = this.props.filteredWorks.map((work, index) => {
       let topTags = []
@@ -25,7 +29,7 @@ class ListOfWorks extends React.Component {
       }
       return (
         <div className="col-lg-6" key={ index + 'div' + generateRandomIDHash() }>
-          <div className="Works-card">
+          <div className="Works-card" onClick={ this.cardClickHandler.bind(this, work) }>
             <h1 className="Works-card-title">{ work.title }</h1>
             <span className="Works-card-cta">
               <span className="Works-card-cta-bracket">&lt;</span>
