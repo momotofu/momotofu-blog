@@ -15,7 +15,10 @@
     flex-wrap: wrap;
 
     &-filter {
+      display: flex;
+      align-items: center;
       color: $bubbleBath;
+      margin-right: 1rem;
     }
   }
 }
