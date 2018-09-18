@@ -5,12 +5,68 @@
     border: 2px solid $charcoal;
     border-radius: 3px;
     padding: 1rem;
+    padding-left: 1.2rem;
     margin: .5rem -.75rem;
+    transition: all .3s ease;
+
+    &:before {
+      content: '';
+      width: calc(100% + 4px);
+      height: 0;
+      position: absolute;
+      left: -2px;
+      top: 0;
+      border-top-left-radius: 2px;
+      border-top-right-radius: 2px;
+      background: $charcoal;
+      transition: all .3s ease;
+    }
+
 
     @media screen and (hover:hover) {
       &:hover {
         cursor: pointer;
+        transform: translateY(3px);
+        border-color: $hauntar;
+        background: $bubbleBath;
+
+        &:before {
+          background: $hauntar;
+          height: 6px;
+          top: -5px;
+        }
       }
+
+      &:hover &-pill {
+        background: $electricity !important;
+      }
+    }
+
+    &:active {
+      transition: none;
+      border-color: $neonPink;
+
+      &:before {
+        background: $neonPink;
+      }
+    }
+
+    &-title {
+      font-size: 3rem;
+      line-height: .9;
+      margin-bottom: 1.5rem;
+    }
+
+    &-pill {
+      transition: all .3s ease;
+      display: inline-block;
+      background: $bubbleBath;
+      margin-right: .5rem;
+      border-radius: 100px;
+      padding: 0 12px;
+      border: 1px solid;
+      line-height: 1.1;
+      font-size: 1.7rem;
     }
   }
 }

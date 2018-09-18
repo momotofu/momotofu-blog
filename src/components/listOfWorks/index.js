@@ -17,15 +17,20 @@ class ListOfWorks extends React.Component {
       let topTags = []
       for (let i = 0; i < 3 && i < work.tags.length - 1; i++) {
         topTags.push(
-          <span key={ i + 'span' + generateRandomIDHash() }>{ work.tags[i] }</span>
+          <span
+            className="Works-card-pill"
+            key={ i + 'span' + generateRandomIDHash() }>
+            { work.tags[i] }
+          </span>
         )
       }
       return (
         <div className="col-lg-6" key={ index + 'div' + generateRandomIDHash() }>
           <div className="Works-card">
-            <h1>{ work.title }</h1>
+            <h1 className="Works-card-title">{ work.title }</h1>
             <div>
               { topTags }
+              <span className="Works-card-pill">...</span>
             </div>
           </div>
         </div>
