@@ -4,7 +4,9 @@ import { toggleWorksModal } from '../actions'
 
 const mapStateToProps = state => ({
   isShowing: state.worksModal.isModalVisible,
-  activeWorkID: state.worksModal.activeWorkID
+  work: state.works.filter((work) => {
+    return work.title === state.worksModal.activeWorkID
+  })
 })
 
 const mapDispatchToProps = (dispatch) => ({

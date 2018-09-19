@@ -24,6 +24,7 @@ class WorksModal extends React.Component {
 
   exitButtonClickHandler() {
     this.props.toggleModal()
+    console.log(this.props.work)
   }
 
   render() {
@@ -35,8 +36,9 @@ class WorksModal extends React.Component {
           onClick={ this.exitButtonClickHandler.bind(this) }>
           <span className="underline">Back</span>
       </button>
+      <div className="WorksModal-panel WorksModal-panel-description">
+      </div>
         <div className="WorksModal-panel"></div>
-        <div className="WorksModal-panel WorksModal-panel-description"></div>
       </div>
     )
   }
