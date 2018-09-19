@@ -5,14 +5,21 @@ class WorksModal extends React.Component {
   /**
    * WorksModal
    *
-   * state:
-   *
    * component props are:
+   * isShowing:
+   * activeWorkID
    */
+
+  exitButtonClickHandler() {
+    this.props.toggleModal()
+  }
 
   render() {
     return (
-      <div>
+      <div className={ `WorksModal ${ this.props.isShowing ? '' : 'd-none' }` }>
+        <button
+          className="WorksModal-button-exit"
+          onClick={ this.exitButtonClickHandler.bind(this) }>Back</button>
       </div>
     )
   }

@@ -2,6 +2,7 @@ import React from 'react'
 import './index.css'
 import WorksVisibilityFilters from '../../redux/containers/worksFilters'
 import WorksList from '../../redux/containers/worksList'
+import WorksModal from '../../redux/containers/worksModal'
 
 class WorksPage extends React.Component {
   /**
@@ -29,6 +30,7 @@ class WorksPage extends React.Component {
             } />
         </div>
         <WorksList className="row" />
+        <WorksModal />
       </div>
     )
   }

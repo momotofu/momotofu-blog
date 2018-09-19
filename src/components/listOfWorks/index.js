@@ -1,7 +1,6 @@
 import React from 'react'
 import './index.css'
 import { generateRandomIDHash } from '../../utils'
-import WorksModal from '../worksModal'
 
 class ListOfWorks extends React.Component {
   /**
