@@ -201,10 +201,16 @@
 
       @media screen and (max-width: 600px) {
         margin: auto 2rem;
+        font-size: 1.4rem;
       }
 
       @media screen and (max-width: 400px) {
-        margin: 0 1rem -2rem;
+        margin-bottom: -3rem;
+      }
+
+      @media screen and (max-width: 360px) {
+        margin: 0 1rem -3rem;
+        font-size: 1.2rem;
       }
     }
 
@@ -222,8 +228,9 @@
         margin: 3rem;
       }
 
-      @media screen and (max-width: 400px) {
+      @media screen and (max-width: 360px) {
         margin: 2rem 1rem;
+        font-size: 2.7rem;
       }
     }
 
