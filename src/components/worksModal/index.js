@@ -10,6 +10,18 @@ class WorksModal extends React.Component {
    * activeWorkID
    */
 
+  componentDidUpdate() {
+    if (this.props.isShowing) {
+      // prevent background from scrolling
+      document.body.style.overflow = 'hidden'
+      document.body.style.position = 'fixed'
+    } else {
+      // allow background to scroll again
+      document.body.style.overflow = 'hidden'
+      document.body.style.position = 'relative'
+    }
+  }
+
   exitButtonClickHandler() {
     this.props.toggleModal()
   }
@@ -17,13 +29,14 @@ class WorksModal extends React.Component {
   render() {
     return (
       <div className={ `WorksModal ${ this.props.isShowing ? '' : 'd-none' }` }>
+        <div className="WorksModal-bg"></div>
         <button
           className="WorksModal-button WorksModal-button-exit"
           onClick={ this.exitButtonClickHandler.bind(this) }>
           <span className="underline">Back</span>
       </button>
-        <div className="WorksModal-description-panel">
-        </div>
+        <div className="WorksModal-panel"></div>
+        <div className="WorksModal-panel WorksModal-panel-description"></div>
       </div>
     )
   }
