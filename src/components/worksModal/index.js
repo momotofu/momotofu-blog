@@ -53,6 +53,7 @@ class WorksModal extends React.Component {
           <span className="underline">Back</span>
       </button>
       <div className="WorksModal-panel">
+        <img className="WorksModal-panel-image" src={ process.env.PUBLIC_URL + '/images/under_cc.png' } />
       </div>
       <div className="WorksModal-panel WorksModal-panel-description">
         <h1 className="WorksModal-panel-description-header">{ work.title }</h1>
