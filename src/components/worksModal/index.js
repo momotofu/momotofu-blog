@@ -18,8 +18,12 @@ class WorksModal extends React.Component {
     return (
       <div className={ `WorksModal ${ this.props.isShowing ? '' : 'd-none' }` }>
         <button
-          className="WorksModal-button-exit"
-          onClick={ this.exitButtonClickHandler.bind(this) }>Back</button>
+          className="WorksModal-button WorksModal-button-exit"
+          onClick={ this.exitButtonClickHandler.bind(this) }>
+          <span className="underline">Back</span>
+      </button>
+        <div className="WorksModal-description-panel">
+        </div>
       </div>
     )
   }

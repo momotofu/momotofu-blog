@@ -59,7 +59,9 @@ class ListOfFilters extends React.Component {
       <div className="Filters">
         <button
           onClick={ this.animateFilterPanel.bind(this) }
-          className="Filters-show-button">{ text }</button>
+          className="Filters-show-button">
+          <span className="underline">{ text }</span>
+        </button>
         <div
           className="Filters-panel"
           id={ `Filters-panel-${this.ID}` }>

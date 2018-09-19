@@ -21,6 +21,19 @@
       cursor: pointer;
     }
 
+    @media screen and (hover:hover) {
+      &:hover .underline {
+        animation: pulse .5s infinite;
+        animation-timing-function: ease-out;
+        animation-direction: alternate;
+      }
+    }
+
+    &:active .underline {
+      animation: none;
+      border-bottom: solid 3px $neonPink;
+    }
+
     @media screen and (max-width: 600px) {
       width: 100%;
     }

@@ -19,6 +19,11 @@ figure {
   margin-bottom: 0 !important;
 }
 
+.underline {
+  height: 28px;
+  display: inline-block;
+}
+
 .container-nested {
   @media screen and (max-width: 600px) {
     padding: 0 15px;
