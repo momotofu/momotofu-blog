@@ -1,4 +1,5 @@
 import React from 'react'
+import { generateRandomIDHash } from '../../utils'
 import './index.css'
 
 class WorksModal extends React.Component {
@@ -24,10 +25,25 @@ class WorksModal extends React.Component {
 
   exitButtonClickHandler() {
     this.props.toggleModal()
-    console.log(this.props.work)
+  }
+
+  renderPills(work) {
+    return work.tags.map((tag, index) => {
+      return (
+        <span
+          className="Works-card-pill WorksModal-pill"
+          key={ index + 'span' + generateRandomIDHash() }>
+          { work.tags[index] }
+        </span>
+      )
+    })
   }
 
   render() {
+    // return if no initial work is active
+    const work = this.props.work[0]
+    if (!work) return <div></div>
+
     return (
       <div className={ `WorksModal ${ this.props.isShowing ? '' : 'd-none' }` }>
         <div className="WorksModal-bg"></div>
@@ -36,9 +52,26 @@ class WorksModal extends React.Component {
           onClick={ this.exitButtonClickHandler.bind(this) }>
           <span className="underline">Back</span>
       </button>
-      <div className="WorksModal-panel WorksModal-panel-description">
+      <div className="WorksModal-panel">
       </div>
-        <div className="WorksModal-panel"></div>
+      <div className="WorksModal-panel WorksModal-panel-description">
+        <h1 className="WorksModal-panel-description-header">{ work.title }</h1>
+        <p className="WorksModal-panel-description-paragraph">{ work.description }</p>
+        <div className="WorksModal-cta">
+          <a
+            className="WorksModal-cta-link"
+            href={ work.liveURL }
+            target="_blank">
+            <span className="Works-card-cta-bracket">&lt;</span>
+            view live
+            <span className="Works-card-cta-bracket">&gt;</span>
+          </a>
+        </div>
+        <h2 className="WorksModal-panel-description-sub-header">Technology</h2>
+        <div>
+          { this.renderPills(work) }
+        </div>
+      </div>
       </div>
     )
   }

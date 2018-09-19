@@ -33,7 +33,7 @@ class ListOfWorks extends React.Component {
             <h1 className="Works-card-title">{ work.title }</h1>
             <span className="Works-card-cta">
               <span className="Works-card-cta-bracket">&lt;</span>
-              view source
+              view details
               <span className="Works-card-cta-bracket">&gt;</span>
             </span>
             <div>

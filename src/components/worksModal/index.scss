@@ -4,6 +4,7 @@
   z-index: 9999;
   position: fixed;
   display: flex;
+  justify-content: space-between;
   width: 100%;
   height: 100%;
   top: 0;
@@ -52,6 +53,21 @@
 
     &-description {
       background: #fff;
+      padding: 2rem;
+      max-width: 550px;
+
+      &-header {
+        font-size: 4rem;
+      }
+
+      &-sub-header {
+        font-size: 3rem;
+      }
+
+      &-paragraph {
+        font-size: 2.5rem;
+        line-height: 1.1;
+      }
     }
   }
 
@@ -61,6 +77,20 @@
     background: rgba(12, 3, 24, .9);
     z-index: -1;
     position: fixed;
+  }
+
+  &-pill {
+    margin-bottom: .5rem;
+  }
+
+  &-cta {
+    display: flex;
+    justify-content: center;
+    padding: 2.5rem;
+
+    &-link {
+      font-size: 2rem;
+    }
   }
 }
 
