@@ -1,6 +1,7 @@
 import React from 'react'
 import './index.css'
 import { generateRandomIDHash } from '../../utils'
+import WorksModal from '../worksModal'
 
 class ListOfWorks extends React.Component {
   /**
@@ -12,7 +13,7 @@ class ListOfWorks extends React.Component {
    */
 
   cardClickHandler(work, event) {
-    this.props.toggleWorksModal()
+    this.props.toggleWorksModal(work.title)
   }
 
   render() {

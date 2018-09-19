@@ -1,6 +1,9 @@
 import * as types from '../constants/actionTypes'
 
-export const toggleWorksModal = () => ({ type: types.TOGGLE_WORKS_MODAL })
+export const toggleWorksModal = (activeWorkID) => ({
+  type: types.TOGGLE_WORKS_MODAL,
+  activeWorkID
+})
 
 export const addWorksVisibilityFilter = filter => ({
   type: types.ADD_WORKS_VISIBILITY_FILTER,

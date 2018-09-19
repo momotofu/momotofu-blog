@@ -1,7 +1,7 @@
 import { connect } from 'react-redux'
 import { getVisibleWorks } from '../selectors'
 import { toggleWorksModal } from '../actions'
-import ListOfWorks from '../../components/listOfWorks'
+import WorksList from '../../components/listOfWorks'
 
 
 const mapStateToProps = state => ({
@@ -9,10 +9,10 @@ const mapStateToProps = state => ({
 })
 
 const mapDispatchToProps = (dispatch) => ({
-  toggleWorksModal: () => dispatch(toggleWorksModal())
+  toggleWorksModal: (workID) => dispatch(toggleWorksModal(workID))
 })
 
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(ListOfWorks)
+)(WorksList)
