@@ -51,8 +51,8 @@ class WorksModal extends React.Component {
       .play
   }
 
-  animatePiecesBackward(button, image, description) {
-    const duration = this.animationDuration
+  animatePiecesBackward(button, image, description, modal) {
+    const duration = 500
 
     return this.anime.timeline({
       loop: false,
@@ -65,7 +65,7 @@ class WorksModal extends React.Component {
         duration,
         offset: 0,
         complete: (anim) => {
-          this.animateBackward = this.animatePiecesBackward(button, image, description)
+          this.animateBackward = this.animatePiecesBackward(button, image, description, modal)
           this.props.toggleModal()
         }
       })
@@ -83,6 +83,13 @@ class WorksModal extends React.Component {
         duration,
         offset: 0
       })
+      .add({
+        targets: modal,
+        opacity: ['1', '0'],
+        easing: 'easeOutExpo',
+        duration,
+        offset: 0
+      })
       .play
   }
 
@@ -93,7 +100,7 @@ class WorksModal extends React.Component {
     const descriptionPanel = document.querySelector('#WorksModal-description-panel')
 
     this.animateForward = this.animatePiecesForward(backButton, projectImage, descriptionPanel)
-    this.animateBackward = this.animatePiecesBackward(backButton, projectImage, descriptionPanel)
+    this.animateBackward = this.animatePiecesBackward(backButton, projectImage, descriptionPanel, this.worksModal)
 
   }
 
@@ -138,7 +145,9 @@ class WorksModal extends React.Component {
     }
 
     return (
-      <div className={ `WorksModal ${ this.props.isShowing ? '' : 'd-none' }` }>
+      <div
+        className={ `WorksModal ${ this.props.isShowing ? '' : 'd-none' }` }
+        style={{ opacity: this.props.isShowing ? 1 : null }}>
         <div className="WorksModal-bg"></div>
         <button
           className="WorksModal-button WorksModal-button-exit"
