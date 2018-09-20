@@ -39,10 +39,10 @@ class ListOfFilters extends React.Component {
   getFilterPanelAnimation() {
     return this.anime({
       targets: document.querySelector(`#Filters-panel-${this.ID}`),
-      height: this.props.isShowing ? '0' : this.panelHeight,
-      duration: 300,
+      height: this.props.isShowing ? [this.panelHeight, 0] : [0, this.panelHeight],
+      duration: 160,
       autoplay: false,
-      easing: 'easeInCubic'
+      easing: 'linear'
     })
   }
 
