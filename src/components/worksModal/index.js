@@ -13,15 +13,12 @@ class WorksModal extends React.Component {
   constructor(props) {
     super(props)
 
-    this.state = {
-      isAnimating: false
-    }
-
     this.anime = window.anime
+    this.animationDuration = 1000
   }
 
   animatePiecesForward(button, image, description) {
-    const duration = 1000
+    const duration = this.animationDuration
 
     return this.anime.timeline({
       loop: false,
@@ -50,9 +47,41 @@ class WorksModal extends React.Component {
         easing: 'easeOutExpo',
         duration,
         offset: 0,
+      })
+      .play
+  }
+
+  animatePiecesBackward(button, image, description) {
+    const duration = this.animationDuration
+
+    return this.anime.timeline({
+      loop: false,
+      autoplay: false
+    })
+      .add({
+        targets: description,
+        translateX: ['0%', '100%'],
+        easing: 'easeOutExpo',
+        duration,
+        offset: 0,
         complete: (anim) => {
-          console.log('completed')
+          this.animateBackward = this.animatePiecesBackward(button, image, description)
+          this.props.toggleModal()
         }
+      })
+      .add({
+        targets: button,
+        translateX: ['0%', '-150%'],
+        easing: 'easeOutExpo',
+        duration,
+        offset: 0
+      })
+      .add({
+        targets: image,
+        translateY: ['0%', '150%'],
+        easing: 'easeOutExpo',
+        duration,
+        offset: 0
       })
       .play
   }
@@ -64,6 +93,7 @@ class WorksModal extends React.Component {
     const descriptionPanel = document.querySelector('#WorksModal-description-panel')
 
     this.animateForward = this.animatePiecesForward(backButton, projectImage, descriptionPanel)
+    this.animateBackward = this.animatePiecesBackward(backButton, projectImage, descriptionPanel)
 
   }
 
@@ -82,7 +112,7 @@ class WorksModal extends React.Component {
   }
 
   exitButtonClickHandler() {
-    this.props.toggleModal()
+    this.animateBackward()
   }
 
   renderPills(work) {
@@ -108,7 +138,7 @@ class WorksModal extends React.Component {
     }
 
     return (
-      <div className={ `WorksModal ${ this.props.isShowing && !this.state.isAnimating ? '' : 'd-none' }` }>
+      <div className={ `WorksModal ${ this.props.isShowing ? '' : 'd-none' }` }>
         <div className="WorksModal-bg"></div>
         <button
           className="WorksModal-button WorksModal-button-exit"
