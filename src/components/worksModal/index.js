@@ -43,7 +43,7 @@ class WorksModal extends React.Component {
       })
       .add({
         targets: image,
-        translateY: ['150%', '0%'],
+        translateY: ['150%', '10%'],
         easing: 'easeOutExpo',
         duration,
         offset: 0,
@@ -78,7 +78,7 @@ class WorksModal extends React.Component {
       })
       .add({
         targets: image,
-        translateY: ['0%', '150%'],
+        translateY: ['10%', '150%'],
         easing: 'easeOutExpo',
         duration,
         offset: 0
@@ -118,8 +118,14 @@ class WorksModal extends React.Component {
 
   }
 
-  exitButtonClickHandler() {
-    this.animateBackward()
+  exitButtonClickHandler(event) {
+    const targetClasses = event.target.classList
+    console.log(targetClasses)
+
+    if (targetClasses.contains("WorksModal-button") ||
+        targetClasses.contains("WorksModal-bg") ||
+        targetClasses.contains("underline"))
+      this.animateBackward()
   }
 
   renderPills(work) {
@@ -136,7 +142,6 @@ class WorksModal extends React.Component {
 
 
   render() {
-    // return if no initial work is active
     const work = this.props.work[0] ? this.props.work[0] : {
       title: '',
       description: '',
@@ -147,7 +152,8 @@ class WorksModal extends React.Component {
     return (
       <div
         className={ `WorksModal ${ this.props.isShowing ? '' : 'd-none' }` }
-        style={{ opacity: this.props.isShowing ? 1 : null }}>
+        style={{ opacity: this.props.isShowing ? 1 : null }}
+        onClick={ this.exitButtonClickHandler.bind(this) }>
         <div className="WorksModal-bg"></div>
         <button
           className="WorksModal-button WorksModal-button-exit"
@@ -156,7 +162,10 @@ class WorksModal extends React.Component {
           <span className="underline">Back</span>
       </button>
       <div className="WorksModal-panel" id="WorksModal-project-image">
-        <img className="WorksModal-panel-image" src={ process.env.PUBLIC_URL + '/images/under_cc.png' } alt="product" />
+        <img
+          className="WorksModal-panel-image"
+          src={ process.env.PUBLIC_URL + '/images/under_cc.png' }
+          alt="product" />
       </div>
       <div
         className="WorksModal-panel WorksModal-panel-description"
