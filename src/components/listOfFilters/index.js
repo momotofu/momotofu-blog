@@ -58,7 +58,7 @@ class ListOfFilters extends React.Component {
       return (
         <button
           onClick={ this.props.clearFilters }
-          className="Filters-show-button">
+          className="Filters-button">
           <span className="underline">Clear filters</span>
         </button>
       )
@@ -71,7 +71,7 @@ class ListOfFilters extends React.Component {
       <div className="Filters">
         <button
           onClick={ this.animateFilterPanel.bind(this) }
-          className="Filters-show-button">
+          className="Filters-button Filters-button-show">
           <span className="underline">{ text }</span>
         </button>
         { this.renderClearFiltersButton() }
