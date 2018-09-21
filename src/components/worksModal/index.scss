@@ -63,7 +63,7 @@
     &-description {
       background: #fff;
       padding: 2rem;
-      max-width: 478px;
+      max-width: 566px;
       transform: translateX(100%);
 
       &-header {
@@ -108,6 +108,7 @@
       color: $charcoal;
       align-self: center;
       height: 21px;
+      margin-right: 12px;
 
       @media screen and (hover:hover) {
         &:hover {
@@ -122,6 +123,10 @@
       &:active {
         animation: none;
         border-bottom: 3px solid $neonPink;
+      }
+
+      &:last-child {
+        margin-right: 0;
       }
     }
 

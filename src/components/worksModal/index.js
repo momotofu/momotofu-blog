@@ -120,12 +120,41 @@ class WorksModal extends React.Component {
 
   exitButtonClickHandler(event) {
     const targetClasses = event.target.classList
-    console.log(targetClasses)
 
     if (targetClasses.contains("WorksModal-button") ||
         targetClasses.contains("WorksModal-bg") ||
         targetClasses.contains("underline"))
       this.animateBackward()
+  }
+
+  renderLinks(work) {
+    const links = []
+
+    if (work.liveURL) {
+      links.push(
+        <a
+          className="WorksModal-cta-link"
+          href={ work.liveURL }
+          target="_blank">
+          <span className="Works-card-cta-bracket">&lt;</span>
+          view live
+          <span className="Works-card-cta-bracket">&gt;</span>
+        </a>)
+    }
+
+    if (work.repoURL) {
+      links.push(
+        <a
+          className="WorksModal-cta-link"
+          href={ work.repoURL }
+          target="_blank">
+          <span className="Works-card-cta-bracket">&lt;</span>
+          view code
+          <span className="Works-card-cta-bracket">&gt;</span>
+        </a>)
+    }
+
+    return links
   }
 
   renderPills(work) {
@@ -173,14 +202,7 @@ class WorksModal extends React.Component {
         <h1 className="WorksModal-panel-description-header">{ work.title }</h1>
         <p className="WorksModal-panel-description-paragraph">{ work.description }</p>
         <div className="WorksModal-cta">
-          <a
-            className="WorksModal-cta-link"
-            href={ work.liveURL }
-            target="_blank">
-            <span className="Works-card-cta-bracket">&lt;</span>
-            view live
-            <span className="Works-card-cta-bracket">&gt;</span>
-          </a>
+          { this.renderLinks(work) }
         </div>
         <h2 className="WorksModal-panel-description-sub-header">Technology</h2>
         <div>

@@ -20,6 +20,26 @@ const initialState = [
     tags: ['Flask', 'Python', 'JavaScript', 'Webpack', 'Knockout.js', 'SQLite3', 'PostgresSQL', 'Github Oauth 2.0', 'SQLAlchemy', 'ORM', 'CRUD', 'User login', 'Authentication', 'Open Source']
   },
   {
+    title: 'Qzzr.com',
+    description: 'Qzzr.com was a hugely rewarding and challenging project because of the dynamic needs and demands of a fast paced start up environment.  While working with Movement Ventures I took full charge of qzzr.com. I rewrote the entire website from a copy and pasted WordPress hack to clean and functional code (jade, stylus, etc.). I cowboyed and crafted all of the UI features (galleries, forms, mobile, navigation, SEO, and A / B tests) and integrated our contact forms with an integrations server (I built the server from the ground up using Node, Express, and third party API\'s). ',
+    repoURL: '',
+    thumbnailImageURL: '',
+    presentationImageURL: '',
+    liveURL: 'https://www.qzzr.com',
+    sortPriority: 0,
+    tags: ['React.js', 'Startup','JavaScript', 'SEO', 'Pug', 'Google Analytics', 'Stylus', 'Wordpress', 'AJAX', 'Jekyll', 'Stripe', 'signup forms', 'forms', 'HTML', 'CSS Animations','Marketo API', 'Mobile development', 'Skunk works', 'Development pipeline', 'Technical documentation', 'SQL'],
+  },
+  {
+    title: '96problems.com',
+    description: 'I had the pleasure to contract with 96problems.com and to implement several new features to their iOS App now called "Everyst." First I completed the major task of bringing their tech stack up to date (React-Native from 0.39 to 0.43). Then I added React-Native animations, new swipe and touch functionality, pull up to refresh, and confirmed local notifications and preferences capability.',
+    repoURL: '',
+    thumbnailImageURL: '',
+    presentationImageURL: '',
+    liveURL: 'https://fromeveryst.com/',
+    sortPriority: 0,
+    tags: ['React-Native.js', 'Startup','JavaScript', 'iOS Development', 'CocoaPods', 'React-Native Animations', 'Mobile development', 'Contract']
+  },
+  {
     title: 'Cat clicker',
     description: 'An exercise and example of separation of concerns using vanilla JavaScript. Count user clicks, and customize / edit the cats. Which is the cutest cat and how clickety are they?',
     repoURL: 'https://github.com/momotofu/Catalogger',
