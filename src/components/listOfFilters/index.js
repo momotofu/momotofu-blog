@@ -53,6 +53,18 @@ class ListOfFilters extends React.Component {
     this.panelAnimation.play()
   }
 
+  renderClearFiltersButton() {
+    if (this.props.hasFilter) {
+      return (
+        <button
+          onClick={ this.props.clearFilters }
+          className="Filters-show-button">
+          <span className="underline">Clear filters</span>
+        </button>
+      )
+    }
+  }
+
   render() {
     const text = this.props.isShowing ? 'Hide filters' : 'Show filters'
     return (
@@ -62,6 +74,7 @@ class ListOfFilters extends React.Component {
           className="Filters-show-button">
           <span className="underline">{ text }</span>
         </button>
+        { this.renderClearFiltersButton() }
         <div
           className="Filters-panel"
           id={ `Filters-panel-${this.ID}` }>

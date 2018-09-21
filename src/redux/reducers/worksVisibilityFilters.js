@@ -1,6 +1,7 @@
 import {
   ADD_WORKS_VISIBILITY_FILTER,
   REMOVE_WORKS_VISIBILITY_FILTER,
+  CLEAR_WORKS_VISIBILITY_FILTERS,
   TOGGLE_WORKS_VISIBILITY_FILTER,
   TOGGLE_WORKS_VISIBILITY_FILTERS
 } from '../constants/actionTypes'
@@ -35,6 +36,10 @@ const worksVisibilityFilters = (state = initialState, action) => {
         return removeWorksFilter(state, action)
       else
         return state
+    case CLEAR_WORKS_VISIBILITY_FILTERS:
+      return Object.assign({}, state, {
+        filters: []
+      })
     case TOGGLE_WORKS_VISIBILITY_FILTER:
       if (state.filters.indexOf(action.filter) === -1)
         return addWorksFilter(state, action)
