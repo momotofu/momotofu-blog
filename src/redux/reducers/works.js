@@ -78,7 +78,27 @@ const initialState = [
     liveURL: '',
     sortPriority: 0,
     tags: ['Swift', 'iOS', 'Game', 'iPhone', 'Apple', 'MVC', 'Delegation']
-  }
+  },
+  {
+    title: 'Linux Server Config',
+    description: 'Installed and configured Linux/Ubuntu on virtual machine (Digital Ocean Droplet), by setting up security (limiting user access, SSH public key login, customized ports, firewall config, groups, privileges, file permissions, and package udpates) and installing a LAPP stack (Linux, Apache2, PostgreSQL, Python - python virtual environment and deameons).',
+    repoURL: 'https://github.com/momotofu/linux-server-config',
+    thumbnailImageURL: '',
+    presentationImageURL: '',
+    liveURL: 'http://142.93.30.236',
+    sortPriority: 0,
+    tags: ['Ubuntu', 'Apache2', 'Digital Oceon', 'PostgreSQL', 'PostgreSQL-contrib', 'Python 3.6', 'libapache2-mod-wsgi-py3', 'Flask', 'VirtualEnv', 'SQLAlchemy', 'Bcrypt', 'Github OAuth 2.0', 'Node', 'npm', 'Bootstrap', 'Knockout.js', 'Webpack', 'JavaScript', 'Requests', 'Open Source']
+  },
+  {
+    title: 'Momotofu-API',
+    description: 'Backend for all things momotofu',
+    repoURL: 'https://github.com/momotofu/momotofu-api',
+    thumbnailImageURL: '',
+    presentationImageURL: '',
+    liveURL: '',
+    sortPriority: 0,
+    tags: ['Flask-restful', 'Gunicorn', 'Yagmail', 'SQLAlchemy', 'API', 'Open Source']
+  },
 ]
 
 const works = (state = initialState) => {
