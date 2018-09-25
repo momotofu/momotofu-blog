@@ -13,12 +13,13 @@
     height: calc(100vh - 60px);
 
     &-control {
+      white-space: nowrap;
       font-family: 'chris-regular';
       font-size: 36px;
       letter-spacing: 0.05em;
       border: none;
       border-bottom: solid 1px;
-      line-height: 1.4rem;
+      line-height: 1.9rem;
       background: none;
       margin: auto;
       outline: none;

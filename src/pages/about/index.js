@@ -81,6 +81,9 @@ class AboutPage extends React.Component {
         document.querySelector('.AboutPage-greeting-control-container')
           .classList
           .toggle('show')
+        document.querySelector('#greeting-continue-arrow')
+          .classList
+          .toggle('show')
       }, 400)
     }, delay)
   }
@@ -178,7 +181,7 @@ class AboutPage extends React.Component {
               `The Sakura tree below is actually a python program I wrote. And it's running right now.`,
               `It uses the pattern of recursion to generate and render a tree similar to the way nature does.`,
               `The program draws a new tree each time.`,
-              `It'll take a sec for the tree to grow, so enjoy the little squiggles or continue scrolling on through.`]
+              `It'll take a sec for the tree to grow, so enjoy the little squiggles or continue scrolling down.`]
             }
             classString="AboutPage-greeting-message mt-5"
             callback={ this.greetingCallback.bind(this, 1200) } />
@@ -190,6 +193,9 @@ class AboutPage extends React.Component {
           </div>
           <div className="AboutPage-SakuraTree">
             <SakuraTree />
+          </div>
+          <div className="continue-arrow" id="greeting-continue-arrow">
+            Keep Scrolling
           </div>
         </div>
         <div className="AboutPage-block d-flex" id="AboutPage-block-0" style={{ background: '#010022'}}>

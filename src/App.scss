@@ -20,6 +20,39 @@ figure {
   margin-bottom: 0 !important;
 }
 
+.continue-arrow {
+  font-size: 2.5rem;
+  position: absolute;
+  bottom: 2.5rem;
+  right: -35px;
+  opacity: 0;
+  transform: translateX(-50%);
+
+  &:before, &:after {
+    content: '';
+    position: absolute;
+    display: inline-block;
+    width: 4px;
+    height: 35%;
+    background: $charcoal;
+    border-radius: 3px;
+    top: 35px;
+    animation: hover-arrow .5s infinite;
+    animation-timing-function: ease-out;
+    animation-direction: alternate;
+  }
+
+  &:before {
+    transform: rotate(45deg);
+    left: calc(50% + 2px);
+  }
+
+  &:after {
+    transform: rotate(-45deg);
+    left: calc(50% - 7px);
+  }
+}
+
 .underline {
   height: 28px;
   display: inline-block;
@@ -28,5 +61,14 @@ figure {
 .container-nested {
   @media screen and (max-width: 600px) {
     padding: 0 15px;
+  }
+}
+
+@keyframes hover-arrow {
+  0% {
+    top: 35px;
+  }
+  100% {
+    top: 45px;
   }
 }
