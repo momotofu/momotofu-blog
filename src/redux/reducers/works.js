@@ -6,7 +6,7 @@ const initialState = [
     thumbnailImageURL: '',
     presentationImageURL: '',
     liveURL: '',
-    sortPriority: 1,
+    sortPriority: 9,
     tags: ['Fuse.js', 'Knex.js', 'Objection.js', 'Express.js', 'Node.js', 'Knockout.js', 'Nodemon', 'concurrently.js', 'Stylus', 'Pug', 'Webpack', 'SQLite3', 'Google Maps JavaScript API', 'Yelp Fusion API', 'Bash', 'JavaScript', 'Open Source']
   },
   {
@@ -16,8 +16,18 @@ const initialState = [
     thumbnailImageURL: '',
     presentationImageURL: '',
     liveURL: '',
-    sortPriority: 2,
+    sortPriority: 8,
     tags: ['Flask', 'Python', 'JavaScript', 'Webpack', 'Knockout.js', 'SQLite3', 'PostgresSQL', 'Github Oauth 2.0', 'SQLAlchemy', 'ORM', 'CRUD', 'User login', 'Authentication', 'Open Source']
+  },
+  {
+    title: 'Create a Menu',
+    description: 'Create and manage restaurants and menus using Flask. Features: OAuth 2.0, API, Session login, Flashing etc.',
+    repoURL: 'https://github.com/momotofu/create-a-menu',
+    thumbnailImageURL: '',
+    presentationImageURL: '',
+    liveURL: '',
+    sortPriority: 7,
+    tags: ['SQLAlchemy', 'httplib2', 'oauth2client', 'passlib', 'itsdangerous', 'flaskhttpauth', 'requests', 'Flask']
   },
   {
     title: 'Qzzr.com',
@@ -26,7 +36,7 @@ const initialState = [
     thumbnailImageURL: '',
     presentationImageURL: '',
     liveURL: 'https://www.qzzr.com',
-    sortPriority: 0,
+    sortPriority: 10,
     tags: ['React.js', 'Startup','JavaScript', 'SEO', 'Pug', 'Google Analytics', 'Stylus', 'Wordpress', 'AJAX', 'Jekyll', 'Stripe', 'signup forms', 'forms', 'HTML', 'CSS Animations','Marketo API', 'Mobile development', 'Skunk works', 'Development pipeline', 'Technical documentation', 'SQL'],
   },
   {
@@ -36,7 +46,7 @@ const initialState = [
     thumbnailImageURL: '',
     presentationImageURL: '',
     liveURL: 'https://fromeveryst.com/',
-    sortPriority: 0,
+    sortPriority: 6,
     tags: ['React-Native.js', 'Startup','JavaScript', 'iOS Development', 'CocoaPods', 'React-Native Animations', 'Mobile development', 'Contract']
   },
   {
@@ -46,7 +56,7 @@ const initialState = [
     thumbnailImageURL: '',
     presentationImageURL: '',
     liveURL: 'https://momotofu.github.io/cat-clicker/',
-    sortPriority: 0,
+    sortPriority: 3,
     tags: ['JavaScript', 'MVC', 'MVC-Architecture', 'html', 'css', 'single-page-app']
   },
   {
@@ -99,7 +109,7 @@ const initialState = [
     sortPriority: 0,
     tags: ['Flask-restful', 'Gunicorn', 'Yagmail', 'SQLAlchemy', 'API', 'Open Source']
   },
-]
+].sort((a, b) => { return a.sortPriority < b.sortPriority })
 
 const works = (state = initialState) => {
   return state
