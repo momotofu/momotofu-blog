@@ -15,6 +15,7 @@ class WorksModal extends React.Component {
 
     this.anime = window.anime
     this.animationDuration = 1000
+    this.isMobile = window.innerWidth <= 1000
   }
 
   animatePiecesForward(button, image, description) {
@@ -133,6 +134,7 @@ class WorksModal extends React.Component {
     if (work.liveURL) {
       links.push(
         <a
+          key={ '123' + work.repoURL }
           className="WorksModal-cta-link"
           href={ work.liveURL }
           target="_blank">
@@ -145,6 +147,7 @@ class WorksModal extends React.Component {
     if (work.repoURL) {
       links.push(
         <a
+          key={ '123' + work.repoURL }
           className="WorksModal-cta-link"
           href={ work.repoURL }
           target="_blank">
