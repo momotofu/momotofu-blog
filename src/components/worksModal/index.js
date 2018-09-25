@@ -15,6 +15,7 @@ class WorksModal extends React.Component {
 
     this.anime = window.anime
     this.animationDuration = 1000
+    this.isMobile = window.innerWidth <= 1000
   }
 
   animatePiecesForward(button, image, description) {
@@ -95,6 +96,29 @@ class WorksModal extends React.Component {
       .play
   }
 
+  showScrollPrompt() {
+    document.querySelector('#WorksModal-keep-scrolling-prompt')
+      .classList
+      .remove('hide')
+  }
+
+
+  addScrollPromptListener() {
+    const eventListener = (event) => {
+      document.querySelector('#WorksModal-keep-scrolling-prompt')
+        .classList
+        .toggle('hide')
+
+      document.querySelector('.WorksModal')
+        .removeEventListener('scroll', eventListener)
+    }
+
+    if (this.isMobile) {
+      document.querySelector('.WorksModal')
+        .addEventListener('scroll', eventListener)
+    }
+  }
+
   componentDidMount() {
     this.worksModal = document.querySelector('.WorksModal')
     const backButton = document.querySelector('#WorksModal-back-button')
@@ -112,10 +136,12 @@ class WorksModal extends React.Component {
       document.body.style.overflow = 'hidden'
       document.body.style.position = 'fixed'
       this.animateForward()
+      this.addScrollPromptListener()
     } else {
       // allow background to scroll again
       document.body.style.overflow = 'hidden'
       document.body.style.position = 'relative'
+      this.showScrollPrompt()
     }
 
   }
@@ -203,6 +229,8 @@ class WorksModal extends React.Component {
         <div
           className="WorksModal-panel WorksModal-panel-description"
           id="WorksModal-description-panel">
+          <div
+            className="WorksModal-panel-description-continue-arrow continue-arrow"id="WorksModal-keep-scrolling-prompt">Keep scrolling</div>
           <div className="WorksModal-panel-description-content">
             <h1 className="WorksModal-panel-description-header">{ work.title }</h1>
             <p className="WorksModal-panel-description-paragraph">{ work.description }</p>

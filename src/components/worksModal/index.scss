@@ -117,6 +117,14 @@
         line-height: 1.1;
         margin-bottom: 2.5rem;
       }
+
+      &-continue-arrow {
+        @media screen and (max-width: 1000px) {
+          transition: opacity .5s ease;
+          opacity: 1;
+          bottom: unset;
+        }
+      }
     }
   }
 
@@ -178,6 +186,10 @@
       height: 1px;
     }
   }
+}
+
+.hide {
+  opacity: 0;
 }
 
 #WorksModal-project-image {
