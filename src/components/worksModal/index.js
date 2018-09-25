@@ -32,6 +32,7 @@ class WorksModal extends React.Component {
         offset: 0,
         complete: (anim) => {
           this.animateForward = this.animatePiecesForward(button, image, description)
+          this.worksModal.style.overflow = 'auto'
         }
       })
       .add({
@@ -67,6 +68,7 @@ class WorksModal extends React.Component {
         complete: (anim) => {
           this.animateBackward = this.animatePiecesBackward(button, image, description, modal)
           this.props.toggleModal()
+          this.worksModal.style.overflow = null
         }
       })
       .add({
