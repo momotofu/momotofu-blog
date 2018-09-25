@@ -133,7 +133,7 @@ class WorksModal extends React.Component {
     if (work.liveURL) {
       links.push(
         <a
-          key={ '123' + work.repoURL }
+          key={ '123' + work.liveURL }
           className="WorksModal-cta-link"
           href={ work.liveURL }
           target="_blank">
