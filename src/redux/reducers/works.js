@@ -6,7 +6,7 @@ const initialState = [
     thumbnailImageURL: '',
     presentationImageURL: '',
     liveURL: '',
-    sortPriority: 0,
+    sortPriority: 1,
     tags: ['Fuse.js', 'Knex.js', 'Objection.js', 'Express.js', 'Node.js', 'Knockout.js', 'Nodemon', 'concurrently.js', 'Stylus', 'Pug', 'Webpack', 'SQLite3', 'Google Maps JavaScript API', 'Yelp Fusion API', 'Bash', 'JavaScript', 'Open Source']
   },
   {
@@ -16,7 +16,7 @@ const initialState = [
     thumbnailImageURL: '',
     presentationImageURL: '',
     liveURL: '',
-    sortPriority: 0,
+    sortPriority: 2,
     tags: ['Flask', 'Python', 'JavaScript', 'Webpack', 'Knockout.js', 'SQLite3', 'PostgresSQL', 'Github Oauth 2.0', 'SQLAlchemy', 'ORM', 'CRUD', 'User login', 'Authentication', 'Open Source']
   },
   {
