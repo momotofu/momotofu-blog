@@ -44,7 +44,7 @@ class WorksModal extends React.Component {
       })
       .add({
         targets: image,
-        translateY: ['150%', '10%'],
+        translateY: ['150%', '0%'],
         easing: 'easeOutExpo',
         duration,
         offset: 0,
@@ -80,7 +80,7 @@ class WorksModal extends React.Component {
       })
       .add({
         targets: image,
-        translateY: ['10%', '150%'],
+        translateY: ['0%', '150%'],
         easing: 'easeOutExpo',
         duration,
         offset: 0
