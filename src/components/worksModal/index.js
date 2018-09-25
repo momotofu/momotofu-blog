@@ -15,7 +15,6 @@ class WorksModal extends React.Component {
 
     this.anime = window.anime
     this.animationDuration = 1000
-    this.isMobile = window.innerWidth <= 1000
   }
 
   animatePiecesForward(button, image, description) {
@@ -192,26 +191,28 @@ class WorksModal extends React.Component {
           id="WorksModal-back-button"
           onClick={ this.exitButtonClickHandler.bind(this) }>
           <span className="underline">Back</span>
-      </button>
-      <div className="WorksModal-panel" id="WorksModal-project-image">
-        <img
-          className="WorksModal-panel-image"
-          src={ process.env.PUBLIC_URL + '/images/under_cc.png' }
-          alt="product" />
-      </div>
-      <div
-        className="WorksModal-panel WorksModal-panel-description"
-        id="WorksModal-description-panel">
-        <h1 className="WorksModal-panel-description-header">{ work.title }</h1>
-        <p className="WorksModal-panel-description-paragraph">{ work.description }</p>
-        <div className="WorksModal-cta">
-          { this.renderLinks(work) }
+        </button>
+        <div className="WorksModal-panel" id="WorksModal-project-image">
+          <img
+            className="WorksModal-panel-image"
+            src={ process.env.PUBLIC_URL + '/images/under_cc.png' }
+            alt="product" />
         </div>
-        <h2 className="WorksModal-panel-description-sub-header">Technology</h2>
-        <div>
-          { this.renderPills(work) }
+        <div
+          className="WorksModal-panel WorksModal-panel-description"
+          id="WorksModal-description-panel">
+          <div className="WorksModal-panel-description-content">
+            <h1 className="WorksModal-panel-description-header">{ work.title }</h1>
+            <p className="WorksModal-panel-description-paragraph">{ work.description }</p>
+            <div className="WorksModal-cta">
+              { this.renderLinks(work) }
+            </div>
+            <h2 className="WorksModal-panel-description-sub-header">Technology</h2>
+            <div>
+              { this.renderPills(work) }
+            </div>
+          </div>
         </div>
-      </div>
       </div>
     )
   }
