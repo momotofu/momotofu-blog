@@ -109,6 +109,46 @@ const initialState = [
     sortPriority: 0,
     tags: ['Flask-restful', 'Gunicorn', 'Yagmail', 'SQLAlchemy', 'API', 'Open Source']
   },
+  {
+    title: 'A Java Collection',
+    description: 'A collection of Java programs from hangman, queues and stacks, tic tac toe, linked lists, to hot chocolate.',
+    repoURL: 'https://github.com/momotofu/a-java-collection',
+    thumbnailImageURL: '',
+    presentationImageURL: '',
+    liveURL: '',
+    sortPriority: 0,
+    tags: ['Java', 'Algorithms', 'Data-structures', 'Toy programs']
+  },
+  {
+    title: 'RootMapper',
+    description: 'Mind maps made easy',
+    repoURL: '',
+    thumbnailImageURL: '',
+    presentationImageURL: '',
+    liveURL: '',
+    sortPriority: 0,
+    tags: ['Swift', 'Core-graphics', 'CocoaPods', 'SpriteKit', 'iOS Development', 'GrowingTextView', 'Objective-C', 'MVC', 'Delegation', 'Caching', 'data persistance', 'trigonometery']
+  },
+  {
+    title: 'Bookmark-server',
+    description: 'URL shortener written in python',
+    repoURL: 'https://github.com/momotofu/bookmark-server',
+    thumbnailImageURL: '',
+    presentationImageURL: '',
+    liveURL: '',
+    sortPriority: 0,
+    tags: ['Python', 'requests', 'url-shortener', 'socketserver', 'urllib.parse', 'threading', 'os']
+  },
+  {
+    title: 'Fresh films (Movie Trailer Website)',
+    description: 'Server-side code written in Python to store a list of my favorite movies, including box art imagery and a movie trailer URL. This data is then served to a web page using HTML and CSS allowing visitors to review these movies and watch the trailers.',
+    repoURL: 'https://github.com/momotofu/movie-trailer-website',
+    thumbnailImageURL: '',
+    presentationImageURL: '',
+    liveURL: 'https://momotofu-api-prod.herokuapp.com/fresh_films',
+    sortPriority: 8,
+    tags: ['Python', 'Bootstrap 3', 'HTML', 'CSS', 'Movies', 'Movie list', 'lists', 'perviewer']
+  }
 ].sort((a, b) => { return a.sortPriority < b.sortPriority })
 
 const works = (state = initialState) => {
