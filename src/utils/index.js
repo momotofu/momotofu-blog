@@ -25,3 +25,23 @@ export const getParameterByName = (name, url) => {
 
     return decodeURIComponent(results[2].replace(/\+/g, ' '))
 }
+
+export const wakeUpHerokuServers = ($) => {
+  //if (process.env.NODE_ENV === 'production') {
+    $.ajax({
+      url: 'https://momotofu-api-prod.herokuapp.com/',
+      success: (result) => {
+        console.log('hello from momotofu api')
+      }
+    })
+    $.ajax({
+      url: 'https://osakaspots.herokuapp.com/',
+      success: function(result){
+        console.log('hello from OsakaSpots')
+      },
+      error: (error) => {
+        console.log('error: ', error)
+      }
+    });
+  //}
+}

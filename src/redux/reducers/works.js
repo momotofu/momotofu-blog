@@ -5,7 +5,7 @@ const initialState = [
     repoURL: 'https://github.com/momotofu/OsakaSpots',
     thumbnailImageURL: '',
     presentationImageName: '',
-    liveURL: '',
+    liveURL: 'https://osakaspots.herokuapp.com/',
     sortPriority: 9,
     tags: ['Fuse.js', 'Knex.js', 'Objection.js', 'Express.js', 'Node.js', 'Knockout.js', 'Nodemon', 'concurrently.js', 'Stylus', 'Pug', 'Webpack', 'SQLite3', 'Google Maps JavaScript API', 'Yelp Fusion API', 'Bash', 'JavaScript', 'Open Source']
   },
@@ -15,7 +15,7 @@ const initialState = [
     repoURL: 'https://github.com/momotofu/Catalogger',
     thumbnailImageURL: '',
     presentationImageName: '',
-    liveURL: '',
+    liveURL: 'http://142.93.30.236',
     sortPriority: 8,
     tags: ['Flask', 'Python', 'JavaScript', 'Webpack', 'Knockout.js', 'SQLite3', 'PostgresSQL', 'Github Oauth 2.0', 'SQLAlchemy', 'ORM', 'CRUD', 'User login', 'Authentication', 'Open Source']
   },

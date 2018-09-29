@@ -119,6 +119,7 @@ class WorksModal extends React.Component {
     }
   }
 
+
   componentDidMount() {
     this.worksModal = document.querySelector('.WorksModal')
     const backButton = document.querySelector('#WorksModal-back-button')
@@ -151,8 +152,9 @@ class WorksModal extends React.Component {
 
     if (targetClasses.contains("WorksModal-button") ||
         targetClasses.contains("WorksModal-bg") ||
-        targetClasses.contains("underline"))
-      this.animateBackward()
+        targetClasses.contains("underline") ||
+        targetClasses.contains("WorksModal-project-container"))
+        this.animateBackward()
   }
 
   renderLinks(work) {
@@ -213,6 +215,7 @@ class WorksModal extends React.Component {
         return (
           <iframe
             title="Work preview"
+            className="WorksModal-project-iframe"
             width="100%"
             height="100%"
             src={ work.liveURL }>
@@ -247,7 +250,7 @@ class WorksModal extends React.Component {
           onClick={ this.exitButtonClickHandler.bind(this) }>
           <span className="underline">Back</span>
         </button>
-        <div className="WorksModal-panel" id="WorksModal-project-image">
+        <div className="WorksModal-panel WorksModal-project-container" id="WorksModal-project-image">
           { workPreview }
         </div>
         <div

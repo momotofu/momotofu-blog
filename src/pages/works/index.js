@@ -3,6 +3,7 @@ import './index.css'
 import WorksVisibilityFilters from '../../redux/containers/worksFilters'
 import WorksList from '../../redux/containers/worksList'
 import WorksModal from '../../redux/containers/worksModal'
+import { wakeUpHerokuServers } from '../../utils'
 
 class WorksPage extends React.Component {
   /**
@@ -14,10 +15,8 @@ class WorksPage extends React.Component {
    */
 
   // lifecycle methods
-  componentDidMount() {
-  }
-
-  componentWillUnmount() {
+  componentWillMount() {
+    wakeUpHerokuServers(window.$)
   }
 
   render() {
