@@ -208,6 +208,33 @@ class WorksModal extends React.Component {
       tags: []
     }
 
+    const workPreview = (() => {
+      if (work.liveURL) {
+        return (
+          <iframe
+            title="Work preview"
+            width="100%"
+            height="100%"
+            src={ work.liveURL }>
+          </iframe>
+        )
+      } else if (work.presentationImageName) {
+        return (
+            <img
+              className="WorksModal-panel-image"
+              src={ work.presentationImageName }
+              alt="product" />
+        )
+      }
+
+      return (
+          <img
+            className="WorksModal-panel-image"
+            src={ process.env.PUBLIC_URL + '/images/under_cc.png' }
+            alt="product" />
+      )
+    })()
+
     return (
       <div
         className={ `WorksModal ${ this.props.isShowing ? '' : 'd-none' }` }
@@ -221,10 +248,7 @@ class WorksModal extends React.Component {
           <span className="underline">Back</span>
         </button>
         <div className="WorksModal-panel" id="WorksModal-project-image">
-          <img
-            className="WorksModal-panel-image"
-            src={ process.env.PUBLIC_URL + '/images/under_cc.png' }
-            alt="product" />
+          { workPreview }
         </div>
         <div
           className="WorksModal-panel WorksModal-panel-description"
