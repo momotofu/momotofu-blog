@@ -27,7 +27,7 @@ export const getParameterByName = (name, url) => {
 }
 
 export const wakeUpHerokuServers = ($) => {
-  //if (process.env.NODE_ENV === 'production') {
+  if (process.env.NODE_ENV === 'production') {
     $.ajax({
       url: 'https://momotofu-api-prod.herokuapp.com/',
       success: (result) => {
@@ -43,5 +43,5 @@ export const wakeUpHerokuServers = ($) => {
         console.log('error: ', error)
       }
     });
-  //}
+  }
 }

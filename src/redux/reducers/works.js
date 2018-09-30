@@ -6,7 +6,7 @@ const initialState = [
     thumbnailImageURL: '',
     presentationImageName: '',
     liveURL: 'https://osakaspots.herokuapp.com/',
-    sortPriority: 9,
+    sortPriority: 8,
     tags: ['Fuse.js', 'Knex.js', 'Objection.js', 'Express.js', 'Node.js', 'Knockout.js', 'Nodemon', 'concurrently.js', 'Stylus', 'Pug', 'Webpack', 'SQLite3', 'Google Maps JavaScript API', 'Yelp Fusion API', 'Bash', 'JavaScript', 'Open Source']
   },
   {
@@ -36,7 +36,7 @@ const initialState = [
     thumbnailImageURL: '',
     presentationImageName: '',
     liveURL: 'https://www.qzzr.com',
-    sortPriority: 10,
+    sortPriority: 9,
     tags: ['React.js', 'Startup','JavaScript', 'SEO', 'Pug', 'Google Analytics', 'Stylus', 'Wordpress', 'AJAX', 'Jekyll', 'Stripe', 'signup forms', 'forms', 'HTML', 'CSS Animations','Marketo API', 'Mobile development', 'Skunk works', 'Development pipeline', 'Technical documentation', 'SQL'],
   },
   {
@@ -76,7 +76,7 @@ const initialState = [
     thumbnailImageURL: '',
     presentationImageName: '',
     liveURL: '',
-    sortPriority: 0,
+    sortPriority: 1,
     tags: ['PostgreSQL', 'SQL', 'Ubuntu', 'Linux', 'Database', 'User reporting', 'console logging', 'print data']
   },
   {
@@ -149,7 +149,13 @@ const initialState = [
     sortPriority: 8,
     tags: ['Python', 'Bootstrap 3', 'HTML', 'CSS', 'Movies', 'Movie list', 'lists', 'perviewer']
   }
-].sort((a, b) => { return a.sortPriority < b.sortPriority })
+].sort((a, b) => {
+  if (a.sortPriority > b.sortPriority)
+    return -1
+  if (a.sortPriority < b.sortPriority)
+    return 1
+  return 0
+})
 
 const works = (state = initialState) => {
   return state

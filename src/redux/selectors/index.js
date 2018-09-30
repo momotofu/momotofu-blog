@@ -4,7 +4,13 @@ const getWorksVisibilityFilters = state => state.worksVisibilityFilters.filters
 const getWorks = state => state.works
 
 const sort = (works) => {
-  return works.sort((a, b) => { return a.sortPriority < b.sortPriority })
+  return works.sort((a, b) => {
+    if (a.sortPriority > b.sortPriority)
+      return -1
+    if (a.sortPriority < b.sortPriority)
+      return 1
+    return 0
+  })
 }
 
 export const getVisibleWorks = createSelector(
