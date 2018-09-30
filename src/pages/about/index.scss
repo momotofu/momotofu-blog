@@ -61,12 +61,14 @@
       transition: opacity 0.3s;
       font-size: 48px;
       margin: auto;
+      margin-top: 6rem;
       max-width: 560px;
       padding: 0 15px;
       z-index: 9;
 
       @media screen and (max-width: 600px) {
         font-size: 32px;
+        margin-top: 4rem;
       }
     }
   }
@@ -106,7 +108,7 @@
         max-width: 330px;
         right: 0;
         left: 0;
-        margin: 2rem auto auto;
+        margin: 4rem auto auto;
       }
     }
 

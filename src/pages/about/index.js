@@ -183,7 +183,7 @@ class AboutPage extends React.Component {
               `The program draws a new tree each time.`,
               `It'll take a sec for the tree to grow, so enjoy the little squiggles or continue scrolling down.`]
             }
-            classString="AboutPage-greeting-message mt-5"
+            classString="AboutPage-greeting-message"
             callback={ this.greetingCallback.bind(this, 1200) } />
           <div className="AboutPage-greeting-control-container">
             <button
