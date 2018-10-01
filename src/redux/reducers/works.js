@@ -26,7 +26,7 @@ const initialState = [
     thumbnailImageURL: '',
     presentationImageName: '',
     liveURL: '',
-    sortPriority: 6,
+    sortPriority: 0,
     tags: ['SQLAlchemy', 'httplib2', 'oauth2client', 'passlib', 'itsdangerous', 'flaskhttpauth', 'requests', 'Flask']
   },
   {
@@ -76,7 +76,7 @@ const initialState = [
     thumbnailImageURL: '',
     presentationImageName: '',
     liveURL: '',
-    sortPriority: 5,
+    sortPriority: 0,
     tags: ['PostgreSQL', 'SQL', 'Ubuntu', 'Linux', 'Database', 'User reporting', 'console logging', 'print data']
   },
   {
@@ -86,7 +86,7 @@ const initialState = [
     thumbnailImageURL: '',
     presentationImageName: '',
     liveURL: '',
-    sortPriority: 5,
+    sortPriority: 0,
     tags: ['Swift', 'iOS', 'Game', 'iPhone', 'Apple', 'MVC', 'Delegation']
   },
   {
@@ -106,7 +106,7 @@ const initialState = [
     thumbnailImageURL: '',
     presentationImageName: '',
     liveURL: '',
-    sortPriority: 5,
+    sortPriority: 0,
     tags: ['Flask-restful', 'Gunicorn', 'Yagmail', 'SQLAlchemy', 'API', 'Open Source']
   },
   {
@@ -116,15 +116,15 @@ const initialState = [
     thumbnailImageURL: '',
     presentationImageName: '',
     liveURL: '',
-    sortPriority: 5,
+    sortPriority: 0,
     tags: ['Java', 'Algorithms', 'Data-structures', 'Toy programs']
   },
   {
     title: 'RootMapper',
-    description: 'Mind maps made easy',
+    description: 'Mind maps made easy. I took advantage of the tree data structure to architect a mind mapping App in Swift and Objective-C. Developed physics and animations using SpriteKit. Added features such as: updating node ancestry with task completion status, collision detection, out of bounds gravity trigger, node status states, priority swapping, node deletion and children transfer, and task timer states. Programmatically drew/animated hierarchical lines and connected task nodes using handrolled trigonometry (vectors) and the CoreGraphics library. Developed the model to persisted node coordinates, details, hierarchy, priority, label etc.',
     repoURL: '',
     thumbnailImageURL: '',
-    presentationImageName: '',
+    presentationImageName: 'root-mapper.png',
     liveURL: '',
     sortPriority: 5,
     tags: ['Swift', 'Core-graphics', 'CocoaPods', 'SpriteKit', 'iOS Development', 'GrowingTextView', 'Objective-C', 'MVC', 'Delegation', 'Caching', 'data persistance', 'trigonometery']
@@ -136,7 +136,7 @@ const initialState = [
     thumbnailImageURL: '',
     presentationImageName: '',
     liveURL: '',
-    sortPriority: 5,
+    sortPriority: 0,
     tags: ['Python', 'requests', 'url-shortener', 'socketserver', 'urllib.parse', 'threading', 'os']
   },
   {

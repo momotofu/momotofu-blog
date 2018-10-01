@@ -225,7 +225,7 @@ class WorksModal extends React.Component {
         return (
             <img
               className="WorksModal-panel-image"
-              src={ work.presentationImageName }
+              src={ `${ process.env.PUBLIC_URL }/images/${ work.presentationImageName }`}
               alt="product" />
         )
       }
