@@ -61,7 +61,7 @@ const initialState = [
   },
   {
     title: 'React-Redux-Demo',
-    description: 'This app pulls from a mock/stubbed API using Apiary and populates a list with the mock data. The UI morphs into several states depending on the received props, and has realtime update capability. The update change-list button demonstrate asynchronous redux and redux-thunk features.',
+    description: 'This app pulls from a mock/stubbed API using Apiary and populates a list with the mock data. The UI (Graphs, bars, etc. ) morphs into several states depending on the received props, and has realtime update capability. The update change-list button demonstrate asynchronous redux and redux-thunk features.',
     repoURL: 'https://github.com/momotofu/React-Redux-Demo',
     thumbnailImageURL: '',
     presentationImageName: '',
