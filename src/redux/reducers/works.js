@@ -16,7 +16,7 @@ const initialState = [
     thumbnailImageURL: '',
     presentationImageName: '',
     liveURL: 'http://142.93.30.236',
-    sortPriority: 8,
+    sortPriority: 9,
     tags: ['Flask', 'Python', 'JavaScript', 'Webpack', 'Knockout.js', 'SQLite3', 'PostgresSQL', 'Github Oauth 2.0', 'SQLAlchemy', 'ORM', 'CRUD', 'User login', 'Authentication', 'Open Source']
   },
   {
@@ -26,7 +26,7 @@ const initialState = [
     thumbnailImageURL: '',
     presentationImageName: '',
     liveURL: '',
-    sortPriority: 7,
+    sortPriority: 6,
     tags: ['SQLAlchemy', 'httplib2', 'oauth2client', 'passlib', 'itsdangerous', 'flaskhttpauth', 'requests', 'Flask']
   },
   {
@@ -36,7 +36,7 @@ const initialState = [
     thumbnailImageURL: '',
     presentationImageName: '',
     liveURL: 'https://www.qzzr.com',
-    sortPriority: 9,
+    sortPriority: 10,
     tags: ['React.js', 'Startup','JavaScript', 'SEO', 'Pug', 'Google Analytics', 'Stylus', 'Wordpress', 'AJAX', 'Jekyll', 'Stripe', 'signup forms', 'forms', 'HTML', 'CSS Animations','Marketo API', 'Mobile development', 'Skunk works', 'Development pipeline', 'Technical documentation', 'SQL'],
   },
   {
@@ -46,7 +46,7 @@ const initialState = [
     thumbnailImageURL: '',
     presentationImageName: '',
     liveURL: 'https://fromeveryst.com/',
-    sortPriority: 6,
+    sortPriority: 7,
     tags: ['React-Native.js', 'Startup','JavaScript', 'iOS Development', 'CocoaPods', 'React-Native Animations', 'Mobile development', 'Contract']
   },
   {
@@ -56,7 +56,7 @@ const initialState = [
     thumbnailImageURL: '',
     presentationImageName: '',
     liveURL: 'https://momotofu.github.io/cat-clicker/',
-    sortPriority: 3,
+    sortPriority: 5,
     tags: ['JavaScript', 'MVC', 'MVC-Architecture', 'html', 'css', 'single-page-app']
   },
   {
@@ -65,8 +65,8 @@ const initialState = [
     repoURL: 'https://github.com/momotofu/React-Redux-Demo',
     thumbnailImageURL: '',
     presentationImageName: '',
-    liveURL: '',
-    sortPriority: 0,
+    liveURL: 'https://react-redux-sample-code.herokuapp.com/',
+    sortPriority: 7,
     tags: ['JavaScript', 'Redux', 'React-Redux', 'API-Stub', 'Isomorphic-fetch', 'JSX']
   },
   {
@@ -76,7 +76,7 @@ const initialState = [
     thumbnailImageURL: '',
     presentationImageName: '',
     liveURL: '',
-    sortPriority: 1,
+    sortPriority: 5,
     tags: ['PostgreSQL', 'SQL', 'Ubuntu', 'Linux', 'Database', 'User reporting', 'console logging', 'print data']
   },
   {
@@ -86,17 +86,17 @@ const initialState = [
     thumbnailImageURL: '',
     presentationImageName: '',
     liveURL: '',
-    sortPriority: 0,
+    sortPriority: 5,
     tags: ['Swift', 'iOS', 'Game', 'iPhone', 'Apple', 'MVC', 'Delegation']
   },
   {
     title: 'Linux Server Config',
-    description: 'Installed and configured Linux/Ubuntu on virtual machine (Digital Ocean Droplet), by setting up security (limiting user access, SSH public key login, customized ports, firewall config, groups, privileges, file permissions, and package udpates) and installing a LAPP stack (Linux, Apache2, PostgreSQL, Python - python virtual environment and deameons).',
+    description: 'For the Catalogger app I installed and configured Linux/Ubuntu on virtual machine (Digital Ocean Droplet), by setting up security (limiting user access, SSH public key login, customized ports, firewall config, groups, privileges, file permissions, and package udpates) and installing a LAPP stack (Linux, Apache2, PostgreSQL, Python - python virtual environment and deameons).',
     repoURL: 'https://github.com/momotofu/linux-server-config',
     thumbnailImageURL: '',
     presentationImageName: '',
     liveURL: 'http://142.93.30.236',
-    sortPriority: 0,
+    sortPriority: 6,
     tags: ['Ubuntu', 'Apache2', 'Digital Oceon', 'PostgreSQL', 'PostgreSQL-contrib', 'Python 3.6', 'libapache2-mod-wsgi-py3', 'Flask', 'VirtualEnv', 'SQLAlchemy', 'Bcrypt', 'Github OAuth 2.0', 'Node', 'npm', 'Bootstrap', 'Knockout.js', 'Webpack', 'JavaScript', 'Requests', 'Open Source']
   },
   {
@@ -106,7 +106,7 @@ const initialState = [
     thumbnailImageURL: '',
     presentationImageName: '',
     liveURL: '',
-    sortPriority: 0,
+    sortPriority: 5,
     tags: ['Flask-restful', 'Gunicorn', 'Yagmail', 'SQLAlchemy', 'API', 'Open Source']
   },
   {
@@ -116,7 +116,7 @@ const initialState = [
     thumbnailImageURL: '',
     presentationImageName: '',
     liveURL: '',
-    sortPriority: 0,
+    sortPriority: 5,
     tags: ['Java', 'Algorithms', 'Data-structures', 'Toy programs']
   },
   {
@@ -126,7 +126,7 @@ const initialState = [
     thumbnailImageURL: '',
     presentationImageName: '',
     liveURL: '',
-    sortPriority: 0,
+    sortPriority: 5,
     tags: ['Swift', 'Core-graphics', 'CocoaPods', 'SpriteKit', 'iOS Development', 'GrowingTextView', 'Objective-C', 'MVC', 'Delegation', 'Caching', 'data persistance', 'trigonometery']
   },
   {
@@ -136,7 +136,7 @@ const initialState = [
     thumbnailImageURL: '',
     presentationImageName: '',
     liveURL: '',
-    sortPriority: 0,
+    sortPriority: 5,
     tags: ['Python', 'requests', 'url-shortener', 'socketserver', 'urllib.parse', 'threading', 'os']
   },
   {
@@ -146,7 +146,7 @@ const initialState = [
     thumbnailImageURL: '',
     presentationImageName: '',
     liveURL: 'https://momotofu-api-prod.herokuapp.com/fresh_films',
-    sortPriority: 8,
+    sortPriority: 5,
     tags: ['Python', 'Bootstrap 3', 'HTML', 'CSS', 'Movies', 'Movie list', 'lists', 'perviewer']
   }
 ].sort((a, b) => {

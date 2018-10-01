@@ -38,10 +38,13 @@ export const wakeUpHerokuServers = ($) => {
       url: 'https://osakaspots.herokuapp.com/',
       success: function(result){
         console.log('hello from OsakaSpots')
-      },
-      error: (error) => {
-        console.log('error: ', error)
       }
-    });
+    })
+    $.ajax({
+      url: 'https://react-redux-sample-code.herokuapp.com/',
+      success: function(result){
+        console.log('hello from OsakaSpots')
+      }
+    })
   }
 }
