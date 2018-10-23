@@ -20,7 +20,7 @@
       work correctly both with client-side routing and a non-root public URL.
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
-    <title>React App</title>
+    <title>Momotofu</title>
   </head>
   <body>
     <noscript>
@@ -28,7 +28,7 @@
     </noscript>
     <div id="root" style="overflow: hidden"></div>
     <script src="javascript/draw_tree_new.js"></script>
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
     <script crossorigin src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
 
     <!--scrollmagic -->
@@ -36,12 +36,11 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.0/TweenMax.min.js"></script>
     <script src="javascript/scrollmagic/uncompressed/ScrollMagic.js"></script>
     <script src="javascript/scrollmagic/uncompressed/plugins/animation.gsap.js"></script>
-    <script src="javascript/scrollmagic/uncompressed/plugins/debug.addIndicators.js"></script>
+    <!--<script src="javascript/scrollmagic/uncompressed/plugins/debug.addIndicators.js"></script>-->
     <!--end scrollmagic-->
 
-
-    <script src="http://www.skulpt.org/static/skulpt.min.js"></script>
-    <script src="http://www.skulpt.org/static/skulpt-stdlib.js"></script>
+    <script src="%PUBLIC_URL%/javascript/skulpt.min.js"></script>
+    <script src="%PUBLIC_URL%/javascript/skulpt-stdlib.js"></script>
     <script src="javascript/draw_tree_setup.js"></script>
   </body>
 </html>
