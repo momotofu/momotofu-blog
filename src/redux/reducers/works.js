@@ -35,7 +35,7 @@ const initialState = [
     repoURL: 'https://github.com/momotofu/Catalogger',
     thumbnailImageURL: '',
     presentationImageName: '',
-    liveURL: 'https://142.93.30.236',
+    liveURL: 'http://142.93.30.236',
     sortPriority: 9,
     tags: ['Flask', 'Python', 'JavaScript', 'Webpack', 'Knockout.js', 'SQLite3', 'PostgresSQL', 'Github Oauth 2.0', 'SQLAlchemy', 'ORM', 'CRUD', 'User login', 'Authentication', 'Open Source']
   },
@@ -72,7 +72,7 @@ const initialState = [
   {
     title: 'Cat clicker',
     description: 'An exercise and example of separation of concerns using vanilla JavaScript. Count user clicks, and customize / edit the cats. Which is the cutest cat and how clickety are they?',
-    repoURL: 'https://github.com/momotofu/Catalogger',
+    repoURL: 'https://github.com/momotofu/cat-clicker',
     thumbnailImageURL: '',
     presentationImageName: '',
     liveURL: 'https://momotofu.github.io/cat-clicker/',
