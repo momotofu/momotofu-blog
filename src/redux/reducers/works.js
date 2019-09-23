@@ -5,7 +5,7 @@ const initialState = [
     repoURL: 'https://github.com/momotofu/medatime',
     thumbnailImageURL: '',
     presentationImageName: '',
-    liveURL: 'http://medatime.herokuapp.com/',
+    liveURL: 'https://medatime.herokuapp.com/',
     sortPriority: 9,
     tags: ['React.js', 'Gatsby.js', 'Stylus', 'Open Source']
   },
@@ -35,7 +35,7 @@ const initialState = [
     repoURL: 'https://github.com/momotofu/Catalogger',
     thumbnailImageURL: '',
     presentationImageName: '',
-    liveURL: 'http://142.93.30.236',
+    liveURL: 'https://142.93.30.236',
     sortPriority: 9,
     tags: ['Flask', 'Python', 'JavaScript', 'Webpack', 'Knockout.js', 'SQLite3', 'PostgresSQL', 'Github Oauth 2.0', 'SQLAlchemy', 'ORM', 'CRUD', 'User login', 'Authentication', 'Open Source']
   },
