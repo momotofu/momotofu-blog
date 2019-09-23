@@ -1,5 +1,25 @@
 const initialState = [
   {
+    title: 'Medatime',
+    description: 'A digital clock used to time meditation intervals. You can set the time using a radial dial or using text input (i.e. 1s 1 second etc.)',
+    repoURL: 'https://github.com/momotofu/medatime',
+    thumbnailImageURL: '',
+    presentationImageName: '',
+    liveURL: 'http://medatime.herokuapp.com/',
+    sortPriority: 9,
+    tags: ['React.js', 'Gatsby.js', 'Stylus', 'Open Source']
+  },
+  {
+    title: 'Compose Namespace',
+    description: 'A digital clock used to time meditation intervals. You can set the time using a radial dial or using text input (i.e. 1s 1 second etc.)',
+    repoURL: 'https://github.com/momotofu/compose-namespace',
+    thumbnailImageURL: '',
+    presentationImageName: '',
+    liveURL: '',
+    sortPriority: 2,
+    tags: ['Utilities', 'Javascript', 'NPM Package', 'Open Source']
+  },
+  {
     title: 'OsakaSpots',
     description: 'A Node.js and Knockout.js application that utilizes Google\'s JavaScript API to show all the best places in Osaka.',
     repoURL: 'https://github.com/momotofu/OsakaSpots',
