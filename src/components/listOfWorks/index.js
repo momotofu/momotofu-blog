@@ -1,6 +1,5 @@
 import React from 'react'
 import './index.css'
-import { generateRandomIDHash } from '../../utils'
 
 class ListOfWorks extends React.Component {
   /**
@@ -22,13 +21,13 @@ class ListOfWorks extends React.Component {
         topTags.push(
           <span
             className="Works-card-pill"
-            key={ i + 'span' + generateRandomIDHash() }>
+            key={ i + 'span' }>
             { work.tags[i] }
           </span>
         )
       }
       return (
-        <div className="col-lg-6" key={ index + 'div' + generateRandomIDHash() }>
+        <div className="col-lg-6" key={ index + 'div' }>
           <div className="Works-card" onClick={ this.cardClickHandler.bind(this, work) }>
             <h1 className="Works-card-title">{ work.title }</h1>
             <span className="Works-card-cta">
