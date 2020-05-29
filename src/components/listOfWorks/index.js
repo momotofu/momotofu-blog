@@ -1,4 +1,6 @@
 import React from 'react'
+
+import Card from '../card'
 import './index.css'
 
 class ListOfWorks extends React.Component {
@@ -26,23 +28,14 @@ class ListOfWorks extends React.Component {
           </span>
         )
       }
-
-      const cta = this.props.cta
-
       return (
         <div className="col-lg-6" key={ index + 'div' }>
-          <div className="Works-card" onClick={ this.cardClickHandler.bind(this, work) }>
-            <h1 className="Works-card-title">{ work.title }</h1>
-            <span className="Works-card-cta">
-              <span className="Works-card-cta-bracket">&lt;</span>
-              { cta }
-              <span className="Works-card-cta-bracket">&gt;</span>
-            </span>
-            <div>
-              { topTags }
-              <span className="Works-card-pill">...</span>
-            </div>
-          </div>
+          <Card
+            title={work.title}
+            onClick={this.cardClickHandler.bind(this, work)}
+            cta='view details'
+            tags={topTags}
+          />
         </div>
       )
     })
