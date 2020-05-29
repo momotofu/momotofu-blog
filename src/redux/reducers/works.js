@@ -7,6 +7,7 @@ const initialState = [
     presentationImageName: '',
     liveURL: 'https://medatime.herokuapp.com/',
     sortPriority: 9,
+    cta: "view details",
     tags: ['React.js', 'Gatsby.js', 'Stylus', 'Open Source']
   },
   {
@@ -17,6 +18,7 @@ const initialState = [
     presentationImageName: '',
     liveURL: '',
     sortPriority: 2,
+    cta: "view details",
     tags: ['Utilities', 'Javascript', 'NPM Package', 'Open Source']
   },
   {
@@ -27,6 +29,7 @@ const initialState = [
     presentationImageName: '',
     liveURL: 'https://osakaspots.herokuapp.com/',
     sortPriority: 8,
+    cta: "view details",
     tags: ['Fuse.js', 'Knex.js', 'Objection.js', 'Express.js', 'Node.js', 'Knockout.js', 'Nodemon', 'concurrently.js', 'Stylus', 'Pug', 'Webpack', 'SQLite3', 'Google Maps JavaScript API', 'Yelp Fusion API', 'Bash', 'JavaScript', 'Open Source']
   },
   {
@@ -37,6 +40,7 @@ const initialState = [
     presentationImageName: '',
     liveURL: 'http://142.93.30.236',
     sortPriority: 9,
+    cta: "view details",
     tags: ['Flask', 'Python', 'JavaScript', 'Webpack', 'Knockout.js', 'SQLite3', 'PostgresSQL', 'Github Oauth 2.0', 'SQLAlchemy', 'ORM', 'CRUD', 'User login', 'Authentication', 'Open Source']
   },
   {
@@ -47,6 +51,7 @@ const initialState = [
     presentationImageName: '',
     liveURL: '',
     sortPriority: 0,
+    cta: "view details",
     tags: ['SQLAlchemy', 'httplib2', 'oauth2client', 'passlib', 'itsdangerous', 'flaskhttpauth', 'requests', 'Flask']
   },
   {
@@ -57,6 +62,7 @@ const initialState = [
     presentationImageName: '',
     liveURL: 'https://www.qzzr.com',
     sortPriority: 10,
+    cta: "view details",
     tags: ['React.js', 'Startup','JavaScript', 'SEO', 'Pug', 'Google Analytics', 'Stylus', 'Wordpress', 'AJAX', 'Jekyll', 'Stripe', 'signup forms', 'forms', 'HTML', 'CSS Animations','Marketo API', 'Mobile development', 'Skunk works', 'Development pipeline', 'Technical documentation', 'SQL'],
   },
   {
@@ -67,6 +73,7 @@ const initialState = [
     presentationImageName: '',
     liveURL: 'https://fromeveryst.com/',
     sortPriority: 7,
+    cta: "view details",
     tags: ['React-Native.js', 'Startup','JavaScript', 'iOS Development', 'CocoaPods', 'React-Native Animations', 'Mobile development', 'Contract']
   },
   {
@@ -77,6 +84,7 @@ const initialState = [
     presentationImageName: '',
     liveURL: 'https://momotofu.github.io/cat-clicker/',
     sortPriority: 5,
+    cta: "view details",
     tags: ['JavaScript', 'MVC', 'MVC-Architecture', 'html', 'css', 'single-page-app']
   },
   {
@@ -87,6 +95,7 @@ const initialState = [
     presentationImageName: '',
     liveURL: 'https://react-redux-sample-code.herokuapp.com/',
     sortPriority: 7,
+    cta: "view details",
     tags: ['JavaScript', 'Redux', 'React-Redux', 'API-Stub', 'Isomorphic-fetch', 'JSX']
   },
   {
@@ -97,6 +106,7 @@ const initialState = [
     presentationImageName: '',
     liveURL: '',
     sortPriority: 0,
+    cta: "view details",
     tags: ['PostgreSQL', 'SQL', 'Ubuntu', 'Linux', 'Database', 'User reporting', 'console logging', 'print data']
   },
   {
@@ -107,6 +117,7 @@ const initialState = [
     presentationImageName: '',
     liveURL: '',
     sortPriority: 0,
+    cta: "view details",
     tags: ['Swift', 'iOS', 'Game', 'iPhone', 'Apple', 'MVC', 'Delegation']
   },
   {
@@ -117,6 +128,7 @@ const initialState = [
     presentationImageName: '',
     liveURL: 'http://142.93.30.236',
     sortPriority: 6,
+    cta: "view details",
     tags: ['Ubuntu', 'Apache2', 'Digital Oceon', 'PostgreSQL', 'PostgreSQL-contrib', 'Python 3.6', 'libapache2-mod-wsgi-py3', 'Flask', 'VirtualEnv', 'SQLAlchemy', 'Bcrypt', 'Github OAuth 2.0', 'Node', 'npm', 'Bootstrap', 'Knockout.js', 'Webpack', 'JavaScript', 'Requests', 'Open Source']
   },
   {
@@ -127,6 +139,7 @@ const initialState = [
     presentationImageName: '',
     liveURL: '',
     sortPriority: 0,
+    cta: "view details",
     tags: ['Flask-restful', 'Gunicorn', 'Yagmail', 'SQLAlchemy', 'API', 'Open Source']
   },
   {
@@ -137,6 +150,7 @@ const initialState = [
     presentationImageName: '',
     liveURL: '',
     sortPriority: 0,
+    cta: "view details",
     tags: ['Java', 'Algorithms', 'Data-structures', 'Toy programs']
   },
   {
@@ -147,6 +161,7 @@ const initialState = [
     presentationImageName: 'root-mapper.png',
     liveURL: '',
     sortPriority: 5,
+    cta: "view details",
     tags: ['Swift', 'Core-graphics', 'CocoaPods', 'SpriteKit', 'iOS Development', 'GrowingTextView', 'Objective-C', 'MVC', 'Delegation', 'Caching', 'data persistance', 'trigonometery']
   },
   {
@@ -157,6 +172,7 @@ const initialState = [
     presentationImageName: '',
     liveURL: '',
     sortPriority: 0,
+    cta: "view details",
     tags: ['Python', 'requests', 'url-shortener', 'socketserver', 'urllib.parse', 'threading', 'os']
   },
   {
@@ -167,6 +183,7 @@ const initialState = [
     presentationImageName: '',
     liveURL: 'https://momotofu-api-prod.herokuapp.com/fresh_films',
     sortPriority: 5,
+    cta: "view details",
     tags: ['Python', 'Bootstrap 3', 'HTML', 'CSS', 'Movies', 'Movie list', 'lists', 'perviewer']
   }
 ].sort((a, b) => {

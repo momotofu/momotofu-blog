@@ -26,13 +26,16 @@ class ListOfWorks extends React.Component {
           </span>
         )
       }
+
+      const cta = this.props.cta
+
       return (
         <div className="col-lg-6" key={ index + 'div' }>
           <div className="Works-card" onClick={ this.cardClickHandler.bind(this, work) }>
             <h1 className="Works-card-title">{ work.title }</h1>
             <span className="Works-card-cta">
               <span className="Works-card-cta-bracket">&lt;</span>
-              view details
+              { cta }
               <span className="Works-card-cta-bracket">&gt;</span>
             </span>
             <div>
