@@ -17,7 +17,7 @@ const Card = ({
         </span>
         <div>
             { tags }
-            <span className="Card-pill">...</span>
+            { tags ? <span className="Card-pill">...</span> : '' }
         </div>
         </div>
     )
