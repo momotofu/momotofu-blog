@@ -22,7 +22,7 @@ class ListOfWorks extends React.Component {
       for (let i = 0; i < 3 && i < work.tags.length - 1; i++) {
         topTags.push(
           <span
-            className="Works-card-pill"
+            className="Card-pill"
             key={ i + 'span' }>
             { work.tags[i] }
           </span>

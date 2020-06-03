@@ -193,7 +193,7 @@ class WorksModal extends React.Component {
     return work.tags.map((tag, index) => {
       return (
         <span
-          className="Works-card-pill WorksModal-pill"
+          className="Card-pill WorksModal-pill"
           key={ index + 'span' + generateRandomIDHash() }>
           { work.tags[index] }
         </span>

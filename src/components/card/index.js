@@ -1,4 +1,5 @@
 import React from 'react';
+import './index.css';
 
 const Card = ({
     title,
@@ -7,16 +8,16 @@ const Card = ({
     cta,
 }) => {
     return (
-        <div className="Works-card" onClick={ onClick }>
-        <h1 className="Works-card-title">{ title }</h1>
-        <span className="Works-card-cta">
-            <span className="Works-card-cta-bracket">&lt;</span>
+        <div className="Card" onClick={ onClick }>
+        <h1 className="Card-title">{ title }</h1>
+        <span className="Card-cta">
+            <span className="Card-cta-bracket">&lt;</span>
             {cta}
-            <span className="Works-card-cta-bracket">&gt;</span>
+            <span className="Card-cta-bracket">&gt;</span>
         </span>
         <div>
             { tags }
-            <span className="Works-card-pill">...</span>
+            <span className="Card-pill">...</span>
         </div>
         </div>
     )
