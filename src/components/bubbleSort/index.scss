@@ -1,0 +1,17 @@
+.bar {
+    width: 18px;
+    background: yellow;
+
+    &-active {
+        background: purple;
+    }
+
+    &:last-child {
+        margin-right: 0 !important;
+    }
+
+    &-container {
+        display: flex;
+        align-items: baseline;
+    }
+}

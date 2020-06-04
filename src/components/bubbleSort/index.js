@@ -1,6 +1,8 @@
-import React, { useReducer } from 'react';
+import React, { useReducer } from 'react'
 
 import Card from '../card'
+import { initialState } from './initialState'
+import './index.css'
 
 const reducer = (state, action) => {
     switch (action.type) {
@@ -9,13 +11,20 @@ const reducer = (state, action) => {
     }
 }
 
-const initialState = [
-    {
-        index: 0,
-        isActive: false,
-        value: 10,
-    }
-]
+
+const renderBars = (data) => {
+    return data.map( item => {
+            const activeClass = item.isActive ? 'bar-active' : ''
+            return (
+                <div
+                    className={'bar mr-3 ' + activeClass}
+                    style={{ 'height': `${item.value}px` }}
+                >
+                </div>
+            )
+        }
+    )
+}
 
 const BubbleSort = () => {
     const [state, dispatch] = useReducer(reducer, initialState) 
@@ -26,9 +35,16 @@ const BubbleSort = () => {
             cta="view source"
             icon="play"
         >
-            <div>Hello</div>
+            <div className="bar-container row p-4">
+                { renderBars(state) }
+            </div>
         </Card>
     )
 }
 
 export default BubbleSort;
+
+function swap(indexA, indexB, arr) {
+    const temp = arr[indexA]
+    arr[indexB]
+}
