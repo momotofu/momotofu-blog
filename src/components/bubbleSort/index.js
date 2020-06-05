@@ -6,11 +6,21 @@ import './index.css'
 
 const reducer = (state, action) => {
     switch (action.type) {
+        case 'UPDATE_LIST':
+            return action.payload;
+        case 'SET_ACTIVE':
+            return state.map( bar => {
+                if (bar.index === action.payload)
+                    return { ...bar, isActive: true }
+                return {
+                    ...bar,
+                    isActive: false
+                }
+            })
         default:
             return state;
     }
 }
-
 
 const renderBars = (data) => {
     return data.map( item => {
@@ -46,5 +56,51 @@ export default BubbleSort;
 
 function swap(indexA, indexB, arr) {
     const temp = arr[indexA]
-    arr[indexB]
+    arr[indexA] = arr[indexB]
+    arr[indexB] = temp
+    return [ ...arr ]
+}
+
+function runBubbleSort(bubbleSort) {
+    let nextArr
+    setInterval(() => {
+        
+    }, 1000)
+}
+
+function bubbleSort(arr, swap, x, y) {
+    let nextArr = arr
+    let shouldContinue = true
+    const iterationCondition = x < arr.length
+    const subIterationCondition = y < arr.length - x - 1;
+
+    if (iterationCondition) {
+       if (subIterationCondition) {
+           if (arr[y] > arr[y + 1]) {
+               nextArr = swap(y, y + 1, arr)
+           }
+       }
+   } 
+
+   const nextX = subIterationCondition ? x + 1 : x;
+   const nextY = y + 1;
+
+    if (iterationCondition)
+        shouldContinue = false
+
+   return [nextArr, nextX, nextY, shouldContinue]
+}
+
+function updateList(nextList) {
+    return {
+      type: 'UPDATE_LIST',
+      payload: nextList,
+    }
+}
+
+function setActive(index) {
+    return {
+        type: 'SET_ACTIVE',
+        payload: index,
+    }
 }
