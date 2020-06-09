@@ -6,19 +6,44 @@ import './index.css'
 
 const reducer = (state, action) => {
     switch (action.type) {
-        case 'UPDATE_LIST':
-            return action.payload;
-        case 'SET_ACTIVE':
-            return state.map( bar => {
-                if (bar.index === action.payload)
-                    return { ...bar, isActive: true }
+        case 'IS_PLAYING':
+            return state
+        case 'IS_PAUSED':
+            return state
+        case 'RESTART':
+            return state
+        case 'TICK': 
+            const nextIndexObject = state.nextIndex.next()
+            const nextIndex = nextIndexObject.done ? null : nextIndexObject.value
+
+            if (!nextIndex) 
+                return state
+
+            const arr = state.arr
+
+            // Perform bubbleSort logic, set swapped item to active, while deactivating the rest
+            if (shouldSwap(nextIndex, nextIndex + 1, arr)) {
+                const nextArr = swap(nextIndex, nextIndex + 1, state.arr).map((item, index) => {
+                    if (index === nextIndex + 1) {
+                        item.isActive = true
+                    } else {
+                        item.isActive
+                    }
+
+                    return item
+                })
+                
                 return {
-                    ...bar,
-                    isActive: false
+                    arr: nextArr,
+                    ...state
                 }
-            })
+
+            } else {
+                return state
+            }
+
         default:
-            return state;
+            return state
     }
 }
 
@@ -59,6 +84,12 @@ function swap(indexA, indexB, arr) {
     arr[indexA] = arr[indexB]
     arr[indexB] = temp
     return [ ...arr ]
+}
+
+function shouldSwap(index1, index2, arr) {
+    const itemA = arr[index1]
+    const itemB = arr[index2]
+    return itemA > itemB
 }
 
 function runBubbleSort(bubbleSort) {
