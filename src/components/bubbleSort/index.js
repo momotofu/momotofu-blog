@@ -68,29 +68,18 @@ function runBubbleSort(bubbleSort) {
     }, 1000)
 }
 
-function bubbleSort(arr, swap, x, y) {
-    let nextArr = arr
-    let shouldContinue = true
-    const iterationCondition = x < arr.length
-    const subIterationCondition = y < arr.length - x - 1;
-
-    if (iterationCondition) {
-       if (subIterationCondition) {
-           if (arr[y] > arr[y + 1]) {
-               nextArr = swap(y, y + 1, arr)
-           }
+export function* bubbleSortIndex(arrLength) {
+    for (let x = 0; x < arrLength; x++) {
+        for (let y = 0; y < arrLength - x - 1; y++) {
+            yield y
        }
    } 
 
-   const nextX = subIterationCondition ? x + 1 : x;
-   const nextY = y + 1;
-
-    if (iterationCondition)
-        shouldContinue = false
-
-   return [nextArr, nextX, nextY, shouldContinue]
+   return
 }
 
+
+// Actions
 function updateList(nextList) {
     return {
       type: 'UPDATE_LIST',
