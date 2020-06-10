@@ -5,29 +5,49 @@ import { initialState } from './initialState'
 import './index.css'
 
 const reducer = (state, action) => {
+    console.log('state: ', state, ' action: ', action)
     switch (action.type) {
-        case 'IS_PLAYING':
-            return state
-        case 'IS_PAUSED':
-            return state
-        case 'RESTART':
-            return state
-        case 'TICK': 
-            const nextIndexObject = state.nextIndex.next()
-            const nextIndex = nextIndexObject.done ? null : nextIndexObject.value
+        case 'START':
+            return {
+                ...state,
+                nextIndex: action.nextIndex,
+                isPaused: false,
+                intervalID: action.intervalID,
+            }
 
-            if (!nextIndex) 
+        case 'PAUSE':
+            return {
+                ...state,
+                intervalID: null,
+                isPaused: true,
+            }
+
+        case 'RESTART':
+            return {
+                ...state,
+                intervalID: null,
+                isPaused: true,
+            }
+
+        case 'TICK': 
+            const nextIndexObject = state.nextIndex ? state.nextIndex.next() : null
+            if (!nextIndexObject) 
+                return state
+
+            const nextIndex = nextIndexObject.done ? null : nextIndexObject.value
+            if (!nextIndex)
                 return state
 
             const arr = state.arr
 
             // Perform bubbleSort logic, set swapped item to active, while deactivating the rest
             if (shouldSwap(nextIndex, nextIndex + 1, arr)) {
+                console.log('shouldSwap invoked')
                 const nextArr = swap(nextIndex, nextIndex + 1, state.arr).map((item, index) => {
                     if (index === nextIndex + 1) {
                         item.isActive = true
                     } else {
-                        item.isActive
+                        item.isActive = false
                     }
 
                     return item
@@ -69,9 +89,10 @@ const BubbleSort = () => {
             title="Bubble Sort"
             cta="view source"
             icon="play"
+            onClick={startAlgorithm.bind(null, dispatch, 50, state.arr.length)}
         >
             <div className="bar-container row p-4">
-                { renderBars(state) }
+                { renderBars(state.arr) }
             </div>
         </Card>
     )
@@ -89,14 +110,7 @@ function swap(indexA, indexB, arr) {
 function shouldSwap(index1, index2, arr) {
     const itemA = arr[index1]
     const itemB = arr[index2]
-    return itemA > itemB
-}
-
-function runBubbleSort(bubbleSort) {
-    let nextArr
-    setInterval(() => {
-        
-    }, 1000)
+    return itemA.value > itemB.value
 }
 
 export function* bubbleSortIndex(arrLength) {
@@ -109,18 +123,36 @@ export function* bubbleSortIndex(arrLength) {
    return
 }
 
-
 // Actions
-function updateList(nextList) {
+function startAlgorithm(dispatch, frameRate, arrLength) {
+    const bsi = bubbleSortIndex(arrLength)
+    const intervalID = setInterval(() => {
+        dispatch(tick())
+    }, frameRate)
+
+    dispatch({
+        type: 'START',
+        nextIndex: bsi,
+        intervalID,
+    })
+}
+
+function tick() {
     return {
-      type: 'UPDATE_LIST',
-      payload: nextList,
+        type: 'TICK'
     }
 }
 
-function setActive(index) {
+function pause(intervalID) {
+    clearInterval(intervalID)
+
     return {
-        type: 'SET_ACTIVE',
-        payload: index,
+        type: 'PAUSE'
+    }
+}
+
+function restartAlgorithm(nextList) {
+    return {
+      type: 'RESTART',
     }
 }
