@@ -1,17 +1,20 @@
 .bar {
     width: 18px;
-    background:  brown;
+    border: 2px solid black;
+    border-radius: 2px;
+    background:  lightgray;
 
     &-active {
-        background: green;
-    }
-
-    &:last-child {
-        margin-right: 0 !important;
+        background: lime;
     }
 
     &-container {
         display: flex;
         align-items: baseline;
     }
+    
+    &:last-child {
+        margin-right: 0 !important;
+    }
+
 }

@@ -5,7 +5,7 @@ import { initialState } from './initialState'
 import './index.css'
 
 const reducer = (state, action) => {
-    console.log('state: ', state, ' action: ', action)
+    // console.log('state: ', state, ' action: ', action)
     switch (action.type) {
         case 'START':
             return {
@@ -35,14 +35,14 @@ const reducer = (state, action) => {
                 return state
 
             const nextIndex = nextIndexObject.done ? null : nextIndexObject.value
-            if (!nextIndex)
+            if (typeof nextIndex !== 'number')
                 return state
 
             const arr = state.arr
+            console.log('nextIndex: ', nextIndex)
 
             // Perform bubbleSort logic, set swapped item to active, while deactivating the rest
             if (shouldSwap(nextIndex, nextIndex + 1, arr)) {
-                console.log('shouldSwap invoked')
                 const nextArr = swap(nextIndex, nextIndex + 1, state.arr).map((item, index) => {
                     if (index === nextIndex + 1) {
                         item.isActive = true
@@ -59,7 +59,13 @@ const reducer = (state, action) => {
                 }
 
             } else {
-                return state
+                return {
+                    ...state,
+                    arr: state.arr.map((item) => { 
+                        item.isActive = false
+                        return item
+                    })
+                }
             }
 
         default:
@@ -112,7 +118,6 @@ function shouldSwap(index1, index2, arr) {
     const itemB = arr[index2]
     return itemA.value > itemB.value
 }
-
 export function* bubbleSortIndex(arrLength) {
     for (let x = 0; x < arrLength; x++) {
         for (let y = 0; y < arrLength - x - 1; y++) {
