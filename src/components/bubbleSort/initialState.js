@@ -1,8 +1,4 @@
-export const initialState = {
-    nextIndex: null,
-    intervalID: null,
-    isPaused: true,
-    arr: [
+const arr = [
         {
             index: 0,
             isActive: false,
@@ -188,4 +184,13 @@ export const initialState = {
             value: 93,
         },
     ]
-}
+
+export const initialState = {
+    nextIndex: null,
+    intervalID: null,
+    isPaused: false,
+    isFinished: false,
+    hasStarted: false,
+    arr,
+    backup: arr.slice(),
+ }

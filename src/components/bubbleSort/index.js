@@ -5,13 +5,18 @@ import { initialState } from './initialState'
 import './index.css'
 
 const reducer = (state, action) => {
-    // console.log('state: ', state, ' action: ', action)
+    console.log('state: ', state, ' action: ', action)
     switch (action.type) {
         case 'START':
+
             return {
                 ...state,
-                nextIndex: action.nextIndex,
+                nextIndex: (state.isPaused || !state.hasStarted)
+                    ? action.nextIndex
+                    : state.nextIndex,
                 isPaused: false,
+                isFinished: false,
+                hasStarted: true,
                 intervalID: action.intervalID,
             }
 
@@ -23,10 +28,14 @@ const reducer = (state, action) => {
             }
 
         case 'RESTART':
+            console.log('should restart')
             return {
                 ...state,
+                arr: state.backup.slice(),
                 intervalID: null,
-                isPaused: true,
+                isPaused: false,
+                hasStarted: false,
+                isFinished: false,
             }
 
         case 'TICK': 
@@ -34,12 +43,22 @@ const reducer = (state, action) => {
             if (!nextIndexObject) 
                 return state
 
-            const nextIndex = nextIndexObject.done ? null : nextIndexObject.value
-            if (typeof nextIndex !== 'number')
-                return state
+            if (nextIndexObject.done) {
+                clearInterval(state.intervalID)
+                return {
+                    ...state,
+                    arr: state.arr.map((item) => { 
+                        item.isActive = false
+                        return item
+                    }),
+                    isFinished: true,
+                    intervalID: null,
+                    hasStarted: false,
+                }
+            }
 
+            const nextIndex = nextIndexObject.value
             const arr = state.arr
-            console.log('nextIndex: ', nextIndex)
 
             // Perform bubbleSort logic, set swapped item to active, while deactivating the rest
             if (shouldSwap(nextIndex, nextIndex + 1, arr)) {
@@ -59,13 +78,7 @@ const reducer = (state, action) => {
                 }
 
             } else {
-                return {
-                    ...state,
-                    arr: state.arr.map((item) => { 
-                        item.isActive = false
-                        return item
-                    })
-                }
+                return state
             }
 
         default:
@@ -81,6 +94,7 @@ const renderBars = (data) => {
                     className={'bar mr-3 ' + activeClass}
                     style={{ 'height': `${item.value}px` }}
                 >
+                    <span className='bar-value'>{item.value}</span>
                 </div>
             )
         }
@@ -89,13 +103,20 @@ const renderBars = (data) => {
 
 const BubbleSort = () => {
     const [state, dispatch] = useReducer(reducer, initialState) 
+    const cardOnClick = cardOnClickWrapper(
+        state,
+        dispatch,
+        startAlgorithm.bind(null, dispatch, 50, state.arr.length),
+        pauseAlgorithm,
+        restartAlgorithm,
+    )
 
     return (
         <Card 
             title="Bubble Sort"
             cta="view source"
             icon="play"
-            onClick={startAlgorithm.bind(null, dispatch, 50, state.arr.length)}
+            onClick={cardOnClick}
         >
             <div className="bar-container row p-4">
                 { renderBars(state.arr) }
@@ -118,6 +139,35 @@ function shouldSwap(index1, index2, arr) {
     const itemB = arr[index2]
     return itemA.value > itemB.value
 }
+
+function cardOnClickWrapper(
+    state,
+    dispatch,
+    startAlgorithm,
+    pauseAlgorithm,
+    restartAlgorithm,
+    ) {
+    const { isPaused, isFinished, intervalID, hasStarted } = state
+
+    return () => {
+        console.log(isPaused, isFinished, intervalID, hasStarted)
+        if (hasStarted && isPaused || (!hasStarted && !isFinished)) {
+            console.log('start')
+            return dispatch(startAlgorithm())
+        }
+
+        if (isFinished) {
+            console.log('restart')
+            return dispatch(restartAlgorithm())
+        }
+
+        if (!isPaused) {
+            console.log('pause')
+            return dispatch(pauseAlgorithm(intervalID))
+        }
+    }
+}
+
 export function* bubbleSortIndex(arrLength) {
     for (let x = 0; x < arrLength; x++) {
         for (let y = 0; y < arrLength - x - 1; y++) {
@@ -135,11 +185,11 @@ function startAlgorithm(dispatch, frameRate, arrLength) {
         dispatch(tick())
     }, frameRate)
 
-    dispatch({
+    return {
         type: 'START',
         nextIndex: bsi,
         intervalID,
-    })
+    }
 }
 
 function tick() {
@@ -148,7 +198,7 @@ function tick() {
     }
 }
 
-function pause(intervalID) {
+function pauseAlgorithm(intervalID) {
     clearInterval(intervalID)
 
     return {
@@ -156,7 +206,7 @@ function pause(intervalID) {
     }
 }
 
-function restartAlgorithm(nextList) {
+function restartAlgorithm() {
     return {
       type: 'RESTART',
     }

@@ -3,6 +3,7 @@
     border: 2px solid black;
     border-radius: 2px;
     background:  lightgray;
+    position: relative;
 
     &-active {
         background: lime;
@@ -12,9 +13,24 @@
         display: flex;
         align-items: baseline;
     }
-    
+
+    &-value {
+        position: absolute;
+        top: -23px;
+        font-size: 15px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
     &:last-child {
         margin-right: 0 !important;
     }
 
+}
+
+.controls {
+    border-radius: 50%;
+    border: 2px solid black;
+    height: 36px;
+    width: 36px;
 }
