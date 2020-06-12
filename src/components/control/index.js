@@ -1,5 +1,7 @@
 import React from 'react'
 
+import './index.css'
+
 const Control = ({ type }) => {
     return (
         <div className="Control">

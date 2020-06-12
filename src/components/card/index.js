@@ -11,18 +11,22 @@ const Card = ({
 }) => {
     return (
         <div className="Card" onClick={ onClick }>
-        <h1 className="Card-title">{ title }</h1>
-        <icon>{icon}</icon>
-        <span className="Card-cta">
-            <span className="Card-cta-bracket">&lt;</span>
-            { cta }
-            <span className="Card-cta-bracket">&gt;</span>
-        </span>
-            { children }
-        <div>
-            { tags }
-            { tags ? <span className="Card-pill">...</span> : '' }
-        </div>
+            <div className="Card-heading">
+                <div className="Card-heading-title">
+                    <h1 className="Card-title">{ title }</h1>
+                    {icon}
+                </div>
+                <span className="Card-cta">
+                    <span className="Card-cta-bracket">&lt;</span>
+                    { cta }
+                    <span className="Card-cta-bracket">&gt;</span>
+                </span>
+            </div>
+                { children }
+            <div>
+                { tags }
+                { tags ? <span className="Card-pill">...</span> : '' }
+            </div>
         </div>
     )
 }
