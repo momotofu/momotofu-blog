@@ -7,10 +7,12 @@ const Card = ({
     tags,
     cta,
     children,
+    icon,
 }) => {
     return (
         <div className="Card" onClick={ onClick }>
         <h1 className="Card-title">{ title }</h1>
+        <icon>{icon}</icon>
         <span className="Card-cta">
             <span className="Card-cta-bracket">&lt;</span>
             { cta }

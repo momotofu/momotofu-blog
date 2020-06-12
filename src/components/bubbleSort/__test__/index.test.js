@@ -1,5 +1,5 @@
 
-import { bubbleSortIndex } from '../index.js'
+import { bubbleSortIndex } from '../utils.js'
 
 it('Should produce nested index sequence', () => {
     const arrLength = 4
