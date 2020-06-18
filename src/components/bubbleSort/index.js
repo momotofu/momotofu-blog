@@ -7,6 +7,16 @@ import { reducer } from './reducer'
 import { startAlgorithm, pauseAlgorithm, restartAlgorithm } from './action.js'
 import './index.css'
 
+const text = `function* bubbleSortIndex(arrLength) {
+    for (let x = 0; x < arrLength; x++) {
+        for (let y = 0; y < arrLength - x - 1; y++) {
+            yield y
+        }
+    } 
+
+    return
+}`
+
 const BubbleSort = () => {
     const [state, dispatch] = useReducer(reducer, initialState) 
     const cardOnClick = cardOnClickWrapper(
@@ -27,6 +37,25 @@ const BubbleSort = () => {
         >
             <div className="bar-container row p-4">
                 { renderBars(state.arr) }
+                <div className="bar-description">
+                    <div className="bar-description-section">
+                        <h3 className="bar-description-title">Description</h3>
+                        <p className="bar-description-body">
+                            Bubble sort is a classic algorithm that arranges elements in a list or array into asscending
+                            or descending order. The essential component of the algorithm is the comparrison of each element
+                            such that the element at index (referred to as A) is compared with the element at index + 1 (referred to as B).
+                            If A is greater than B, then a swap is performed where A is placed in B's position and visa-versa. 
+                            This comparrison is checked on each item of the array n * n where n is the length of the array.
+                        </p>
+                    </div>
+                    <h3>Big O: O(n^2)</h3>
+                    <div className="bar-description-section">
+                        <h3>Behind the scenes: keeping track of the index during state changes</h3>
+                        <pre>
+                            {text}
+                        </pre>
+                    </div>
+                </div>
             </div>
         </Card>
     )

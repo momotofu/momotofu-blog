@@ -22,6 +22,27 @@
         transform: translateX(-50%);
     }
 
+    &-description {
+        margin-top: 24px;
+        display: flex;
+        width: 100%;
+        flex-direction: column;
+
+        &-title {
+            font-size: 2rem;
+        }
+
+        &-body {
+            font-size: 2.5rem;
+            line-height: 1.1;
+            margin-bottom: 2.5rem;
+        }
+
+        &-section {
+            width: 100%;
+        }
+    }
+
     &:last-child {
         margin-right: 0 !important;
     }
