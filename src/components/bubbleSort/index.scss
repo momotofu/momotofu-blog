@@ -1,6 +1,6 @@
 .bar {
     width: 18px;
-    border: 2px solid black;
+    border: 1px solid black;
     border-radius: 2px;
     background:  lightgray;
     position: relative;
@@ -12,7 +12,7 @@
     }
 
     &-active {
-        background: lime;
+        background: #00e0e0;
     }
 
     &-container {
@@ -29,13 +29,15 @@
     }
 
     &-description {
-        margin-top: 24px;
+        margin-top: 60px;
+        margin-right: 12px;
         display: flex;
         width: 100%;
-        flex-direction: column;
 
         &-title {
             font-size: 2rem;
+            margin-bottom: 12px;
+            text-transform: uppercase;
         }
 
         &-body {
@@ -46,6 +48,12 @@
 
         &-section {
             width: 100%;
+
+            &:first-child {
+                border-right: 1px solid lightgray;
+                padding-right: 24px;
+                margin-right: 36px;
+            }
         }
     }
 

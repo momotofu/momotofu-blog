@@ -34,6 +34,12 @@ const BubbleSort = () => {
         restartAlgorithm,
     )
     const iconState = getIconState(state) 
+    const tags = [
+        <span className="Card-pill">React.js</span>,
+        <span className="Card-pill">Redux</span>,
+        <span className="Card-pill">BubbleSort</span>,
+        <span className="Card-pill">Algorithms</span>,
+    ]
 
     return (
         <Card 
@@ -41,6 +47,7 @@ const BubbleSort = () => {
             cta="view source"
             icon={<Control type={iconState} />}
             onClick={cardOnClick}
+            tags={tags}
         >
             <div className="bar-container row p-4">
                 { renderBars(state.arr) }
@@ -55,14 +62,14 @@ const BubbleSort = () => {
                             This comparrison is checked on each item of the array N x N where N is the length of the array.
                         </p>
                     </div>
-                    <h3>Big O: O(n^2)</h3>
                     <div className="bar-description-section">
-                        <h3>Behind the scenes: keeping track of the index during state changes</h3>
-                        <p>
+                        <h3 className="bar-description-title">Behind the scenes</h3>
+                        <p className="bar-description-body">
                             The above is more than just an animation - the actual algorithm is being ran. On each iteration of
                             the algorithm, the state of the array changes and is represented in the DOM (thanks to React.js).
-                            State is handled using redux or React.js's version "use-reducer." I found a great use for javascript
-                            generators in 
+                            State is handled using redux or React.js's version "use-reducer." JavaScript Generators were utilized 
+                            to retrieve the current iteration scene by scene, so that the algorithm could run asyncrounously
+                            and in spaced intervals.
                         </p>
                         <div />
                         <pre className="bar-code-block">
