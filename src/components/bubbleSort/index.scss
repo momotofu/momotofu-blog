@@ -1,8 +1,11 @@
+@import '../../styles/color.scss';
+@import '../../styles/signifier.scss';
+
 .bar {
     width: 18px;
-    border: 1px solid black;
+    border: 1px solid $charcoal;
     border-radius: 2px;
-    background:  lightgray;
+    background:  $steelBlue;
     position: relative;
 
     &-code-block {
@@ -12,7 +15,7 @@
     }
 
     &-active {
-        background: #00e0e0;
+        background: $tangerine;
     }
 
     &-container {
@@ -35,6 +38,7 @@
         width: 100%;
 
         &-title {
+            color: $charcoal;
             font-size: 2rem;
             margin-bottom: 12px;
             text-transform: uppercase;

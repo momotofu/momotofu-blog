@@ -1,4 +1,4 @@
-import React, { useReducer } from 'react'
+import React, { useReducer, useEffect } from 'react'
 
 import Card from '../card'
 import Control from '../control'
@@ -40,6 +40,10 @@ const BubbleSort = () => {
         <span className="Card-pill">BubbleSort</span>,
         <span className="Card-pill">Algorithms</span>,
     ]
+
+    useEffect(() => {
+        return dispatch(restartAlgorithm())
+    }, [])
 
     return (
         <Card 
@@ -123,7 +127,7 @@ function cardOnClickWrapper(
 
     return () => {
         console.log(isPaused, isFinished, intervalID, hasStarted)
-        if (hasStarted && isPaused || (!hasStarted && !isFinished)) {
+        if ((hasStarted && isPaused) || (!hasStarted && !isFinished)) {
             console.log('start')
             return dispatch(startAlgorithm())
         }
