@@ -5,6 +5,12 @@
     background:  lightgray;
     position: relative;
 
+    &-code-block {
+        border-radius: 10px;
+        padding: 4px;
+        background: #2b2b2b;
+    }
+
     &-active {
         background: lime;
     }

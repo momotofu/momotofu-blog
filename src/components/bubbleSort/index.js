@@ -5,17 +5,24 @@ import Control from '../control'
 import { initialState } from './initialState'
 import { reducer } from './reducer'
 import { startAlgorithm, pauseAlgorithm, restartAlgorithm } from './action.js'
+import hljs from 'highlight.js/lib/core'
+import javascript from 'highlight.js/lib/languages/javascript'
+import 'highlight.js/styles/a11y-dark.css'
 import './index.css'
+
+hljs.registerLanguage('javascript', javascript);
 
 const text = `function* bubbleSortIndex(arrLength) {
     for (let x = 0; x < arrLength; x++) {
         for (let y = 0; y < arrLength - x - 1; y++) {
-            yield y
-        }
-    } 
+            yield y;
+        };
+    };
 
-    return
-}`
+    return;
+};`
+
+const highlightedText = hljs.highlight('javascript', text).value
 
 const BubbleSort = () => {
     const [state, dispatch] = useReducer(reducer, initialState) 
@@ -45,14 +52,24 @@ const BubbleSort = () => {
                             or descending order. The essential component of the algorithm is the comparrison of each element
                             such that the element at index (referred to as A) is compared with the element at index + 1 (referred to as B).
                             If A is greater than B, then a swap is performed where A is placed in B's position and visa-versa. 
-                            This comparrison is checked on each item of the array n * n where n is the length of the array.
+                            This comparrison is checked on each item of the array N x N where N is the length of the array.
                         </p>
                     </div>
                     <h3>Big O: O(n^2)</h3>
                     <div className="bar-description-section">
                         <h3>Behind the scenes: keeping track of the index during state changes</h3>
-                        <pre>
-                            {text}
+                        <p>
+                            The above is more than just an animation - the actual algorithm is being ran. On each iteration of
+                            the algorithm, the state of the array changes and is represented in the DOM (thanks to React.js).
+                            State is handled using redux or React.js's version "use-reducer." I found a great use for javascript
+                            generators in 
+                        </p>
+                        <div />
+                        <pre className="bar-code-block">
+                            <code
+                                className="javascript hljs"
+                                dangerouslySetInnerHTML={{ __html: highlightedText}}
+                            />
                         </pre>
                     </div>
                 </div>
