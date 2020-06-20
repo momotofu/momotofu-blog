@@ -16,11 +16,13 @@ const Card = ({
                     <h1 className="Card-title">{ title }</h1>
                     {icon}
                 </div>
+                {cta ? 
                 <span className="Card-cta">
                     <span className="Card-cta-bracket">&lt;</span>
                     { cta }
                     <span className="Card-cta-bracket">&gt;</span>
                 </span>
+                : ''}
             </div>
                 { children }
             <div>

@@ -39,6 +39,7 @@ const BubbleSort = () => {
         <span className="Card-pill">Redux</span>,
         <span className="Card-pill">BubbleSort</span>,
         <span className="Card-pill">Algorithms</span>,
+        <span className="Card-pill">O(n^2)</span>,
     ]
 
     useEffect(() => {
@@ -48,7 +49,6 @@ const BubbleSort = () => {
     return (
         <Card 
             title="Bubble Sort"
-            cta="view source"
             icon={<Control type={iconState} />}
             onClick={cardOnClick}
             tags={tags}
@@ -73,7 +73,10 @@ const BubbleSort = () => {
                             the algorithm, the state of the array changes and is represented in the DOM (thanks to React.js).
                             State is handled using redux or React.js's version "use-reducer." JavaScript Generators were utilized 
                             to retrieve the current iteration scene by scene, so that the algorithm could run asyncrounously
-                            and in spaced intervals.
+                            and in spaced intervals. {' '}
+                            <span className="Card-cta-bracket">&lt;</span>
+                                <a className="Card-cta" href="https://github.com/momotofu/momotofu-blog/blob/effd95c0e959b6a2d21237705d0497a919b978eb/src/components/bubbleSort/utils.js#L14" target="_blank">Check out the source</a>
+                            <span className="Card-cta-bracket">&gt;</span>
                         </p>
                         <div />
                         <pre className="bar-code-block">
