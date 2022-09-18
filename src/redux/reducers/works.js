@@ -57,17 +57,17 @@ const initialState = [
     presentationImageName: '',
     liveURL: 'https://www.qzzr.com',
     sortPriority: 10,
-    tags: ['React.js', 'Startup','JavaScript', 'SEO', 'Pug', 'Google Analytics', 'Stylus', 'Wordpress', 'AJAX', 'Jekyll', 'Stripe', 'signup forms', 'forms', 'HTML', 'CSS Animations','Marketo API', 'Mobile development', 'Skunk works', 'Development pipeline', 'Technical documentation', 'SQL'],
+    tags: ['React.js', 'Startup', 'JavaScript', 'SEO', 'Pug', 'Google Analytics', 'Stylus', 'Wordpress', 'AJAX', 'Jekyll', 'Stripe', 'signup forms', 'forms', 'HTML', 'CSS Animations', 'Marketo API', 'Mobile development', 'Skunk works', 'Development pipeline', 'Technical documentation', 'SQL'],
   },
   {
-    title: '96problems.com',
-    description: 'I had the pleasure to contract with 96problems.com and to implement several new features to their iOS App now called "Everyst." First I completed the major task of bringing their tech stack up to date (React-Native from 0.39 to 0.43). Then I added React-Native animations, new swipe and touch functionality, pull up to refresh, and confirmed local notifications and preferences capability.',
+    title: '555 comic',
+    description: 'I had the pleasure to contract with 555 comic and implement several new features for their iOS App now called "Everyst." First I completed the major task of bringing their tech stack up to date (React-Native from 0.39 to 0.43). Then I added React-Native animations, new swipe and touch functionality, pull up to refresh, and confirmed local notifications and preferences capability.',
     repoURL: '',
     thumbnailImageURL: '',
     presentationImageName: '',
-    liveURL: 'https://fromeveryst.com/',
-    sortPriority: 7,
-    tags: ['React-Native.js', 'Startup','JavaScript', 'iOS Development', 'CocoaPods', 'React-Native Animations', 'Mobile development', 'Contract']
+    liveURL: 'https://555comic.com',
+    sortPriority: 0,
+    tags: ['React-Native.js', 'Startup', 'JavaScript', 'iOS Development', 'CocoaPods', 'React-Native Animations', 'Mobile development', 'Contract']
   },
   {
     title: 'Cat clicker',
